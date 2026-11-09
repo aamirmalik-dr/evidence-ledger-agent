@@ -8,7 +8,9 @@ from __future__ import annotations
 import hashlib
 import json
 
-from .agentcore import BaseAgentState, HistoryEntry, ToolRegistry, render_recent
+from .agentcore.loop import render_recent
+from .agentcore.policy import ToolRegistry
+from .agentcore.schemas import BaseAgentState, HistoryEntry
 
 PROMPT_VERSION = "ledger-prompts-v1"
 

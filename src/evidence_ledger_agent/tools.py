@@ -11,7 +11,7 @@ from typing import Any
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
-from .agentcore import ToolFailure, ToolSpec
+from .agentcore.policy import ToolFailure, ToolSpec
 from .citation_checks import CitationArg, parse_span_id, resolve_citations
 from .corpus import Corpus
 from .retrieval import BM25Index

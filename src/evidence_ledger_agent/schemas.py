@@ -6,7 +6,7 @@ from typing import Any, Literal
 
 from pydantic import BaseModel, ConfigDict, Field
 
-from .agentcore import BaseAgentState
+from .agentcore.schemas import BaseAgentState
 
 Verdict = Literal["supported", "conflicted", "insufficient"]
 Outcome = Literal["supported", "conflicted", "insufficient", "abstained", "failed"]

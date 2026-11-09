@@ -21,6 +21,7 @@ from .trace import TraceWriter
 S = TypeVar("S", bound=BaseAgentState)
 Renderer = Callable[[BaseAgentState, list[HistoryEntry]], str]
 
+REFUSED = ("unknown_tool", "not_allowed", "invalid_arguments")
 RESPONSE_FORMAT = (
     'Reply with exactly one JSON object and nothing else: {"summary": "<one sentence>", '
     '"action": {"tool": "<tool name>", "arguments": {...}}}'
@@ -247,16 +248,7 @@ class AgentLoop:
                 "summary": pending.summary,
                 "raw_responses": raws,
                 "action": pending.action.model_dump(),
-                "validation": (
-                    "ok"
-                    if result.ok
-                    or (
-                        result.error
-                        and result.error.code
-                        not in ("unknown_tool", "not_allowed", "invalid_arguments")
-                    )
-                    else "rejected"
-                ),
+                "validation": "rejected" if result.error and result.error.code in REFUSED else "ok",
                 "result": result.model_dump(),
                 "resumed": resumed,
                 "latency_s": latency,

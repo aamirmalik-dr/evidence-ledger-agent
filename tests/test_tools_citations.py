@@ -2,7 +2,8 @@ from __future__ import annotations
 
 import pytest
 
-from evidence_ledger_agent.agentcore import Action, Budget, PendingAction, Policy, ToolRegistry
+from evidence_ledger_agent.agentcore.policy import Budget, Policy, ToolRegistry
+from evidence_ledger_agent.agentcore.schemas import Action, PendingAction
 from evidence_ledger_agent.citation_checks import (
     CitationArg,
     audit_entry,
