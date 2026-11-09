@@ -16,7 +16,8 @@
     "end": 738,
     "doc_hash": "69439517de63cc16252f7700b10a4dd3858a1dfa4d883ddf588b6e10f80bec70",
     "quote": "All three LX-4 electrodes remained stable for the full 100 hours at pH 14",
-    "read_span_id": "dev-01:156:1217"
+    "read_span_id": "dev-01:156:1217",
+    "whitespace_normalized": false
    },
    {
     "doc_id": "dev-02",
@@ -24,7 +25,8 @@
     "end": 660,
     "doc_hash": "559113fc8e9e67e45a7e8c4fbe1099dce47f3c0394cc92d3101b643e309cda33",
     "quote": "At pH 7 the LX-4 electrodes were not stable",
-    "read_span_id": "dev-02:0:1213"
+    "read_span_id": "dev-02:0:1213",
+    "whitespace_normalized": false
    }
   ],
   "abstain_reason": null,

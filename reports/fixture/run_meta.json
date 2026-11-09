@@ -1,5 +1,6 @@
 {
- "agentcore_version": "0.1.0",
+ "adapter_retries": null,
+ "agentcore_version": "0.1.1",
  "config": {
   "arms": [
    "lexical",
@@ -31,6 +32,7 @@
   "fixture_scripts": "tests/fixtures/scripts",
   "lexical_coverage_threshold": 0.5,
   "mode": "fixture",
+  "model": null,
   "output_dir": "reports/fixture",
   "record_timing": false,
   "run_caps": {
@@ -45,7 +47,7 @@
   "task_limit": null
  },
  "config_sha256": "3c8f29c3b833765bb22153a09b1697af9759ba734f9f08cef9e63430884bd080",
- "finished_at": "2026-11-09T11:16:53+09:00",
+ "finished_at": "2026-11-09T11:49:54+09:00",
  "fixture_hashes": {
   "dev/corpus": "428081366b3b73eca0fd2efabd44300162edceb4363244344930b658e3625c18",
   "dev/gold": "9f6295b261f0c5eaf8a74da8fe3852dd49974b7fb2f3b23b439cef43447b479f",
@@ -60,8 +62,8 @@
   "heldout/script/agent_no_expand": "4e276a6f78b9993b88470edfcd2f06063871abf5fb1189624136426c1580754d",
   "heldout/script/single_call": "60a774633dbbb50ee33a1b59db8343884a0451907c91667d8463110e69dcf691"
  },
- "git_commit": "bfeebdfa5f567f65715c005b93726ea2b77242f7",
- "git_dirty": false,
+ "git_commit": "767e83b8a5f0cc99865b7145d7c182a278eab9d9",
+ "git_dirty": true,
  "hardware": {
   "machine": "AMD64",
   "platform": "Windows-10-10.0.26300-SP0",
@@ -71,9 +73,10 @@
  "mode": "fixture",
  "model": "none (scripted fixture adapter)",
  "package_version": "0.1.0",
- "prompt_sha256": "fc7d2e3c607462af3eb0b264faf478a21c31135b8c9dbf640eafdca69b4e2477",
- "prompt_version": "ledger-prompts-v1",
- "started_at": "2026-11-09T11:16:37+09:00",
+ "prompt_sha256": "702e8f169533fdf03f4ecedb81db956533c5a08257c5aa17a56e76937118cb75",
+ "prompt_version": "ledger-prompts-v2",
+ "started_at": "2026-11-09T11:49:36+09:00",
  "tokens": null,
- "usd": null
+ "usd": null,
+ "usd_reported_by_provider": null
 }
