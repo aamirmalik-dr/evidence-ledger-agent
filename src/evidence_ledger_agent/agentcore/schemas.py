@@ -106,6 +106,7 @@ class BaseAgentState(BaseModel):
     remaining_tool_calls: int
     model_calls: int = 0
     malformed_actions: int = 0
+    reprompts: int = 0
     prompt_chars: int = 0
     token_usage: TokenUsage = Field(default_factory=TokenUsage)
     elapsed_seconds: float = 0.0

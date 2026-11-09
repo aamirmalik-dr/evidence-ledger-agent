@@ -145,6 +145,7 @@ def build_tools(corpus: Corpus, index: BM25Index | None = None) -> list[ToolSpec
                 "citations": len(args.citations),
                 "valid_citations": len(verified),
                 "accepted": not reasons,
+                "problem_codes": [p.code for p in problems],
                 "problems": reasons,
             }
         )

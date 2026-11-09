@@ -1,0 +1,63 @@
+{
+ "ho-q01": [
+  "{\"summary\": \"Search the corpus for: GZ-9 ionic conductivity room temperature.\", \"action\": {\"tool\": \"search\", \"arguments\": {\"query\": \"GZ-9 ionic conductivity room temperature\", \"filters\": {}, \"limit\": 5}}}",
+  "{\"summary\": \"Read ho-01 to check its wording.\", \"action\": {\"tool\": \"read_span\", \"arguments\": {\"doc_id\": \"ho-01\", \"start\": 0, \"end\": 910}}}",
+  "{\"summary\": \"Finish with verdict supported.\", \"action\": {\"tool\": \"finish\", \"arguments\": {\"verdict\": \"supported\", \"claim\": \"GZ-9 conducts 1.2 mS cm-1 at 25 °C.\", \"citations\": [{\"span_id\": \"ho-01:0:910\", \"quote\": \"a total ionic conductivity of 1.2 mS cm-1 at 25 °C\"}], \"conditions\": {\"temperature\": \"25 °C\", \"atmosphere\": \"argon\"}, \"rationale\": \"Direct impedance measurement above the 1 mS cm-1 threshold.\"}}}"
+ ],
+ "ho-q02": [
+  "{\"summary\": \"Search the corpus for: GZ-9 conductivity above 5 mS cm-1.\", \"action\": {\"tool\": \"search\", \"arguments\": {\"query\": \"GZ-9 conductivity above 5 mS cm-1\", \"filters\": {}, \"limit\": 5}}}",
+  "{\"summary\": \"Read ho-02 to check its wording.\", \"action\": {\"tool\": \"read_span\", \"arguments\": {\"doc_id\": \"ho-02\", \"start\": 310, \"end\": 510}}}",
+  "{\"summary\": \"Expand the span to see its scope and caveats.\", \"action\": {\"tool\": \"expand_context\", \"arguments\": {\"span_id\": \"ho-02:310:510\", \"radius\": 300}}}",
+  "{\"summary\": \"Read ho-01 to check its wording.\", \"action\": {\"tool\": \"read_span\", \"arguments\": {\"doc_id\": \"ho-01\", \"start\": 0, \"end\": 910}}}",
+  "{\"summary\": \"Finish with verdict conflicted.\", \"action\": {\"tool\": \"finish\", \"arguments\": {\"verdict\": \"conflicted\", \"claim\": \"GZ-9 exceeds 5 mS cm-1 only at 80 °C; at 25 °C it is about 1.1 to 1.2 mS cm-1.\", \"citations\": [{\"span_id\": \"ho-02:10:810\", \"quote\": \"6.5 × 10-3 S cm-1 at 80 °C\"}, {\"span_id\": \"ho-01:0:910\", \"quote\": \"a total ionic conductivity of 1.2 mS cm-1 at 25 °C\"}], \"conditions\": {\"temperature\": \"above 5 mS cm-1 at 80 °C only\"}, \"rationale\": \"6.5 × 10-3 S cm-1 is 6.5 mS cm-1, reached only at elevated temperature.\"}}}"
+ ],
+ "ho-q03": [
+  "{\"summary\": \"Search the corpus for: AL-3 coating capacity retention 500 cycles.\", \"action\": {\"tool\": \"search\", \"arguments\": {\"query\": \"AL-3 coating capacity retention 500 cycles\", \"filters\": {}, \"limit\": 5}}}",
+  "{\"summary\": \"Read ho-04 to check its wording.\", \"action\": {\"tool\": \"read_span\", \"arguments\": {\"doc_id\": \"ho-04\", \"start\": 0, \"end\": 597}}}",
+  "{\"summary\": \"Read ho-05 to check its wording.\", \"action\": {\"tool\": \"read_span\", \"arguments\": {\"doc_id\": \"ho-05\", \"start\": 0, \"end\": 770}}}",
+  "{\"summary\": \"Finish with verdict insufficient.\", \"action\": {\"tool\": \"finish\", \"arguments\": {\"verdict\": \"insufficient\", \"claim\": \"The only supporting preprint was withdrawn.\", \"citations\": [{\"span_id\": \"ho-05:0:770\", \"quote\": \"are therefore unreliable and should not be cited\"}], \"conditions\": {}, \"rationale\": \"The withdrawal notice supersedes the retention values.\"}}}"
+ ],
+ "ho-q04": [
+  "{\"summary\": \"Search the corpus for: SX-2 dry room stability 48 hours.\", \"action\": {\"tool\": \"search\", \"arguments\": {\"query\": \"SX-2 dry room stability 48 hours\", \"filters\": {}, \"limit\": 5}}}",
+  "{\"summary\": \"Read ho-06 to check its wording.\", \"action\": {\"tool\": \"read_span\", \"arguments\": {\"doc_id\": \"ho-06\", \"start\": 0, \"end\": 898}}}",
+  "{\"summary\": \"Finish with verdict supported.\", \"action\": {\"tool\": \"finish\", \"arguments\": {\"verdict\": \"supported\", \"claim\": \"SX-2 showed no degradation over 48 hours in a dry room.\", \"citations\": [{\"span_id\": \"ho-06:0:898\", \"quote\": \"SX-2 pellets showed no hydrogen sulfide release and no measurable conductivity loss over 48 hours\"}], \"conditions\": {\"humidity\": \"dry room, dew point -50 °C\"}, \"rationale\": \"Holds for dry-room conditions only; ambient air degrades SX-2.\"}}}"
+ ],
+ "ho-q05": [
+  "{\"summary\": \"Search the corpus for: TQ-5 ionic conductivity.\", \"action\": {\"tool\": \"search\", \"arguments\": {\"query\": \"TQ-5 ionic conductivity\", \"filters\": {}, \"limit\": 5}}}",
+  "{\"summary\": \"Read ho-09 to check its wording.\", \"action\": {\"tool\": \"read_span\", \"arguments\": {\"doc_id\": \"ho-09\", \"start\": 0, \"end\": 727}}}",
+  "{\"summary\": \"Search the corpus for: TQ-5 replication.\", \"action\": {\"tool\": \"search\", \"arguments\": {\"query\": \"TQ-5 replication\", \"filters\": {}, \"limit\": 5}}}",
+  "{\"summary\": \"Read ho-08 to check its wording.\", \"action\": {\"tool\": \"read_span\", \"arguments\": {\"doc_id\": \"ho-08\", \"start\": 0, \"end\": 956}}}",
+  "{\"summary\": \"Search the corpus for: TQ-5 argyrodite synthesis.\", \"action\": {\"tool\": \"search\", \"arguments\": {\"query\": \"TQ-5 argyrodite synthesis\", \"filters\": {}, \"limit\": 5}}}",
+  "{\"summary\": \"Search the corpus for: TQ-5 cold pressing 370 MPa.\", \"action\": {\"tool\": \"search\", \"arguments\": {\"query\": \"TQ-5 cold pressing 370 MPa\", \"filters\": {}, \"limit\": 5}}}",
+  "{\"summary\": \"Read ho-03 to check its wording.\", \"action\": {\"tool\": \"read_span\", \"arguments\": {\"doc_id\": \"ho-03\", \"start\": 0, \"end\": 830}}}",
+  "{\"summary\": \"Search the corpus for: sulfide conductivity 25 °C.\", \"action\": {\"tool\": \"search\", \"arguments\": {\"query\": \"sulfide conductivity 25 °C\", \"filters\": {}, \"limit\": 5}}}",
+  "{\"summary\": \"Read ho-06 to check its wording.\", \"action\": {\"tool\": \"read_span\", \"arguments\": {\"doc_id\": \"ho-06\", \"start\": 0, \"end\": 898}}}",
+  "{\"summary\": \"Search the corpus for: TQ-5 discrepancy.\", \"action\": {\"tool\": \"search\", \"arguments\": {\"query\": \"TQ-5 discrepancy\", \"filters\": {}, \"limit\": 5}}}",
+  "{\"summary\": \"Read ho-07 to check its wording.\", \"action\": {\"tool\": \"read_span\", \"arguments\": {\"doc_id\": \"ho-07\", \"start\": 0, \"end\": 827}}}"
+ ],
+ "ho-q06": [
+  "{\"summary\": \"Search the corpus for: PB-1 binder oxidation stability 4.5 V.\", \"action\": {\"tool\": \"search\", \"arguments\": {\"query\": \"PB-1 binder oxidation stability 4.5 V\", \"filters\": {}, \"limit\": 5}}}",
+  "{\"summary\": \"Read ho-10 to check its wording.\", \"action\": {\"tool\": \"read_span\", \"arguments\": {\"doc_id\": \"ho-10\", \"start\": 0, \"end\": 858}}}",
+  "{\"summary\": \"Finish with verdict supported.\", \"action\": {\"tool\": \"finish\", \"arguments\": {\"verdict\": \"supported\", \"claim\": \"PB-1 shows no oxidation current up to 4.5 V vs Li/Li+.\", \"citations\": [{\"span_id\": \"ho-10:0:858\", \"quote\": \"showed no oxidation current above background up to 4.5 V vs Li/Li+\"}], \"conditions\": {\"method\": \"linear sweep voltammetry, 0.1 mV s-1\", \"source\": \"supplier datasheet\"}, \"rationale\": \"Supplier data, which the datasheet calls typical rather than a specification.\"}}}"
+ ],
+ "ho-q07": [
+  "{\"summary\": \"Search the corpus for: GZ-9 lithium metal cycling 1000 cycles.\", \"action\": {\"tool\": \"search\", \"arguments\": {\"query\": \"GZ-9 lithium metal cycling 1000 cycles\", \"filters\": {}, \"limit\": 5}}}",
+  "{\"summary\": \"Read ho-12 to check its wording.\", \"action\": {\"tool\": \"read_span\", \"arguments\": {\"doc_id\": \"ho-12\", \"start\": 0, \"end\": 733}}}",
+  "{\"summary\": \"Finish with verdict insufficient.\", \"action\": {\"tool\": \"finish\", \"arguments\": {\"verdict\": \"insufficient\", \"claim\": \"Only 200 stable cycles are reported; nothing beyond.\", \"citations\": [{\"span_id\": \"ho-12:0:733\", \"quote\": \"the study stopped at 200 cycles\"}], \"conditions\": {\"stack pressure\": \"5 MPa\"}, \"rationale\": \"No data exist for more than 200 cycles.\"}}}"
+ ],
+ "ho-q08": [
+  "{\"summary\": \"Search the corpus for: GZ-9 dendrite grain-boundary electronic conductivity.\", \"action\": {\"tool\": \"search\", \"arguments\": {\"query\": \"GZ-9 dendrite grain-boundary electronic conductivity\", \"filters\": {}, \"limit\": 5}}}",
+  "{\"summary\": \"Read ho-11 to check its wording.\", \"action\": {\"tool\": \"read_span\", \"arguments\": {\"doc_id\": \"ho-11\", \"start\": 0, \"end\": 873}}}",
+  "{\"summary\": \"Finish with verdict insufficient.\", \"action\": {\"tool\": \"finish\", \"arguments\": {\"verdict\": \"insufficient\", \"claim\": \"The cause is asserted in an opinion piece without data.\", \"citations\": [{\"span_id\": \"ho-11:0:873\", \"quote\": \"We have not measured the electronic conductivity of GZ-9 grain boundaries\"}], \"conditions\": {}, \"rationale\": \"The only source is an opinion that reports no measurements.\"}}}"
+ ],
+ "ho-q09": [
+  "{\"summary\": \"Search the corpus for: SX-2 area-specific resistance interface.\", \"action\": {\"tool\": \"search\", \"arguments\": {\"query\": \"SX-2 area-specific resistance interface\", \"filters\": {}, \"limit\": 5}}}",
+  "{\"summary\": \"Read ho-07 to check its wording.\", \"action\": {\"tool\": \"read_span\", \"arguments\": {\"doc_id\": \"ho-07\", \"start\": 0, \"end\": 827}}}",
+  "{\"summary\": \"Finish with verdict supported.\", \"action\": {\"tool\": \"finish\", \"arguments\": {\"verdict\": \"supported\", \"claim\": \"The SX-2 interfacial ASR is 35 ohm cm2 at 25 °C.\", \"citations\": [{\"span_id\": \"ho-07:0:827\", \"quote\": \"the interfacial ASR of SX-2 was 0.035 kΩ cm2 at 25 °C\"}], \"conditions\": {\"temperature\": \"25 °C\", \"electrodes\": \"lithium-indium\", \"stack pressure\": \"10 MPa\"}, \"rationale\": \"0.035 kOhm cm2 equals 35 Ohm cm2, below 50.\"}}}"
+ ],
+ "ho-q10": [
+  "{\"summary\": \"Search the corpus for: SX-2 hydrogen sulfide humidity.\", \"action\": {\"tool\": \"search\", \"arguments\": {\"query\": \"SX-2 hydrogen sulfide humidity\", \"filters\": {}, \"limit\": 5}}}",
+  "{\"summary\": \"Read ho-06 to check its wording.\", \"action\": {\"tool\": \"read_span\", \"arguments\": {\"doc_id\": \"ho-06\", \"start\": 0, \"end\": 898}}}",
+  "{\"summary\": \"Finish with verdict supported.\", \"action\": {\"tool\": \"finish\", \"arguments\": {\"verdict\": \"supported\", \"claim\": \"SX-2 releases H2S within 2 minutes at 30% relative humidity.\", \"citations\": [{\"span_id\": \"ho-06:0:898\", \"quote\": \"at 30% relative humidity and 25 °C, SX-2 released detectable hydrogen sulfide within 2 minutes\"}], \"conditions\": {\"humidity\": \"30% RH\", \"temperature\": \"25 °C\"}, \"rationale\": \"Direct statement.\"}}}"
+ ]
+}

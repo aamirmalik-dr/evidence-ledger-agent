@@ -1,0 +1,32 @@
+{
+ "ho-q01": [
+  "{\"verdict\": \"supported\", \"claim\": \"1.2 mS cm-1 at 25 °C.\", \"citations\": [{\"span_id\": \"ho-01:0:910\", \"quote\": \"a total ionic conductivity of 1.2 mS cm-1 at 25 °C\"}], \"conditions\": {\"temperature\": \"25 °C\"}, \"rationale\": \"Above 1 mS cm-1.\"}"
+ ],
+ "ho-q02": [
+  "{\"verdict\": \"supported\", \"claim\": \"GZ-9 reaches 6.5 mS cm-1.\", \"citations\": [{\"span_id\": \"ho-02:0:922\", \"quote\": \"6.5 × 10-3 S cm-1 at 80 °C\"}], \"conditions\": {}, \"rationale\": \"Planted failure: ignores the temperature condition.\"}"
+ ],
+ "ho-q03": [
+  "{\"verdict\": \"insufficient\", \"claim\": \"Preprint withdrawn.\", \"citations\": [{\"span_id\": \"ho-05:0:770\", \"quote\": \"are therefore unreliable and should not be cited\"}], \"conditions\": {}, \"rationale\": \"Withdrawn data.\"}"
+ ],
+ "ho-q04": [
+  "{\"verdict\": \"supported\", \"claim\": \"Stable 48 hours in a dry room.\", \"citations\": [{\"span_id\": \"ho-06:0:898\", \"quote\": \"no measurable conductivity loss over 48 hours\"}], \"conditions\": {\"humidity\": \"dry room\"}, \"rationale\": \"Stated directly.\"}"
+ ],
+ "ho-q05": [
+  "{\"verdict\": \"conflicted\", \"claim\": \"3.1 versus 0.9 mS cm-1 at 25 °C.\", \"citations\": [{\"span_id\": \"ho-09:0:727\", \"quote\": \"gave an ionic conductivity of 3.1 mS cm-1\"}, {\"span_id\": \"ho-08:0:956\", \"quote\": \"TQ-5 showed an ionic conductivity of 0.9 mS cm-1 at 25 °C\"}], \"conditions\": {\"temperature\": \"25 °C\"}, \"rationale\": \"Replication disagrees.\"}"
+ ],
+ "ho-q06": [
+  "{\"verdict\": \"supported\", \"claim\": \"Stable to 4.5 V.\", \"citations\": [{\"span_id\": \"ho-10:0:858\", \"quote\": \"no oxidation current above background up to 4.5 V vs Li/Li+\"}], \"conditions\": {}, \"rationale\": \"Datasheet value.\"}"
+ ],
+ "ho-q07": [
+  "{\"abstain\": \"No passage reports 1000 cycles.\"}"
+ ],
+ "ho-q08": [
+  "{\"verdict\": \"insufficient\", \"claim\": \"Opinion without measurements.\", \"citations\": [{\"span_id\": \"ho-11:0:873\", \"quote\": \"We have not measured the electronic conductivity of GZ-9 grain boundaries\"}], \"conditions\": {}, \"rationale\": \"No data.\"}"
+ ],
+ "ho-q09": [
+  "{\"verdict\": \"supported\", \"claim\": \"35 ohm cm2 at 25 °C.\", \"citations\": [{\"span_id\": \"ho-07:0:827\", \"quote\": \"the interfacial ASR of SX-2 was 0.035 kΩ cm2 at 25 °C\"}], \"conditions\": {\"temperature\": \"25 °C\"}, \"rationale\": \"0.035 kOhm cm2 is 35 Ohm cm2.\"}"
+ ],
+ "ho-q10": [
+  "{\"verdict\": \"supported\", \"claim\": \"H2S within 2 minutes at 30% RH.\", \"citations\": [{\"span_id\": \"ho-06:0:898\", \"quote\": \"SX-2 released detectable hydrogen sulfide within 2 minutes\"}], \"conditions\": {\"humidity\": \"30% RH\"}, \"rationale\": \"Stated directly.\"}"
+ ]
+}

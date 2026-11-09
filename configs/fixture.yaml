@@ -1,0 +1,28 @@
+# Offline evaluation with the scripted fixture adapter. No model is called.
+# Frozen 2026-11-09 before any evaluation run. The lexical coverage threshold
+# was set here a priori and has not been tuned on any result.
+mode: fixture
+families:
+  dev:
+    corpus: tests/fixtures/corpus/dev
+    questions: tests/fixtures/questions_dev.json
+    gold: evaluator/gold_dev.json
+  heldout:
+    corpus: tests/fixtures/corpus/heldout
+    questions: tests/fixtures/questions_heldout.json
+    gold: evaluator/gold_heldout.json
+arms: [lexical, single_call, agent, agent_no_expand]
+runs: 1
+fixture_scripts: tests/fixtures/scripts
+episode:
+  max_steps: 16
+  max_tool_calls: 10
+  max_tokens_per_episode: 40000
+  max_wall_seconds: 300
+  recent_k: 4
+  max_completion_tokens: 700
+single_call_top_k: 4
+single_call_max_completion_tokens: 900
+lexical_coverage_threshold: 0.5
+output_dir: reports/fixture
+record_timing: false

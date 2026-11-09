@@ -1,0 +1,20 @@
+{
+ "dev-q1": [
+  "{\"verdict\": \"conflicted\", \"claim\": \"Stable at pH 14 for 100 hours, unstable at pH 7.\", \"citations\": [{\"span_id\": \"dev-01:0:1217\", \"quote\": \"All three LX-4 electrodes remained stable for the full 100 hours at pH 14\"}, {\"span_id\": \"dev-02:0:1213\", \"quote\": \"At pH 7 the LX-4 electrodes were not stable\"}], \"conditions\": {\"pH\": \"14 versus 7\"}, \"rationale\": \"Results depend on pH.\"}"
+ ],
+ "dev-q2": [
+  "{\"verdict\": \"supported\", \"claim\": \"CM-2 reaches 620 mA cm-2 at 1.8 V.\", \"citations\": [{\"span_id\": \"dev-03:0:1022\", \"quote\": \"sustained 620 mA cm-2 at 1.8 V\"}], \"conditions\": {}, \"rationale\": \"Planted failure: paraphrased quote.\"}"
+ ],
+ "dev-q3": [
+  "{\"verdict\": \"insufficient\", \"claim\": \"Corrected to 91%.\", \"citations\": [{\"span_id\": \"dev-06:0:1023\", \"quote\": \"the corrected Faradaic efficiency of RT-1 for oxygen evolution is 91%\"}], \"conditions\": {}, \"rationale\": \"The correction supersedes 99%.\"}"
+ ],
+ "dev-q4": [
+  "{\"verdict\": \"insufficient\", \"claim\": \"The isotope test was inconclusive.\", \"citations\": [{\"span_id\": \"dev-08:0:1071\", \"quote\": \"the experiment is inconclusive\"}], \"conditions\": {}, \"rationale\": \"No direct evidence.\"}"
+ ],
+ "dev-q5": [
+  "{\"abstain\": \"No passage covers CM-2 in acid.\"}"
+ ],
+ "dev-q6": [
+  "{\"verdict\": \"supported\", \"claim\": \"Calcined at 450 °C in air.\", \"citations\": [{\"span_id\": \"dev-09:0:957\", \"quote\": \"calcined in air at 450 °C for 4 hours\"}], \"conditions\": {}, \"rationale\": \"Stated directly.\"}"
+ ]
+}

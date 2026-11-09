@@ -1,0 +1,40 @@
+{
+ "dev-q1": [
+  "{\"summary\": \"Search the corpus for: LX-4 stable 100 hours oxygen evolution.\", \"action\": {\"tool\": \"search\", \"arguments\": {\"query\": \"LX-4 stable 100 hours oxygen evolution\", \"filters\": {}, \"limit\": 5}}}",
+  "{\"summary\": \"Read dev-01 to check its wording.\", \"action\": {\"tool\": \"read_span\", \"arguments\": {\"doc_id\": \"dev-01\", \"start\": 656, \"end\": 956}}}",
+  "{\"summary\": \"Read a wider window to see its scope and caveats.\", \"action\": {\"tool\": \"read_span\", \"arguments\": {\"doc_id\": \"dev-01\", \"start\": 156, \"end\": 1217}}}",
+  "{\"summary\": \"Search the corpus for: LX-4 stability near-neutral pH 7.\", \"action\": {\"tool\": \"search\", \"arguments\": {\"query\": \"LX-4 stability near-neutral pH 7\", \"filters\": {\"pH\": \"7\"}, \"limit\": 5}}}",
+  "{\"summary\": \"Read dev-02 to check its wording.\", \"action\": {\"tool\": \"read_span\", \"arguments\": {\"doc_id\": \"dev-02\", \"start\": 0, \"end\": 1213}}}",
+  "{\"summary\": \"Finish with verdict conflicted.\", \"action\": {\"tool\": \"finish\", \"arguments\": {\"verdict\": \"conflicted\", \"claim\": \"LX-4 is stable for 100 hours at pH 14 but deactivates within 12 hours at pH 7.\", \"citations\": [{\"span_id\": \"dev-01:156:1217\", \"quote\": \"All three LX-4 electrodes remained stable for the full 100 hours at pH 14\"}, {\"span_id\": \"dev-02:0:1213\", \"quote\": \"At pH 7 the LX-4 electrodes were not stable\"}], \"conditions\": {\"pH\": \"stable at pH 14 (1 M KOH), not stable at pH 7 (phosphate buffer)\"}, \"rationale\": \"The two reports disagree, and the disagreement follows the electrolyte pH; the alkaline report explicitly limits its scope to strongly alkaline media.\"}}}"
+ ],
+ "dev-q2": [
+  "{\"summary\": \"Search the corpus for: CM-2 current density 1.8 V flow cell.\", \"action\": {\"tool\": \"search\", \"arguments\": {\"query\": \"CM-2 current density 1.8 V flow cell\", \"filters\": {}, \"limit\": 5}}}",
+  "{\"summary\": \"Read dev-03 to check its wording.\", \"action\": {\"tool\": \"read_span\", \"arguments\": {\"doc_id\": \"dev-03\", \"start\": 0, \"end\": 1022}}}",
+  "{\"summary\": \"Finish with verdict supported.\", \"action\": {\"tool\": \"finish\", \"arguments\": {\"verdict\": \"supported\", \"claim\": \"CM-2 sustains 620 mA cm-2 at 1.8 V.\", \"citations\": [{\"span_id\": \"dev-03:0:1022\", \"quote\": \"sustained 620 mA cm-2 at a cell voltage of 1.8 V\"}], \"conditions\": {}, \"rationale\": \"Fabricated quote, planted to exercise the rejection path.\"}}}",
+  "{\"summary\": \"Finish with verdict supported.\", \"action\": {\"tool\": \"finish\", \"arguments\": {\"verdict\": \"supported\", \"claim\": \"CM-2 sustained 0.62 A cm-2 (620 mA cm-2) at 1.8 V in a zero-gap flow cell.\", \"citations\": [{\"span_id\": \"dev-03:0:1022\", \"quote\": \"the CM-2 anode sustained 0.62 A cm-2 at a cell voltage of 1.8 V\"}], \"conditions\": {\"cell\": \"zero-gap flow cell\", \"temperature\": \"60 °C\", \"electrolyte\": \"1 M KOH\"}, \"rationale\": \"0.62 A cm-2 equals 620 mA cm-2, above the 500 mA cm-2 threshold.\"}}}"
+ ],
+ "dev-q3": [
+  "{\"summary\": \"Search the corpus for: RT-1 Faradaic efficiency oxygen evolution.\", \"action\": {\"tool\": \"search\", \"arguments\": {\"query\": \"RT-1 Faradaic efficiency oxygen evolution\", \"filters\": {}, \"limit\": 5}}}",
+  "{\"summary\": \"Read dev-05 to check its wording.\", \"action\": {\"tool\": \"read_span\", \"arguments\": {\"doc_id\": \"dev-05\", \"start\": 0, \"end\": 879}}}",
+  "{\"summary\": \"Search the corpus for: RT-1 correction Faradaic efficiency.\", \"action\": {\"tool\": \"search\", \"arguments\": {\"query\": \"RT-1 correction Faradaic efficiency\", \"filters\": {}, \"limit\": 5}}}",
+  "{\"summary\": \"Read dev-06 to check its wording.\", \"action\": {\"tool\": \"read_span\", \"arguments\": {\"doc_id\": \"dev-06\", \"start\": 0, \"end\": 1023}}}",
+  "{\"summary\": \"Finish with verdict insufficient.\", \"action\": {\"tool\": \"finish\", \"arguments\": {\"verdict\": \"insufficient\", \"claim\": \"The 99% value was corrected to 91%, so efficiency above 95% is not supported.\", \"citations\": [{\"span_id\": \"dev-06:0:1023\", \"quote\": \"the corrected Faradaic efficiency of RT-1 for oxygen evolution is 91%, not the 99% stated in the original report\"}], \"conditions\": {\"electrolyte\": \"0.5 M sulfuric acid\"}, \"rationale\": \"A later correction supersedes the original 99% figure.\"}}}"
+ ],
+ "dev-q4": [
+  "{\"summary\": \"Search the corpus for: LX-4 lattice-oxygen mechanism.\", \"action\": {\"tool\": \"search\", \"arguments\": {\"query\": \"LX-4 lattice-oxygen mechanism\", \"filters\": {}, \"limit\": 5}}}",
+  "{\"summary\": \"Read dev-07 to check its wording.\", \"action\": {\"tool\": \"read_span\", \"arguments\": {\"doc_id\": \"dev-07\", \"start\": 0, \"end\": 1095}}}",
+  "{\"summary\": \"Finish with verdict supported.\", \"action\": {\"tool\": \"finish\", \"arguments\": {\"verdict\": \"supported\", \"claim\": \"LX-4 runs on the lattice-oxygen mechanism.\", \"citations\": [{\"span_id\": \"dev-07:0:1095\", \"quote\": \"It is clear beyond reasonable doubt that LX-4 evolves oxygen exclusively through the lattice-oxygen pathway\"}], \"conditions\": {}, \"rationale\": \"Planted failure: accepts a confident perspective without data.\"}}}"
+ ],
+ "dev-q5": [
+  "I should look for CM-2 data in acid first.",
+  "{\"summary\": \"Search the corpus for: CM-2 acidic electrolyte stability pH 1.\", \"action\": {\"tool\": \"search\", \"arguments\": {\"query\": \"CM-2 acidic electrolyte stability pH 1\", \"filters\": {}, \"limit\": 5}}}",
+  "{\"summary\": \"Read dev-03 to check its wording.\", \"action\": {\"tool\": \"read_span\", \"arguments\": {\"doc_id\": \"dev-03\", \"start\": 0, \"end\": 1022}}}",
+  "{\"summary\": \"Search the corpus for: spinel catalyst acid stability.\", \"action\": {\"tool\": \"search\", \"arguments\": {\"query\": \"spinel catalyst acid stability\", \"filters\": {}, \"limit\": 5}}}",
+  "{\"summary\": \"Abstain, the corpus does not bear on the claim.\", \"action\": {\"tool\": \"abstain\", \"arguments\": {\"reason\": \"No document reports CM-2 in acidic electrolyte; the only acid data concern RT-1.\"}}}"
+ ],
+ "dev-q6": [
+  "{\"summary\": \"Search the corpus for: CM-2 synthesis calcination temperature.\", \"action\": {\"tool\": \"search\", \"arguments\": {\"query\": \"CM-2 synthesis calcination temperature\", \"filters\": {}, \"limit\": 5}}}",
+  "{\"summary\": \"Read dev-09 to check its wording.\", \"action\": {\"tool\": \"read_span\", \"arguments\": {\"doc_id\": \"dev-09\", \"start\": 0, \"end\": 957}}}",
+  "{\"summary\": \"Finish with verdict supported.\", \"action\": {\"tool\": \"finish\", \"arguments\": {\"verdict\": \"supported\", \"claim\": \"CM-2 powder is made by calcining the dried gel in air at 450 °C.\", \"citations\": [{\"span_id\": \"dev-09:0:957\", \"quote\": \"calcined in air at 450 °C for 4 hours\"}], \"conditions\": {\"atmosphere\": \"air\", \"duration\": \"4 hours\"}, \"rationale\": \"The synthesis notebook states the calcination step directly.\"}}}"
+ ]
+}

@@ -1,0 +1,29 @@
+# Live pilot against an OpenAI-compatible endpoint configured through
+# AGENT_MODEL_BASE_URL, AGENT_MODEL_NAME and AGENT_MODEL_API_KEY.
+# Not yet run: no model route was available when this repository was published.
+# Held-out family only (10 tasks), two runs, all four arms, hard caps below.
+mode: live
+families:
+  heldout:
+    corpus: tests/fixtures/corpus/heldout
+    questions: tests/fixtures/questions_heldout.json
+    gold: evaluator/gold_heldout.json
+arms: [lexical, single_call, agent, agent_no_expand]
+runs: 2
+episode:
+  max_steps: 16
+  max_tool_calls: 10
+  max_tokens_per_episode: 40000   # prompt plus completion, per agent episode
+  max_wall_seconds: 300           # per agent episode
+  recent_k: 4
+  max_completion_tokens: 700
+single_call_top_k: 4
+single_call_max_completion_tokens: 900
+lexical_coverage_threshold: 0.5
+run_caps:
+  max_total_tokens: 1500000       # whole evaluation run; later episodes are recorded as failed
+  max_usd: 5.0                    # enforced only when both prices below are filled in
+  usd_per_mtok_input: null
+  usd_per_mtok_output: null
+output_dir: reports/live
+record_timing: true

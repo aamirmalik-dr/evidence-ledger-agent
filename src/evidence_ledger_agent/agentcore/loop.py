@@ -206,6 +206,7 @@ class AgentLoop:
         decision, error = parse_decision(text, self.max_output_chars)
         raws = [text]
         if decision is None:  # one corrective re-prompt that includes the parse error
+            state.reprompts += 1
             messages += [
                 {"role": "assistant", "content": text[: self.max_output_chars]},
                 {
