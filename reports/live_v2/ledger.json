@@ -1,0 +1,2010 @@
+[
+ {
+  "family": "heldout_v2",
+  "run": 0,
+  "task_id": "h2-q01",
+  "question": "Claim to check: the perovskite PV-7 has an optical bandgap of about 1.55 eV.",
+  "arm": "lexical",
+  "outcome": "supported",
+  "claim": "Optical bandgap of the perovskite absorber PV-7",
+  "conditions": {},
+  "rationale": "best sentence covers 0.67 of query terms (threshold 0.5)",
+  "citations": [
+   {
+    "doc_id": "h2-01",
+    "start": 109,
+    "end": 156,
+    "doc_hash": "2d43f191c1ca65dac8ccda6249110c6fa9e1256d233f911f7f1c7e546d8957a6",
+    "quote": "Optical bandgap of the perovskite absorber PV-7",
+    "read_span_id": "h2-01:0:577",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": null
+ },
+ {
+  "family": "heldout_v2",
+  "run": 0,
+  "task_id": "h2-q01",
+  "question": "Claim to check: the perovskite PV-7 has an optical bandgap of about 1.55 eV.",
+  "arm": "single_call",
+  "outcome": "supported",
+  "claim": "the perovskite PV-7 has an optical bandgap of about 1.55 eV",
+  "conditions": {
+   "temperature": "25 C",
+   "measurement atmosphere": "nitrogen immediately after annealing"
+  },
+  "rationale": "The passage h2-01:0:577 directly reports an optical bandgap of 1.55 eV for PV-7 measured at 25 °C in nitrogen after annealing, matching the claim exactly.",
+  "citations": [
+   {
+    "doc_id": "h2-01",
+    "start": 261,
+    "end": 350,
+    "doc_hash": "2d43f191c1ca65dac8ccda6249110c6fa9e1256d233f911f7f1c7e546d8957a6",
+    "quote": "Absorption onsets and photoluminescence peaks gave an optical bandgap of 1.55 eV at 25 °C",
+    "read_span_id": "h2-01:0:577",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 0,
+  "task_id": "h2-q01",
+  "question": "Claim to check: the perovskite PV-7 has an optical bandgap of about 1.55 eV.",
+  "arm": "agent",
+  "outcome": "supported",
+  "claim": "The perovskite PV-7 has an optical bandgap of about 1.55 eV.",
+  "conditions": {
+   "temperature": "25 °C",
+   "atmosphere": "nitrogen",
+   "post-annealing": "100 °C"
+  },
+  "rationale": "Document h2-01 reports that films of PV-7 measured at 25 °C in nitrogen immediately after annealing showed an optical bandgap of 1.55 eV.",
+  "citations": [
+   {
+    "doc_id": "h2-01",
+    "start": 168,
+    "end": 383,
+    "doc_hash": "2d43f191c1ca65dac8ccda6249110c6fa9e1256d233f911f7f1c7e546d8957a6",
+    "quote": "Films of the mixed-cation perovskite PV-7 were spin coated on quartz and annealed at 100 °C. Absorption onsets and photoluminescence peaks gave an optical bandgap of 1.55 eV at 25 °C, with a Urbach energy of 14 meV.",
+    "read_span_id": "h2-01:0:577",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 0,
+  "task_id": "h2-q01",
+  "question": "Claim to check: the perovskite PV-7 has an optical bandgap of about 1.55 eV.",
+  "arm": "agent_no_expand",
+  "outcome": "supported",
+  "claim": "The perovskite PV-7 has an optical bandgap of about 1.55 eV.",
+  "conditions": {
+   "temperature": "25 °C",
+   "atmosphere": "nitrogen",
+   "post-annealing": "100 °C annealed films"
+  },
+  "rationale": "The document directly reports an optical bandgap of 1.55 eV for PV-7 films measured at 25 °C in nitrogen immediately after annealing.",
+  "citations": [
+   {
+    "doc_id": "h2-01",
+    "start": 261,
+    "end": 383,
+    "doc_hash": "2d43f191c1ca65dac8ccda6249110c6fa9e1256d233f911f7f1c7e546d8957a6",
+    "quote": "Absorption onsets and photoluminescence peaks gave an optical bandgap of 1.55 eV at 25 °C, with a Urbach energy of 14 meV.",
+    "read_span_id": "h2-01:0:577",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 0,
+  "task_id": "h2-q02",
+  "question": "Claim to check: PV-7 cells retain more than 90% of their efficiency after 1000 hours at 85 °C.",
+  "arm": "lexical",
+  "outcome": "insufficient",
+  "claim": "",
+  "conditions": {},
+  "rationale": "best sentence covers 0.46 of query terms (threshold 0.5)",
+  "citations": [],
+  "abstain_reason": null,
+  "stop_reason": null
+ },
+ {
+  "family": "heldout_v2",
+  "run": 0,
+  "task_id": "h2-q02",
+  "question": "Claim to check: PV-7 cells retain more than 90% of their efficiency after 1000 hours at 85 °C.",
+  "arm": "single_call",
+  "outcome": "supported",
+  "claim": "PV-7 cells retain more than 90% of their efficiency after 1000 hours at 85 °C.",
+  "conditions": {
+   "temperature": "85 C",
+   "atmosphere": "dry nitrogen",
+   "encapsulation": "glass-glass encapsulated",
+   "illumination": "no illumination during ageing"
+  },
+  "rationale": "The passage h2-02:0:567 directly states that encapsulated PV-7 cells held at 85 °C in dry nitrogen retained 94% efficiency after 1000 hours, supporting the claim under these specific conditions.",
+  "citations": [
+   {
+    "doc_id": "h2-02",
+    "start": 259,
+    "end": 344,
+    "doc_hash": "3d7e6a17e5aadccd58c70693474edf21403c580c5d09499d20b4694cbea665df",
+    "quote": "After 1000 hours the cells retained 94% of their initial power conversion efficiency.",
+    "read_span_id": "h2-02:0:567",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 0,
+  "task_id": "h2-q02",
+  "question": "Claim to check: PV-7 cells retain more than 90% of their efficiency after 1000 hours at 85 °C.",
+  "arm": "agent",
+  "outcome": "supported",
+  "claim": "PV-7 cells retain more than 90% of their efficiency after 1000 hours at 85 °C under dry nitrogen atmosphere with glass-glass encapsulation.",
+  "conditions": {
+   "temperature": "85 C",
+   "atmosphere": "dry nitrogen",
+   "encapsulation": "glass-glass"
+  },
+  "rationale": "Document h2-02 reports that glass-glass encapsulated PV-7 cells held at 85 °C in a nitrogen oven under open circuit retained 94% of their initial power conversion efficiency after 1000 hours, specifying dry nitrogen atmosphere and encapsulation.",
+  "citations": [
+   {
+    "doc_id": "h2-02",
+    "start": 165,
+    "end": 344,
+    "doc_hash": "3d7e6a17e5aadccd58c70693474edf21403c580c5d09499d20b4694cbea665df",
+    "quote": "Glass-glass encapsulated PV-7 cells were held at 85 °C in a nitrogen oven under open circuit. After 1000 hours the cells retained 94% of their initial power conversion efficiency.",
+    "read_span_id": "h2-02:100:400",
+    "whitespace_normalized": false
+   },
+   {
+    "doc_id": "h2-02",
+    "start": 438,
+    "end": 567,
+    "doc_hash": "3d7e6a17e5aadccd58c70693474edf21403c580c5d09499d20b4694cbea665df",
+    "quote": "the authors state that the result applies to encapsulated cells in a dry atmosphere and should not be read as a damp-heat result.",
+    "read_span_id": "h2-02:400:567",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 0,
+  "task_id": "h2-q02",
+  "question": "Claim to check: PV-7 cells retain more than 90% of their efficiency after 1000 hours at 85 °C.",
+  "arm": "agent_no_expand",
+  "outcome": "supported",
+  "claim": "PV-7 cells retain more than 90% of their efficiency after 1000 hours at 85 °C under dry nitrogen encapsulated conditions.",
+  "conditions": {
+   "temperature": "85 C",
+   "atmosphere": "dry nitrogen",
+   "encapsulation": "glass-glass"
+  },
+  "rationale": "Glass-glass encapsulated PV-7 cells held at 85 °C in dry nitrogen retained 94% of their initial efficiency after 1000 hours, confirming the claim under these conditions.",
+  "citations": [
+   {
+    "doc_id": "h2-02",
+    "start": 165,
+    "end": 344,
+    "doc_hash": "3d7e6a17e5aadccd58c70693474edf21403c580c5d09499d20b4694cbea665df",
+    "quote": "Glass-glass encapsulated PV-7 cells were held at 85 °C in a nitrogen oven under open circuit. After 1000 hours the cells retained 94% of their initial power conversion efficiency.",
+    "read_span_id": "h2-02:100:400",
+    "whitespace_normalized": false
+   },
+   {
+    "doc_id": "h2-02",
+    "start": 431,
+    "end": 567,
+    "doc_hash": "3d7e6a17e5aadccd58c70693474edf21403c580c5d09499d20b4694cbea665df",
+    "quote": "Scope: the authors state that the result applies to encapsulated cells in a dry atmosphere and should not be read as a damp-heat result.",
+    "read_span_id": "h2-02:400:567",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 0,
+  "task_id": "h2-q03",
+  "question": "Claim to check: an HX-2 hole-transport layer raises PV-7 cell efficiency to 24%.",
+  "arm": "lexical",
+  "outcome": "supported",
+  "claim": "Abstract: Replacing the standard hole-transport layer with the polymer HX-2 raised the champion efficiency of PV-7 cells to 24.0% under AM1.5G illumination.",
+  "conditions": {},
+  "rationale": "best sentence covers 0.79 of query terms (threshold 0.5)",
+  "citations": [
+   {
+    "doc_id": "h2-04",
+    "start": 161,
+    "end": 317,
+    "doc_hash": "4183780bfa3d16b33c421519dd0ba93091f689fcb6ebd90c8ca6993c8bf06c57",
+    "quote": "Abstract: Replacing the standard hole-transport layer with the polymer HX-2 raised the champion efficiency of PV-7 cells to 24.0% under AM1.5G illumination.",
+    "read_span_id": "h2-04:0:404",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": null
+ },
+ {
+  "family": "heldout_v2",
+  "run": 0,
+  "task_id": "h2-q03",
+  "question": "Claim to check: an HX-2 hole-transport layer raises PV-7 cell efficiency to 24%.",
+  "arm": "single_call",
+  "outcome": "insufficient",
+  "claim": "an HX-2 hole-transport layer raises PV-7 cell efficiency to 24%",
+  "conditions": {
+   "illumination": "AM1.5G"
+  },
+  "rationale": "The initial claim of 24% efficiency with HX-2 is corrected downward to 22.1% after proper measurement, negating the claimed efficiency gain. Thus, the corpus does not support the claim as stated.",
+  "citations": [
+   {
+    "doc_id": "h2-04",
+    "start": 171,
+    "end": 317,
+    "doc_hash": "4183780bfa3d16b33c421519dd0ba93091f689fcb6ebd90c8ca6993c8bf06c57",
+    "quote": "Replacing the standard hole-transport layer with the polymer HX-2 raised the champion efficiency of PV-7 cells to 24.0% under AM1.5G illumination.",
+    "read_span_id": "h2-04:0:404",
+    "whitespace_normalized": false
+   },
+   {
+    "doc_id": "h2-05",
+    "start": 163,
+    "end": 445,
+    "doc_hash": "a6c4cd763157101c3bdee2dce3f48b71d5b9f71c9938c2389607eaa87e0bc958",
+    "quote": "Correction: the authors of the HX-2 preprint report that the 24.0% value used an aperture smaller than the active area. Remeasured with a calibrated mask, the champion HX-2 cell reached 22.1%, within error of the reference cells. The claimed efficiency gain from HX-2 does not hold.",
+    "read_span_id": "h2-05:0:512",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 0,
+  "task_id": "h2-q03",
+  "question": "Claim to check: an HX-2 hole-transport layer raises PV-7 cell efficiency to 24%.",
+  "arm": "agent",
+  "outcome": "insufficient",
+  "claim": "An HX-2 hole-transport layer raises PV-7 cell efficiency to 24%.",
+  "conditions": {},
+  "rationale": "The correction to the HX-2 preprint reports a recalibrated champion efficiency of 22.1%, not 24.0%, and states the claimed efficiency gain does not hold; independent replication found a maximum efficiency of 17.9%.",
+  "citations": [
+   {
+    "doc_id": "h2-05",
+    "start": 163,
+    "end": 445,
+    "doc_hash": "a6c4cd763157101c3bdee2dce3f48b71d5b9f71c9938c2389607eaa87e0bc958",
+    "quote": "Correction: the authors of the HX-2 preprint report that the 24.0% value used an aperture smaller than the active area. Remeasured with a calibrated mask, the champion HX-2 cell reached 22.1%, within error of the reference cells. The claimed efficiency gain from HX-2 does not hold.",
+    "read_span_id": "h2-05:0:512",
+    "whitespace_normalized": false
+   },
+   {
+    "doc_id": "h2-07",
+    "start": 109,
+    "end": 463,
+    "doc_hash": "a3b716c472109c51b38456822cfcbd9a822c8b8f2b74ed9ead294056d8ef4d3a",
+    "quote": "Independent replication of PV-7 cell efficiency\n\nAbstract: A second laboratory followed the published PV-7 recipe and cell stack. Under AM1.5G illumination at 25 °C with a calibrated mask, the best of 40 cells reached 17.9% and the median was 16.2%.\n\nConditions: the same as the original report. The replicating group could not reproduce the 21.4% value.",
+    "read_span_id": "h2-07:0:463",
+    "whitespace_normalized": true
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 0,
+  "task_id": "h2-q03",
+  "question": "Claim to check: an HX-2 hole-transport layer raises PV-7 cell efficiency to 24%.",
+  "arm": "agent_no_expand",
+  "outcome": "insufficient",
+  "claim": "An HX-2 hole-transport layer raises PV-7 cell efficiency to 24%.",
+  "conditions": {},
+  "rationale": "The correction to the original preprint states the 24.0% efficiency was due to an aperture error and revises it to 22.1%, while an independent replication found a maximum efficiency of 17.9%, failing to reproduce the claimed gain.",
+  "citations": [
+   {
+    "doc_id": "h2-05",
+    "start": 163,
+    "end": 445,
+    "doc_hash": "a6c4cd763157101c3bdee2dce3f48b71d5b9f71c9938c2389607eaa87e0bc958",
+    "quote": "Correction: the authors of the HX-2 preprint report that the 24.0% value used an aperture smaller than the active area. Remeasured with a calibrated mask, the champion HX-2 cell reached 22.1%, within error of the reference cells. The claimed efficiency gain from HX-2 does not hold.",
+    "read_span_id": "h2-05:0:512",
+    "whitespace_normalized": false
+   },
+   {
+    "doc_id": "h2-07",
+    "start": 109,
+    "end": 463,
+    "doc_hash": "a3b716c472109c51b38456822cfcbd9a822c8b8f2b74ed9ead294056d8ef4d3a",
+    "quote": "Independent replication of PV-7 cell efficiency\n\nAbstract: A second laboratory followed the published PV-7 recipe and cell stack. Under AM1.5G illumination at 25 °C with a calibrated mask, the best of 40 cells reached 17.9% and the median was 16.2%.\n\nConditions: the same as the original report. The replicating group could not reproduce the 21.4% value.",
+    "read_span_id": "h2-07:0:463",
+    "whitespace_normalized": true
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 0,
+  "task_id": "h2-q04",
+  "question": "Claim to check: PV-7 cells reach 21.4% efficiency under AM1.5G illumination at 25 °C.",
+  "arm": "lexical",
+  "outcome": "supported",
+  "claim": "Abstract: Opaque PV-7 cells with a gold back contact reached a power conversion efficiency of 21.4% under AM1.5G illumination at 25 °C, measured with a calibrated mask of 0.09 cm2.",
+  "conditions": {},
+  "rationale": "best sentence covers 0.91 of query terms (threshold 0.5)",
+  "citations": [
+   {
+    "doc_id": "h2-06",
+    "start": 160,
+    "end": 340,
+    "doc_hash": "d0be3d3aaed37f4c0699c487d755e25db3c4d6e363b00cf43c925f522430a3c4",
+    "quote": "Abstract: Opaque PV-7 cells with a gold back contact reached a power conversion efficiency of 21.4% under AM1.5G illumination at 25 °C, measured with a calibrated mask of 0.09 cm2.",
+    "read_span_id": "h2-06:0:402",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": null
+ },
+ {
+  "family": "heldout_v2",
+  "run": 0,
+  "task_id": "h2-q04",
+  "question": "Claim to check: PV-7 cells reach 21.4% efficiency under AM1.5G illumination at 25 °C.",
+  "arm": "single_call",
+  "outcome": "conflicted",
+  "claim": "PV-7 cells reach 21.4% efficiency under AM1.5G illumination at 25 °C.",
+  "conditions": {
+   "temperature": "25 C",
+   "illumination": "AM1.5G"
+  },
+  "rationale": "The original report claims 21.4% efficiency at 25 °C under AM1.5G, but an independent replication under the same conditions failed to reproduce this value, achieving only 17.9% maximum. This discrepancy indicates conflicting evidence about the claim's reproducibility.",
+  "citations": [
+   {
+    "doc_id": "h2-06",
+    "start": 170,
+    "end": 340,
+    "doc_hash": "d0be3d3aaed37f4c0699c487d755e25db3c4d6e363b00cf43c925f522430a3c4",
+    "quote": "Opaque PV-7 cells with a gold back contact reached a power conversion efficiency of 21.4% under AM1.5G illumination at 25 °C, measured with a calibrated mask of 0.09 cm2.",
+    "read_span_id": "h2-06:0:402",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 0,
+  "task_id": "h2-q04",
+  "question": "Claim to check: PV-7 cells reach 21.4% efficiency under AM1.5G illumination at 25 °C.",
+  "arm": "agent",
+  "outcome": "failed",
+  "claim": "",
+  "conditions": {},
+  "rationale": "",
+  "citations": [],
+  "abstain_reason": null,
+  "stop_reason": "max_tool_calls"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 0,
+  "task_id": "h2-q04",
+  "question": "Claim to check: PV-7 cells reach 21.4% efficiency under AM1.5G illumination at 25 °C.",
+  "arm": "agent_no_expand",
+  "outcome": "failed",
+  "claim": "",
+  "conditions": {},
+  "rationale": "",
+  "citations": [],
+  "abstain_reason": null,
+  "stop_reason": "max_tool_calls"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 0,
+  "task_id": "h2-q05",
+  "question": "Claim to check: PV-7 cells have a series resistance below 5 Ohm cm2.",
+  "arm": "lexical",
+  "outcome": "supported",
+  "claim": "Series resistance of PV-7 cells",
+  "conditions": {},
+  "rationale": "best sentence covers 0.60 of query terms (threshold 0.5)",
+  "citations": [
+   {
+    "doc_id": "h2-08",
+    "start": 109,
+    "end": 140,
+    "doc_hash": "85d54b06717a2c01ba5c5a63158dc00d1a6a2394124d60b11fae4eeb60f7591d",
+    "quote": "Series resistance of PV-7 cells",
+    "read_span_id": "h2-08:0:378",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": null
+ },
+ {
+  "family": "heldout_v2",
+  "run": 0,
+  "task_id": "h2-q05",
+  "question": "Claim to check: PV-7 cells have a series resistance below 5 Ohm cm2.",
+  "arm": "single_call",
+  "outcome": "supported",
+  "claim": "PV-7 cells have a series resistance below 5 Ohm cm2.",
+  "conditions": {
+   "temperature": "25 C"
+  },
+  "rationale": "The series resistance reported is 0.0042 kOhm cm2, which equals 4.2 Ohm cm2, below the 5 Ohm cm2 threshold stated in the claim.",
+  "citations": [
+   {
+    "doc_id": "h2-08",
+    "start": 109,
+    "end": 378,
+    "doc_hash": "85d54b06717a2c01ba5c5a63158dc00d1a6a2394124d60b11fae4eeb60f7591d",
+    "quote": "Series resistance of PV-7 cells\n\nAbstract: Light-intensity dependent current-voltage curves of PV-7 cells were fitted with a one-diode model. The series resistance was 0.0042 kOhm cm2 and the shunt resistance exceeded 2 kOhm cm2.\n\nConditions: 25 °C, six cells averaged.",
+    "read_span_id": "h2-08:0:378",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 0,
+  "task_id": "h2-q05",
+  "question": "Claim to check: PV-7 cells have a series resistance below 5 Ohm cm2.",
+  "arm": "agent",
+  "outcome": "supported",
+  "claim": "PV-7 cells have a series resistance below 5 Ohm cm2.",
+  "conditions": {
+   "temperature": "25 °C"
+  },
+  "rationale": "The series resistance of PV-7 cells was measured as 0.0042 kOhm cm2 (4.2 Ohm cm2) at 25 °C, which is below the claimed 5 Ohm cm2.",
+  "citations": [
+   {
+    "doc_id": "h2-08",
+    "start": 152,
+    "end": 378,
+    "doc_hash": "85d54b06717a2c01ba5c5a63158dc00d1a6a2394124d60b11fae4eeb60f7591d",
+    "quote": "Light-intensity dependent current-voltage curves of PV-7 cells were fitted with a one-diode model. The series resistance was 0.0042 kOhm cm2 and the shunt resistance exceeded 2 kOhm cm2.\n\nConditions: 25 °C, six cells averaged.",
+    "read_span_id": "h2-08:80:378",
+    "whitespace_normalized": true
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 0,
+  "task_id": "h2-q05",
+  "question": "Claim to check: PV-7 cells have a series resistance below 5 Ohm cm2.",
+  "arm": "agent_no_expand",
+  "outcome": "supported",
+  "claim": "PV-7 cells have a series resistance below 5 Ohm cm2.",
+  "conditions": {},
+  "rationale": "The series resistance of PV-7 cells was measured as 0.0042 kOhm cm2 (4.2 Ohm cm2) at 25 °C, which is below 5 Ohm cm2.",
+  "citations": [
+   {
+    "doc_id": "h2-08",
+    "start": 152,
+    "end": 378,
+    "doc_hash": "85d54b06717a2c01ba5c5a63158dc00d1a6a2394124d60b11fae4eeb60f7591d",
+    "quote": "Light-intensity dependent current-voltage curves of PV-7 cells were fitted with a one-diode model. The series resistance was 0.0042 kOhm cm2 and the shunt resistance exceeded 2 kOhm cm2.\n\nConditions: 25 °C, six cells averaged.",
+    "read_span_id": "h2-08:80:378",
+    "whitespace_normalized": true
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 0,
+  "task_id": "h2-q06",
+  "question": "Claim to check: the EN-4 encapsulant has a water vapour transmission rate below 1 × 10-3 g m-2 day-1.",
+  "arm": "lexical",
+  "outcome": "supported",
+  "claim": "Measured water vapour transmission rate: 4 × 10-4 g m-2 day-1 at 38 °C and 90% relative humidity.",
+  "conditions": {},
+  "rationale": "best sentence covers 0.68 of query terms (threshold 0.5)",
+  "citations": [
+   {
+    "doc_id": "h2-09",
+    "start": 212,
+    "end": 309,
+    "doc_hash": "2da361eed3286598398879bd65cfaa397f7fbe9e9622214ac0d98378856aac7c",
+    "quote": "Measured water vapour transmission rate: 4 × 10-4 g m-2 day-1 at 38 °C and 90% relative humidity.",
+    "read_span_id": "h2-09:0:494",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": null
+ },
+ {
+  "family": "heldout_v2",
+  "run": 0,
+  "task_id": "h2-q06",
+  "question": "Claim to check: the EN-4 encapsulant has a water vapour transmission rate below 1 × 10-3 g m-2 day-1.",
+  "arm": "single_call",
+  "outcome": "supported",
+  "claim": "the EN-4 encapsulant has a water vapour transmission rate below 1 × 10-3 g m-2 day-1",
+  "conditions": {
+   "temperature": "38 °C",
+   "relative humidity": "90%"
+  },
+  "rationale": "The datasheet states a water vapour transmission rate of 4 × 10-4 g m-2 day-1, which is below the claimed threshold of 1 × 10-3 g m-2 day-1 under specified conditions.",
+  "citations": [
+   {
+    "doc_id": "h2-09",
+    "start": 212,
+    "end": 309,
+    "doc_hash": "2da361eed3286598398879bd65cfaa397f7fbe9e9622214ac0d98378856aac7c",
+    "quote": "Measured water vapour transmission rate: 4 × 10-4 g m-2 day-1 at 38 °C and 90% relative humidity.",
+    "read_span_id": "h2-09:0:494",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 0,
+  "task_id": "h2-q06",
+  "question": "Claim to check: the EN-4 encapsulant has a water vapour transmission rate below 1 × 10-3 g m-2 day-1.",
+  "arm": "agent",
+  "outcome": "supported",
+  "claim": "The EN-4 encapsulant has a water vapour transmission rate below 1 × 10-3 g m-2 day-1.",
+  "conditions": {
+   "temperature": "38 °C",
+   "relative humidity": "90%"
+  },
+  "rationale": "The EN-4 encapsulant has a measured water vapour transmission rate of 4 × 10-4 g m-2 day-1 at 38 °C and 90% relative humidity, which is below 1 × 10-3 g m-2 day-1.",
+  "citations": [
+   {
+    "doc_id": "h2-09",
+    "start": 212,
+    "end": 309,
+    "doc_hash": "2da361eed3286598398879bd65cfaa397f7fbe9e9622214ac0d98378856aac7c",
+    "quote": "Measured water vapour transmission rate: 4 × 10-4 g m-2 day-1 at 38 °C and 90% relative humidity.",
+    "read_span_id": "h2-09:80:320",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 0,
+  "task_id": "h2-q06",
+  "question": "Claim to check: the EN-4 encapsulant has a water vapour transmission rate below 1 × 10-3 g m-2 day-1.",
+  "arm": "agent_no_expand",
+  "outcome": "supported",
+  "claim": "The EN-4 encapsulant has a water vapour transmission rate below 1 × 10^-3 g m^-2 day^-1.",
+  "conditions": {},
+  "rationale": "The datasheet directly reports a water vapour transmission rate of 4 × 10^-4 g m^-2 day^-1, which is below the claimed threshold of 1 × 10^-3 g m^-2 day^-1, confirming the claim under typical testing conditions.",
+  "citations": [
+   {
+    "doc_id": "h2-09",
+    "start": 212,
+    "end": 309,
+    "doc_hash": "2da361eed3286598398879bd65cfaa397f7fbe9e9622214ac0d98378856aac7c",
+    "quote": "Measured water vapour transmission rate: 4 × 10-4 g m-2 day-1 at 38 °C and 90% relative humidity.",
+    "read_span_id": "h2-09:100:494",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 0,
+  "task_id": "h2-q07",
+  "question": "Claim to check: PV-7 modules have passed 3000 hours of outdoor field testing.",
+  "arm": "lexical",
+  "outcome": "insufficient",
+  "claim": "",
+  "conditions": {},
+  "rationale": "best sentence covers 0.40 of query terms (threshold 0.5)",
+  "citations": [],
+  "abstain_reason": null,
+  "stop_reason": null
+ },
+ {
+  "family": "heldout_v2",
+  "run": 0,
+  "task_id": "h2-q07",
+  "question": "Claim to check: PV-7 modules have passed 3000 hours of outdoor field testing.",
+  "arm": "single_call",
+  "outcome": "insufficient",
+  "claim": "PV-7 modules have passed 3000 hours of outdoor field testing.",
+  "conditions": {},
+  "rationale": "The only passage mentioning outdoor testing states it has not started and no field data exist yet, so there is no evidence that PV-7 modules have passed 3000 hours of outdoor field testing.",
+  "citations": [
+   {
+    "doc_id": "h2-12",
+    "start": 231,
+    "end": 324,
+    "doc_hash": "08c97fdf4e1aadbd8283febfbaf5cad8499410e9fcc6084ba42bc0f504c3c3f6",
+    "quote": "Outdoor testing of tandem modules is planned but has not started, so no field data exist yet.",
+    "read_span_id": "h2-12:0:324",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 0,
+  "task_id": "h2-q07",
+  "question": "Claim to check: PV-7 modules have passed 3000 hours of outdoor field testing.",
+  "arm": "agent",
+  "outcome": "insufficient",
+  "claim": "PV-7 modules have passed 3000 hours of outdoor field testing.",
+  "conditions": {},
+  "rationale": "Document h2-12 explicitly states that outdoor testing of PV-7 tandem modules is planned but has not started, so no field data exist to support the claim.",
+  "citations": [
+   {
+    "doc_id": "h2-12",
+    "start": 231,
+    "end": 319,
+    "doc_hash": "08c97fdf4e1aadbd8283febfbaf5cad8499410e9fcc6084ba42bc0f504c3c3f6",
+    "quote": "Outdoor testing of tandem modules is planned but has not started, so no field data exist",
+    "read_span_id": "h2-12:70:320",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 0,
+  "task_id": "h2-q07",
+  "question": "Claim to check: PV-7 modules have passed 3000 hours of outdoor field testing.",
+  "arm": "agent_no_expand",
+  "outcome": "insufficient",
+  "claim": "PV-7 modules have passed 3000 hours of outdoor field testing.",
+  "conditions": {},
+  "rationale": "The document h2-12 states that outdoor testing of PV-7 tandem modules is planned but has not started, so no field data exist.",
+  "citations": [
+   {
+    "doc_id": "h2-12",
+    "start": 231,
+    "end": 319,
+    "doc_hash": "08c97fdf4e1aadbd8283febfbaf5cad8499410e9fcc6084ba42bc0f504c3c3f6",
+    "quote": "Outdoor testing of tandem modules is planned but has not started, so no field data exist",
+    "read_span_id": "h2-12:70:320",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 0,
+  "task_id": "h2-q08",
+  "question": "Claim to check: ion migration in PV-7 is caused by iodine vacancies alone.",
+  "arm": "lexical",
+  "outcome": "supported",
+  "claim": "Opinion: in my view, ion migration in PV-7 is caused by iodine vacancies alone, and other defects play no role.",
+  "conditions": {},
+  "rationale": "best sentence covers 1.00 of query terms (threshold 0.5)",
+  "citations": [
+   {
+    "doc_id": "h2-10",
+    "start": 160,
+    "end": 271,
+    "doc_hash": "a22def4015d2f0d40204cbd1ef21b5cb6faa260eeddb5d0e423b70faa337276d",
+    "quote": "Opinion: in my view, ion migration in PV-7 is caused by iodine vacancies alone, and other defects play no role.",
+    "read_span_id": "h2-10:0:393",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": null
+ },
+ {
+  "family": "heldout_v2",
+  "run": 0,
+  "task_id": "h2-q08",
+  "question": "Claim to check: ion migration in PV-7 is caused by iodine vacancies alone.",
+  "arm": "single_call",
+  "outcome": "insufficient",
+  "claim": "ion migration in PV-7 is caused by iodine vacancies alone",
+  "conditions": {},
+  "rationale": "The only passage addressing the cause of ion migration in PV-7 is an opinion without measurements or data. No experimental evidence or corroborating reports are provided to confirm that iodine vacancies alone cause ion migration.",
+  "citations": [
+   {
+    "doc_id": "h2-10",
+    "start": 160,
+    "end": 393,
+    "doc_hash": "a22def4015d2f0d40204cbd1ef21b5cb6faa260eeddb5d0e423b70faa337276d",
+    "quote": "Opinion: in my view, ion migration in PV-7 is caused by iodine vacancies alone, and other defects play no role. Anyone who has worked with these films knows this. No measurements are presented here; this piece argues from experience.",
+    "read_span_id": "h2-10:0:393",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 0,
+  "task_id": "h2-q08",
+  "question": "Claim to check: ion migration in PV-7 is caused by iodine vacancies alone.",
+  "arm": "agent",
+  "outcome": "abstained",
+  "claim": "",
+  "conditions": {},
+  "rationale": "",
+  "citations": [],
+  "abstain_reason": "The corpus contains only an opinion asserting that ion migration in PV-7 is caused by iodine vacancies alone, with no experimental data or reports supporting or contradicting this claim.",
+  "stop_reason": "abstained"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 0,
+  "task_id": "h2-q08",
+  "question": "Claim to check: ion migration in PV-7 is caused by iodine vacancies alone.",
+  "arm": "agent_no_expand",
+  "outcome": "abstained",
+  "claim": "",
+  "conditions": {},
+  "rationale": "",
+  "citations": [],
+  "abstain_reason": "The corpus contains only an opinion asserting that ion migration in PV-7 is caused by iodine vacancies alone, with no experimental data or reports supporting or contradicting this claim.",
+  "stop_reason": "abstained"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 0,
+  "task_id": "h2-q09",
+  "question": "Claim to check: broken PV-7 modules release less than 1 mg of lead per square metre.",
+  "arm": "lexical",
+  "outcome": "insufficient",
+  "claim": "",
+  "conditions": {},
+  "rationale": "best sentence covers 0.46 of query terms (threshold 0.5)",
+  "citations": [],
+  "abstain_reason": null,
+  "stop_reason": null
+ },
+ {
+  "family": "heldout_v2",
+  "run": 0,
+  "task_id": "h2-q09",
+  "question": "Claim to check: broken PV-7 modules release less than 1 mg of lead per square metre.",
+  "arm": "single_call",
+  "outcome": "supported",
+  "claim": "broken PV-7 modules release less than 1 mg of lead per square metre",
+  "conditions": {
+   "module type": "glass-glass PV-7 mini-modules with EN-4 encapsulant",
+   "damage method": "broken with a steel ball",
+   "exposure": "soaked in simulated rain for 24 hours",
+   "temperature": "room temperature"
+  },
+  "rationale": "The passage directly reports lead release below 0.6 mg/m2 under specified conditions, which supports the claim that broken PV-7 modules release less than 1 mg/m2 of lead.",
+  "citations": [
+   {
+    "doc_id": "h2-11",
+    "start": 263,
+    "end": 331,
+    "doc_hash": "26b6964dd40ead0ba6ee5aad3a44c073a5d1e346578919addecfa3809e09ae0b",
+    "quote": "Lead release stayed below 0.6 mg m-2 of module area in every sample.",
+    "read_span_id": "h2-11:0:405",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 0,
+  "task_id": "h2-q09",
+  "question": "Claim to check: broken PV-7 modules release less than 1 mg of lead per square metre.",
+  "arm": "agent",
+  "outcome": "supported",
+  "claim": "Broken PV-7 modules release less than 1 mg of lead per square metre.",
+  "conditions": {
+   "temperature": "room temperature",
+   "test": "simulated rain soak for 24 hours"
+  },
+  "rationale": "Document h2-11 reports that encapsulated PV-7 mini-modules broken with a steel ball and soaked in simulated rain for 24 hours released less than 0.6 mg lead per square meter at room temperature.",
+  "citations": [
+   {
+    "doc_id": "h2-11",
+    "start": 159,
+    "end": 405,
+    "doc_hash": "26b6964dd40ead0ba6ee5aad3a44c073a5d1e346578919addecfa3809e09ae0b",
+    "quote": "Encapsulated PV-7 mini-modules were broken with a steel ball and soaked in simulated rain for 24 hours. Lead release stayed below 0.6 mg m-2 of module area in every sample.\n\nConditions: glass-glass modules with EN-4 encapsulant, room temperature.",
+    "read_span_id": "h2-11:0:405",
+    "whitespace_normalized": true
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 0,
+  "task_id": "h2-q09",
+  "question": "Claim to check: broken PV-7 modules release less than 1 mg of lead per square metre.",
+  "arm": "agent_no_expand",
+  "outcome": "supported",
+  "claim": "Broken PV-7 modules release less than 1 mg of lead per square metre.",
+  "conditions": {},
+  "rationale": "Document h2-11 reports that encapsulated PV-7 mini-modules broken and soaked in simulated rain released below 0.6 mg lead per square meter at room temperature.",
+  "citations": [
+   {
+    "doc_id": "h2-11",
+    "start": 159,
+    "end": 405,
+    "doc_hash": "26b6964dd40ead0ba6ee5aad3a44c073a5d1e346578919addecfa3809e09ae0b",
+    "quote": "Encapsulated PV-7 mini-modules were broken with a steel ball and soaked in simulated rain for 24 hours. Lead release stayed below 0.6 mg m-2 of module area in every sample.\n\nConditions: glass-glass modules with EN-4 encapsulant, room temperature.",
+    "read_span_id": "h2-11:0:405",
+    "whitespace_normalized": true
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 0,
+  "task_id": "h2-q10",
+  "question": "Claim to check: unencapsulated PV-7 cells lose more than half of their efficiency within 300 hours at 85 °C and 85% relative humidity.",
+  "arm": "lexical",
+  "outcome": "supported",
+  "claim": "Abstract: Unencapsulated PV-7 cells were exposed to damp heat at 85 °C and 85% relative humidity.",
+  "conditions": {},
+  "rationale": "best sentence covers 0.53 of query terms (threshold 0.5)",
+  "citations": [
+   {
+    "doc_id": "h2-03",
+    "start": 161,
+    "end": 258,
+    "doc_hash": "90f60a36532f5117e3900310768488c3868ec79ac7e41c7bb6f4d9ea9670d798",
+    "quote": "Abstract: Unencapsulated PV-7 cells were exposed to damp heat at 85 °C and 85% relative humidity.",
+    "read_span_id": "h2-03:0:538",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": null
+ },
+ {
+  "family": "heldout_v2",
+  "run": 0,
+  "task_id": "h2-q10",
+  "question": "Claim to check: unencapsulated PV-7 cells lose more than half of their efficiency within 300 hours at 85 °C and 85% relative humidity.",
+  "arm": "single_call",
+  "outcome": "supported",
+  "claim": "unencapsulated PV-7 cells lose more than half of their efficiency within 300 hours at 85 °C and 85% relative humidity",
+  "conditions": {
+   "temperature": "85 C",
+   "humidity": "85% RH",
+   "encapsulation": "none"
+  },
+  "rationale": "The passage reports unencapsulated PV-7 cells exposed to 85 °C and 85% RH lost efficiency down to 40% after 250 hours, confirming loss of more than half within 300 hours under these conditions.",
+  "citations": [
+   {
+    "doc_id": "h2-03",
+    "start": 259,
+    "end": 318,
+    "doc_hash": "90f60a36532f5117e3900310768488c3868ec79ac7e41c7bb6f4d9ea9670d798",
+    "quote": "Efficiency fell to 40% of its initial value after 250 hours",
+    "read_span_id": "h2-03:0:538",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 0,
+  "task_id": "h2-q10",
+  "question": "Claim to check: unencapsulated PV-7 cells lose more than half of their efficiency within 300 hours at 85 °C and 85% relative humidity.",
+  "arm": "agent",
+  "outcome": "supported",
+  "claim": "Unencapsulated PV-7 cells lose more than half of their efficiency within 300 hours at 85 °C and 85% relative humidity.",
+  "conditions": {
+   "temperature": "85 °C",
+   "humidity": "85% relative humidity",
+   "encapsulation": "none"
+  },
+  "rationale": "Document h2-03 states that unencapsulated PV-7 cells exposed to 85 °C and 85% relative humidity lost efficiency to 40% of initial value after 250 hours, confirming more than half efficiency loss within 300 hours under these conditions.",
+  "citations": [
+   {
+    "doc_id": "h2-03",
+    "start": 171,
+    "end": 373,
+    "doc_hash": "90f60a36532f5117e3900310768488c3868ec79ac7e41c7bb6f4d9ea9670d798",
+    "quote": "Unencapsulated PV-7 cells were exposed to damp heat at 85 °C and 85% relative humidity. Efficiency fell to 40% of its initial value after 250 hours, and films turned yellow as the perovskite decomposed.",
+    "read_span_id": "h2-03:0:538",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 0,
+  "task_id": "h2-q10",
+  "question": "Claim to check: unencapsulated PV-7 cells lose more than half of their efficiency within 300 hours at 85 °C and 85% relative humidity.",
+  "arm": "agent_no_expand",
+  "outcome": "supported",
+  "claim": "Unencapsulated PV-7 cells lose more than half of their efficiency within 300 hours at 85 °C and 85% relative humidity.",
+  "conditions": {},
+  "rationale": "The data directly shows efficiency dropping to 40% after 250 hours at the specified temperature and humidity, confirming loss of more than half efficiency within 300 hours.",
+  "citations": [
+   {
+    "doc_id": "h2-03",
+    "start": 171,
+    "end": 373,
+    "doc_hash": "90f60a36532f5117e3900310768488c3868ec79ac7e41c7bb6f4d9ea9670d798",
+    "quote": "Unencapsulated PV-7 cells were exposed to damp heat at 85 °C and 85% relative humidity. Efficiency fell to 40% of its initial value after 250 hours, and films turned yellow as the perovskite decomposed.",
+    "read_span_id": "h2-03:100:400",
+    "whitespace_normalized": false
+   },
+   {
+    "doc_id": "h2-03",
+    "start": 400,
+    "end": 538,
+    "doc_hash": "90f60a36532f5117e3900310768488c3868ec79ac7e41c7bb6f4d9ea9670d798",
+    "quote": "ion, 85 °C, 85% relative humidity, dark.\n\nInterpretation: moisture ingress, not temperature alone, drives the loss under these conditions.",
+    "read_span_id": "h2-03:400:538",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 1,
+  "task_id": "h2-q01",
+  "question": "Claim to check: the perovskite PV-7 has an optical bandgap of about 1.55 eV.",
+  "arm": "lexical",
+  "outcome": "supported",
+  "claim": "Optical bandgap of the perovskite absorber PV-7",
+  "conditions": {},
+  "rationale": "best sentence covers 0.67 of query terms (threshold 0.5)",
+  "citations": [
+   {
+    "doc_id": "h2-01",
+    "start": 109,
+    "end": 156,
+    "doc_hash": "2d43f191c1ca65dac8ccda6249110c6fa9e1256d233f911f7f1c7e546d8957a6",
+    "quote": "Optical bandgap of the perovskite absorber PV-7",
+    "read_span_id": "h2-01:0:577",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": null
+ },
+ {
+  "family": "heldout_v2",
+  "run": 1,
+  "task_id": "h2-q01",
+  "question": "Claim to check: the perovskite PV-7 has an optical bandgap of about 1.55 eV.",
+  "arm": "single_call",
+  "outcome": "supported",
+  "claim": "the perovskite PV-7 has an optical bandgap of about 1.55 eV",
+  "conditions": {
+   "temperature": "25 C",
+   "measurement atmosphere": "nitrogen immediately after annealing"
+  },
+  "rationale": "The passage h2-01:0:577 directly reports an optical bandgap of 1.55 eV for PV-7 films measured at 25 °C in nitrogen after annealing, matching the claim exactly.",
+  "citations": [
+   {
+    "doc_id": "h2-01",
+    "start": 261,
+    "end": 350,
+    "doc_hash": "2d43f191c1ca65dac8ccda6249110c6fa9e1256d233f911f7f1c7e546d8957a6",
+    "quote": "Absorption onsets and photoluminescence peaks gave an optical bandgap of 1.55 eV at 25 °C",
+    "read_span_id": "h2-01:0:577",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 1,
+  "task_id": "h2-q01",
+  "question": "Claim to check: the perovskite PV-7 has an optical bandgap of about 1.55 eV.",
+  "arm": "agent",
+  "outcome": "supported",
+  "claim": "The perovskite PV-7 has an optical bandgap of about 1.55 eV.",
+  "conditions": {
+   "temperature": "25 °C",
+   "atmosphere": "nitrogen"
+  },
+  "rationale": "Document h2-01 reports that films of PV-7 measured at 25 °C in nitrogen immediately after annealing showed an optical bandgap of 1.55 eV.",
+  "citations": [
+   {
+    "doc_id": "h2-01",
+    "start": 168,
+    "end": 457,
+    "doc_hash": "2d43f191c1ca65dac8ccda6249110c6fa9e1256d233f911f7f1c7e546d8957a6",
+    "quote": "Films of the mixed-cation perovskite PV-7 were spin coated on quartz and annealed at 100 °C. Absorption onsets and photoluminescence peaks gave an optical bandgap of 1.55 eV at 25 °C, with a Urbach energy of 14 meV.\n\nConditions: films were measured in nitrogen immediately after annealing.",
+    "read_span_id": "h2-01:0:577",
+    "whitespace_normalized": true
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 1,
+  "task_id": "h2-q01",
+  "question": "Claim to check: the perovskite PV-7 has an optical bandgap of about 1.55 eV.",
+  "arm": "agent_no_expand",
+  "outcome": "supported",
+  "claim": "The perovskite PV-7 has an optical bandgap of about 1.55 eV.",
+  "conditions": {
+   "temperature": "25 °C",
+   "atmosphere": "nitrogen",
+   "post-annealing": "100 °C annealed films"
+  },
+  "rationale": "The document directly reports an optical bandgap of 1.55 eV for PV-7 films measured at 25 °C in nitrogen immediately after annealing.",
+  "citations": [
+   {
+    "doc_id": "h2-01",
+    "start": 261,
+    "end": 383,
+    "doc_hash": "2d43f191c1ca65dac8ccda6249110c6fa9e1256d233f911f7f1c7e546d8957a6",
+    "quote": "Absorption onsets and photoluminescence peaks gave an optical bandgap of 1.55 eV at 25 °C, with a Urbach energy of 14 meV.",
+    "read_span_id": "h2-01:0:577",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 1,
+  "task_id": "h2-q02",
+  "question": "Claim to check: PV-7 cells retain more than 90% of their efficiency after 1000 hours at 85 °C.",
+  "arm": "lexical",
+  "outcome": "insufficient",
+  "claim": "",
+  "conditions": {},
+  "rationale": "best sentence covers 0.46 of query terms (threshold 0.5)",
+  "citations": [],
+  "abstain_reason": null,
+  "stop_reason": null
+ },
+ {
+  "family": "heldout_v2",
+  "run": 1,
+  "task_id": "h2-q02",
+  "question": "Claim to check: PV-7 cells retain more than 90% of their efficiency after 1000 hours at 85 °C.",
+  "arm": "single_call",
+  "outcome": "supported",
+  "claim": "PV-7 cells retain more than 90% of their efficiency after 1000 hours at 85 °C.",
+  "conditions": {
+   "temperature": "85 C",
+   "atmosphere": "dry nitrogen",
+   "encapsulation": "glass-glass encapsulated",
+   "illumination": "no illumination during ageing"
+  },
+  "rationale": "The passage reports 94% efficiency retention after 1000 hours at 85 °C in dry nitrogen for encapsulated PV-7 cells, directly supporting the claim under these conditions.",
+  "citations": [
+   {
+    "doc_id": "h2-02",
+    "start": 259,
+    "end": 344,
+    "doc_hash": "3d7e6a17e5aadccd58c70693474edf21403c580c5d09499d20b4694cbea665df",
+    "quote": "After 1000 hours the cells retained 94% of their initial power conversion efficiency.",
+    "read_span_id": "h2-02:0:567",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 1,
+  "task_id": "h2-q02",
+  "question": "Claim to check: PV-7 cells retain more than 90% of their efficiency after 1000 hours at 85 °C.",
+  "arm": "agent",
+  "outcome": "supported",
+  "claim": "PV-7 cells retain more than 90% of their efficiency after 1000 hours at 85 °C under dry nitrogen atmosphere with glass-glass encapsulation.",
+  "conditions": {
+   "temperature": "85 C",
+   "atmosphere": "dry nitrogen",
+   "encapsulation": "glass-glass"
+  },
+  "rationale": "Document h2-02 reports that glass-glass encapsulated PV-7 cells held at 85 °C in a nitrogen oven under open circuit retained 94% of their initial power conversion efficiency after 1000 hours, specifying dry nitrogen atmosphere and encapsulation.",
+  "citations": [
+   {
+    "doc_id": "h2-02",
+    "start": 165,
+    "end": 344,
+    "doc_hash": "3d7e6a17e5aadccd58c70693474edf21403c580c5d09499d20b4694cbea665df",
+    "quote": "Glass-glass encapsulated PV-7 cells were held at 85 °C in a nitrogen oven under open circuit. After 1000 hours the cells retained 94% of their initial power conversion efficiency.",
+    "read_span_id": "h2-02:100:400",
+    "whitespace_normalized": false
+   },
+   {
+    "doc_id": "h2-02",
+    "start": 438,
+    "end": 567,
+    "doc_hash": "3d7e6a17e5aadccd58c70693474edf21403c580c5d09499d20b4694cbea665df",
+    "quote": "the authors state that the result applies to encapsulated cells in a dry atmosphere and should not be read as a damp-heat result.",
+    "read_span_id": "h2-02:400:567",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 1,
+  "task_id": "h2-q02",
+  "question": "Claim to check: PV-7 cells retain more than 90% of their efficiency after 1000 hours at 85 °C.",
+  "arm": "agent_no_expand",
+  "outcome": "supported",
+  "claim": "PV-7 cells retain more than 90% of their efficiency after 1000 hours at 85 °C when encapsulated.",
+  "conditions": {
+   "temperature": "85 C",
+   "encapsulation": "glass-glass",
+   "atmosphere": "dry nitrogen",
+   "illumination": "none"
+  },
+  "rationale": "The only direct measurement in the corpus shows encapsulated PV-7 cells retain 94% efficiency after 1000 hours at 85 °C in dry nitrogen, supporting the claim under these conditions.",
+  "citations": [
+   {
+    "doc_id": "h2-02",
+    "start": 165,
+    "end": 344,
+    "doc_hash": "3d7e6a17e5aadccd58c70693474edf21403c580c5d09499d20b4694cbea665df",
+    "quote": "Glass-glass encapsulated PV-7 cells were held at 85 °C in a nitrogen oven under open circuit. After 1000 hours the cells retained 94% of their initial power conversion efficiency.",
+    "read_span_id": "h2-02:100:400",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 1,
+  "task_id": "h2-q03",
+  "question": "Claim to check: an HX-2 hole-transport layer raises PV-7 cell efficiency to 24%.",
+  "arm": "lexical",
+  "outcome": "supported",
+  "claim": "Abstract: Replacing the standard hole-transport layer with the polymer HX-2 raised the champion efficiency of PV-7 cells to 24.0% under AM1.5G illumination.",
+  "conditions": {},
+  "rationale": "best sentence covers 0.79 of query terms (threshold 0.5)",
+  "citations": [
+   {
+    "doc_id": "h2-04",
+    "start": 161,
+    "end": 317,
+    "doc_hash": "4183780bfa3d16b33c421519dd0ba93091f689fcb6ebd90c8ca6993c8bf06c57",
+    "quote": "Abstract: Replacing the standard hole-transport layer with the polymer HX-2 raised the champion efficiency of PV-7 cells to 24.0% under AM1.5G illumination.",
+    "read_span_id": "h2-04:0:404",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": null
+ },
+ {
+  "family": "heldout_v2",
+  "run": 1,
+  "task_id": "h2-q03",
+  "question": "Claim to check: an HX-2 hole-transport layer raises PV-7 cell efficiency to 24%.",
+  "arm": "single_call",
+  "outcome": "insufficient",
+  "claim": "an HX-2 hole-transport layer raises PV-7 cell efficiency to 24%",
+  "conditions": {
+   "illumination": "AM1.5G"
+  },
+  "rationale": "The initial claim of 24% efficiency with HX-2 was corrected downward to 22.1% after proper measurement, negating the claimed efficiency gain. Thus, the corpus does not support the claim as stated.",
+  "citations": [
+   {
+    "doc_id": "h2-04",
+    "start": 171,
+    "end": 317,
+    "doc_hash": "4183780bfa3d16b33c421519dd0ba93091f689fcb6ebd90c8ca6993c8bf06c57",
+    "quote": "Replacing the standard hole-transport layer with the polymer HX-2 raised the champion efficiency of PV-7 cells to 24.0% under AM1.5G illumination.",
+    "read_span_id": "h2-04:0:404",
+    "whitespace_normalized": false
+   },
+   {
+    "doc_id": "h2-05",
+    "start": 163,
+    "end": 445,
+    "doc_hash": "a6c4cd763157101c3bdee2dce3f48b71d5b9f71c9938c2389607eaa87e0bc958",
+    "quote": "Correction: the authors of the HX-2 preprint report that the 24.0% value used an aperture smaller than the active area. Remeasured with a calibrated mask, the champion HX-2 cell reached 22.1%, within error of the reference cells. The claimed efficiency gain from HX-2 does not hold.",
+    "read_span_id": "h2-05:0:512",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 1,
+  "task_id": "h2-q03",
+  "question": "Claim to check: an HX-2 hole-transport layer raises PV-7 cell efficiency to 24%.",
+  "arm": "agent",
+  "outcome": "insufficient",
+  "claim": "The claim that an HX-2 hole-transport layer raises PV-7 cell efficiency to 24% is not supported; corrected measurements show a maximum of 22.1%, and independent replication found lower efficiencies around 17.9%.",
+  "conditions": {},
+  "rationale": "The correction to the HX-2 preprint states the 24.0% efficiency was measured with an aperture smaller than the active area and revises the champion efficiency to 22.1%, negating the claimed gain. Independent replication found efficiencies up to 17.9%, failing to reproduce the higher values.",
+  "citations": [
+   {
+    "doc_id": "h2-05",
+    "start": 163,
+    "end": 445,
+    "doc_hash": "a6c4cd763157101c3bdee2dce3f48b71d5b9f71c9938c2389607eaa87e0bc958",
+    "quote": "Correction: the authors of the HX-2 preprint report that the 24.0% value used an aperture smaller than the active area. Remeasured with a calibrated mask, the champion HX-2 cell reached 22.1%, within error of the reference cells. The claimed efficiency gain from HX-2 does not hold.",
+    "read_span_id": "h2-05:0:512",
+    "whitespace_normalized": false
+   },
+   {
+    "doc_id": "h2-07",
+    "start": 239,
+    "end": 463,
+    "doc_hash": "a3b716c472109c51b38456822cfcbd9a822c8b8f2b74ed9ead294056d8ef4d3a",
+    "quote": "Under AM1.5G illumination at 25 °C with a calibrated mask, the best of 40 cells reached 17.9% and the median was 16.2%.\n\nConditions: the same as the original report. The replicating group could not reproduce the 21.4% value.",
+    "read_span_id": "h2-07:0:463",
+    "whitespace_normalized": true
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 1,
+  "task_id": "h2-q03",
+  "question": "Claim to check: an HX-2 hole-transport layer raises PV-7 cell efficiency to 24%.",
+  "arm": "agent_no_expand",
+  "outcome": "insufficient",
+  "claim": "An HX-2 hole-transport layer raises PV-7 cell efficiency to 24%.",
+  "conditions": {},
+  "rationale": "The correction to the HX-2 preprint lowered the efficiency from 24.0% to 22.1%, and an independent replication found a maximum efficiency of only 17.9%, failing to confirm the 24% claim.",
+  "citations": [
+   {
+    "doc_id": "h2-05",
+    "start": 163,
+    "end": 445,
+    "doc_hash": "a6c4cd763157101c3bdee2dce3f48b71d5b9f71c9938c2389607eaa87e0bc958",
+    "quote": "Correction: the authors of the HX-2 preprint report that the 24.0% value used an aperture smaller than the active area. Remeasured with a calibrated mask, the champion HX-2 cell reached 22.1%, within error of the reference cells. The claimed efficiency gain from HX-2 does not hold.",
+    "read_span_id": "h2-05:0:512",
+    "whitespace_normalized": false
+   },
+   {
+    "doc_id": "h2-07",
+    "start": 168,
+    "end": 463,
+    "doc_hash": "a3b716c472109c51b38456822cfcbd9a822c8b8f2b74ed9ead294056d8ef4d3a",
+    "quote": "A second laboratory followed the published PV-7 recipe and cell stack. Under AM1.5G illumination at 25 °C with a calibrated mask, the best of 40 cells reached 17.9% and the median was 16.2%.\n\nConditions: the same as the original report. The replicating group could not reproduce the 21.4% value.",
+    "read_span_id": "h2-07:0:463",
+    "whitespace_normalized": true
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 1,
+  "task_id": "h2-q04",
+  "question": "Claim to check: PV-7 cells reach 21.4% efficiency under AM1.5G illumination at 25 °C.",
+  "arm": "lexical",
+  "outcome": "supported",
+  "claim": "Abstract: Opaque PV-7 cells with a gold back contact reached a power conversion efficiency of 21.4% under AM1.5G illumination at 25 °C, measured with a calibrated mask of 0.09 cm2.",
+  "conditions": {},
+  "rationale": "best sentence covers 0.91 of query terms (threshold 0.5)",
+  "citations": [
+   {
+    "doc_id": "h2-06",
+    "start": 160,
+    "end": 340,
+    "doc_hash": "d0be3d3aaed37f4c0699c487d755e25db3c4d6e363b00cf43c925f522430a3c4",
+    "quote": "Abstract: Opaque PV-7 cells with a gold back contact reached a power conversion efficiency of 21.4% under AM1.5G illumination at 25 °C, measured with a calibrated mask of 0.09 cm2.",
+    "read_span_id": "h2-06:0:402",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": null
+ },
+ {
+  "family": "heldout_v2",
+  "run": 1,
+  "task_id": "h2-q04",
+  "question": "Claim to check: PV-7 cells reach 21.4% efficiency under AM1.5G illumination at 25 °C.",
+  "arm": "single_call",
+  "outcome": "conflicted",
+  "claim": "PV-7 cells reach 21.4% efficiency under AM1.5G illumination at 25 °C.",
+  "conditions": {
+   "temperature": "25 °C",
+   "illumination": "AM1.5G"
+  },
+  "rationale": "The original report claims 21.4% efficiency at 25 °C under AM1.5G, but an independent replication under the same conditions failed to reproduce this value, achieving only up to 17.9%. This discrepancy indicates conflicting evidence about the claim's reproducibility.",
+  "citations": [
+   {
+    "doc_id": "h2-06",
+    "start": 170,
+    "end": 340,
+    "doc_hash": "d0be3d3aaed37f4c0699c487d755e25db3c4d6e363b00cf43c925f522430a3c4",
+    "quote": "Opaque PV-7 cells with a gold back contact reached a power conversion efficiency of 21.4% under AM1.5G illumination at 25 °C, measured with a calibrated mask of 0.09 cm2.",
+    "read_span_id": "h2-06:0:402",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 1,
+  "task_id": "h2-q04",
+  "question": "Claim to check: PV-7 cells reach 21.4% efficiency under AM1.5G illumination at 25 °C.",
+  "arm": "agent",
+  "outcome": "failed",
+  "claim": "",
+  "conditions": {},
+  "rationale": "",
+  "citations": [],
+  "abstain_reason": null,
+  "stop_reason": "max_tool_calls"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 1,
+  "task_id": "h2-q04",
+  "question": "Claim to check: PV-7 cells reach 21.4% efficiency under AM1.5G illumination at 25 °C.",
+  "arm": "agent_no_expand",
+  "outcome": "failed",
+  "claim": "",
+  "conditions": {},
+  "rationale": "",
+  "citations": [],
+  "abstain_reason": null,
+  "stop_reason": "max_tool_calls"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 1,
+  "task_id": "h2-q05",
+  "question": "Claim to check: PV-7 cells have a series resistance below 5 Ohm cm2.",
+  "arm": "lexical",
+  "outcome": "supported",
+  "claim": "Series resistance of PV-7 cells",
+  "conditions": {},
+  "rationale": "best sentence covers 0.60 of query terms (threshold 0.5)",
+  "citations": [
+   {
+    "doc_id": "h2-08",
+    "start": 109,
+    "end": 140,
+    "doc_hash": "85d54b06717a2c01ba5c5a63158dc00d1a6a2394124d60b11fae4eeb60f7591d",
+    "quote": "Series resistance of PV-7 cells",
+    "read_span_id": "h2-08:0:378",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": null
+ },
+ {
+  "family": "heldout_v2",
+  "run": 1,
+  "task_id": "h2-q05",
+  "question": "Claim to check: PV-7 cells have a series resistance below 5 Ohm cm2.",
+  "arm": "single_call",
+  "outcome": "supported",
+  "claim": "PV-7 cells have a series resistance below 5 Ohm cm2.",
+  "conditions": {
+   "temperature": "25 C"
+  },
+  "rationale": "The series resistance of PV-7 cells is reported as 0.0042 kOhm cm2, which equals 4.2 Ohm cm2, below the claimed 5 Ohm cm2 threshold, under 25 C conditions.",
+  "citations": [
+   {
+    "doc_id": "h2-08",
+    "start": 109,
+    "end": 378,
+    "doc_hash": "85d54b06717a2c01ba5c5a63158dc00d1a6a2394124d60b11fae4eeb60f7591d",
+    "quote": "Series resistance of PV-7 cells\n\nAbstract: Light-intensity dependent current-voltage curves of PV-7 cells were fitted with a one-diode model. The series resistance was 0.0042 kOhm cm2 and the shunt resistance exceeded 2 kOhm cm2.\n\nConditions: 25 °C, six cells averaged.",
+    "read_span_id": "h2-08:0:378",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 1,
+  "task_id": "h2-q05",
+  "question": "Claim to check: PV-7 cells have a series resistance below 5 Ohm cm2.",
+  "arm": "agent",
+  "outcome": "supported",
+  "claim": "PV-7 cells have a series resistance below 5 Ohm cm2.",
+  "conditions": {
+   "temperature": "25 °C"
+  },
+  "rationale": "Document h2-08 reports a series resistance of 0.0042 kOhm cm2 (4.2 Ohm cm2) for PV-7 cells at 25 °C, which is below 5 Ohm cm2.",
+  "citations": [
+   {
+    "doc_id": "h2-08",
+    "start": 152,
+    "end": 378,
+    "doc_hash": "85d54b06717a2c01ba5c5a63158dc00d1a6a2394124d60b11fae4eeb60f7591d",
+    "quote": "Light-intensity dependent current-voltage curves of PV-7 cells were fitted with a one-diode model. The series resistance was 0.0042 kOhm cm2 and the shunt resistance exceeded 2 kOhm cm2.\n\nConditions: 25 °C, six cells averaged.",
+    "read_span_id": "h2-08:0:378",
+    "whitespace_normalized": true
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 1,
+  "task_id": "h2-q05",
+  "question": "Claim to check: PV-7 cells have a series resistance below 5 Ohm cm2.",
+  "arm": "agent_no_expand",
+  "outcome": "supported",
+  "claim": "PV-7 cells have a series resistance below 5 Ohm cm2.",
+  "conditions": {
+   "temperature": "25 °C"
+  },
+  "rationale": "The series resistance of PV-7 cells is given as 0.0042 kOhm cm2 (4.2 Ohm cm2) at 25 °C, which is below the claimed 5 Ohm cm2.",
+  "citations": [
+   {
+    "doc_id": "h2-08",
+    "start": 152,
+    "end": 338,
+    "doc_hash": "85d54b06717a2c01ba5c5a63158dc00d1a6a2394124d60b11fae4eeb60f7591d",
+    "quote": "Light-intensity dependent current-voltage curves of PV-7 cells were fitted with a one-diode model. The series resistance was 0.0042 kOhm cm2 and the shunt resistance exceeded 2 kOhm cm2.",
+    "read_span_id": "h2-08:80:350",
+    "whitespace_normalized": false
+   },
+   {
+    "doc_id": "h2-08",
+    "start": 352,
+    "end": 378,
+    "doc_hash": "85d54b06717a2c01ba5c5a63158dc00d1a6a2394124d60b11fae4eeb60f7591d",
+    "quote": "25 °C, six cells averaged.",
+    "read_span_id": "h2-08:350:378",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 1,
+  "task_id": "h2-q06",
+  "question": "Claim to check: the EN-4 encapsulant has a water vapour transmission rate below 1 × 10-3 g m-2 day-1.",
+  "arm": "lexical",
+  "outcome": "supported",
+  "claim": "Measured water vapour transmission rate: 4 × 10-4 g m-2 day-1 at 38 °C and 90% relative humidity.",
+  "conditions": {},
+  "rationale": "best sentence covers 0.68 of query terms (threshold 0.5)",
+  "citations": [
+   {
+    "doc_id": "h2-09",
+    "start": 212,
+    "end": 309,
+    "doc_hash": "2da361eed3286598398879bd65cfaa397f7fbe9e9622214ac0d98378856aac7c",
+    "quote": "Measured water vapour transmission rate: 4 × 10-4 g m-2 day-1 at 38 °C and 90% relative humidity.",
+    "read_span_id": "h2-09:0:494",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": null
+ },
+ {
+  "family": "heldout_v2",
+  "run": 1,
+  "task_id": "h2-q06",
+  "question": "Claim to check: the EN-4 encapsulant has a water vapour transmission rate below 1 × 10-3 g m-2 day-1.",
+  "arm": "single_call",
+  "outcome": "supported",
+  "claim": "the EN-4 encapsulant has a water vapour transmission rate below 1 × 10-3 g m-2 day-1",
+  "conditions": {
+   "temperature": "38 °C",
+   "relative humidity": "90%"
+  },
+  "rationale": "The datasheet for EN-4 encapsulant directly reports a water vapour transmission rate of 4 × 10-4 g m-2 day-1, which is below the claimed threshold of 1 × 10-3 g m-2 day-1 under specified conditions.",
+  "citations": [
+   {
+    "doc_id": "h2-09",
+    "start": 212,
+    "end": 309,
+    "doc_hash": "2da361eed3286598398879bd65cfaa397f7fbe9e9622214ac0d98378856aac7c",
+    "quote": "Measured water vapour transmission rate: 4 × 10-4 g m-2 day-1 at 38 °C and 90% relative humidity.",
+    "read_span_id": "h2-09:0:494",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 1,
+  "task_id": "h2-q06",
+  "question": "Claim to check: the EN-4 encapsulant has a water vapour transmission rate below 1 × 10-3 g m-2 day-1.",
+  "arm": "agent",
+  "outcome": "supported",
+  "claim": "The EN-4 encapsulant has a water vapour transmission rate below 1 × 10-3 g m-2 day-1.",
+  "conditions": {
+   "temperature": "38 °C",
+   "relative humidity": "90%"
+  },
+  "rationale": "The EN-4 encapsulant has a measured water vapour transmission rate of 4 × 10-4 g m-2 day-1 at 38 °C and 90% relative humidity, which is below 1 × 10-3 g m-2 day-1.",
+  "citations": [
+   {
+    "doc_id": "h2-09",
+    "start": 212,
+    "end": 309,
+    "doc_hash": "2da361eed3286598398879bd65cfaa397f7fbe9e9622214ac0d98378856aac7c",
+    "quote": "Measured water vapour transmission rate: 4 × 10-4 g m-2 day-1 at 38 °C and 90% relative humidity.",
+    "read_span_id": "h2-09:50:350",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 1,
+  "task_id": "h2-q06",
+  "question": "Claim to check: the EN-4 encapsulant has a water vapour transmission rate below 1 × 10-3 g m-2 day-1.",
+  "arm": "agent_no_expand",
+  "outcome": "supported",
+  "claim": "The EN-4 encapsulant has a water vapour transmission rate below 1 × 10-3 g m-2 day-1.",
+  "conditions": {},
+  "rationale": "The datasheet states a measured water vapour transmission rate of 4 × 10-4 g m-2 day-1, which is below 1 × 10-3 g m-2 day-1, at 38 °C and 90% relative humidity.",
+  "citations": [
+   {
+    "doc_id": "h2-09",
+    "start": 212,
+    "end": 300,
+    "doc_hash": "2da361eed3286598398879bd65cfaa397f7fbe9e9622214ac0d98378856aac7c",
+    "quote": "Measured water vapour transmission rate: 4 × 10-4 g m-2 day-1 at 38 °C and 90% relative ",
+    "read_span_id": "h2-09:100:300",
+    "whitespace_normalized": false
+   },
+   {
+    "doc_id": "h2-09",
+    "start": 300,
+    "end": 309,
+    "doc_hash": "2da361eed3286598398879bd65cfaa397f7fbe9e9622214ac0d98378856aac7c",
+    "quote": "humidity.",
+    "read_span_id": "h2-09:300:494",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 1,
+  "task_id": "h2-q07",
+  "question": "Claim to check: PV-7 modules have passed 3000 hours of outdoor field testing.",
+  "arm": "lexical",
+  "outcome": "insufficient",
+  "claim": "",
+  "conditions": {},
+  "rationale": "best sentence covers 0.40 of query terms (threshold 0.5)",
+  "citations": [],
+  "abstain_reason": null,
+  "stop_reason": null
+ },
+ {
+  "family": "heldout_v2",
+  "run": 1,
+  "task_id": "h2-q07",
+  "question": "Claim to check: PV-7 modules have passed 3000 hours of outdoor field testing.",
+  "arm": "single_call",
+  "outcome": "insufficient",
+  "claim": "PV-7 modules have passed 3000 hours of outdoor field testing.",
+  "conditions": {},
+  "rationale": "The only passage mentioning outdoor testing states it has not started and no field data exist yet, so there is no evidence that PV-7 modules have passed 3000 hours of outdoor field testing.",
+  "citations": [
+   {
+    "doc_id": "h2-12",
+    "start": 231,
+    "end": 324,
+    "doc_hash": "08c97fdf4e1aadbd8283febfbaf5cad8499410e9fcc6084ba42bc0f504c3c3f6",
+    "quote": "Outdoor testing of tandem modules is planned but has not started, so no field data exist yet.",
+    "read_span_id": "h2-12:0:324",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 1,
+  "task_id": "h2-q07",
+  "question": "Claim to check: PV-7 modules have passed 3000 hours of outdoor field testing.",
+  "arm": "agent",
+  "outcome": "insufficient",
+  "claim": "PV-7 modules have passed 3000 hours of outdoor field testing.",
+  "conditions": {},
+  "rationale": "Document h2-12 explicitly states that outdoor testing of PV-7 tandem modules is planned but has not started, so no field data exist.",
+  "citations": [
+   {
+    "doc_id": "h2-12",
+    "start": 231,
+    "end": 319,
+    "doc_hash": "08c97fdf4e1aadbd8283febfbaf5cad8499410e9fcc6084ba42bc0f504c3c3f6",
+    "quote": "Outdoor testing of tandem modules is planned but has not started, so no field data exist",
+    "read_span_id": "h2-12:70:320",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 1,
+  "task_id": "h2-q07",
+  "question": "Claim to check: PV-7 modules have passed 3000 hours of outdoor field testing.",
+  "arm": "agent_no_expand",
+  "outcome": "abstained",
+  "claim": "",
+  "conditions": {},
+  "rationale": "",
+  "citations": [],
+  "abstain_reason": "No document in the corpus reports that PV-7 modules have passed 3000 hours of outdoor field testing; outdoor testing is planned but not yet started.",
+  "stop_reason": "abstained"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 1,
+  "task_id": "h2-q08",
+  "question": "Claim to check: ion migration in PV-7 is caused by iodine vacancies alone.",
+  "arm": "lexical",
+  "outcome": "supported",
+  "claim": "Opinion: in my view, ion migration in PV-7 is caused by iodine vacancies alone, and other defects play no role.",
+  "conditions": {},
+  "rationale": "best sentence covers 1.00 of query terms (threshold 0.5)",
+  "citations": [
+   {
+    "doc_id": "h2-10",
+    "start": 160,
+    "end": 271,
+    "doc_hash": "a22def4015d2f0d40204cbd1ef21b5cb6faa260eeddb5d0e423b70faa337276d",
+    "quote": "Opinion: in my view, ion migration in PV-7 is caused by iodine vacancies alone, and other defects play no role.",
+    "read_span_id": "h2-10:0:393",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": null
+ },
+ {
+  "family": "heldout_v2",
+  "run": 1,
+  "task_id": "h2-q08",
+  "question": "Claim to check: ion migration in PV-7 is caused by iodine vacancies alone.",
+  "arm": "single_call",
+  "outcome": "insufficient",
+  "claim": "ion migration in PV-7 is caused by iodine vacancies alone",
+  "conditions": {},
+  "rationale": "The only passage addressing the cause of ion migration in PV-7 is an opinion without supporting measurements or data. No experimental evidence or alternative defect roles are discussed, so the claim is not adequately supported.",
+  "citations": [
+   {
+    "doc_id": "h2-10",
+    "start": 160,
+    "end": 393,
+    "doc_hash": "a22def4015d2f0d40204cbd1ef21b5cb6faa260eeddb5d0e423b70faa337276d",
+    "quote": "Opinion: in my view, ion migration in PV-7 is caused by iodine vacancies alone, and other defects play no role. Anyone who has worked with these films knows this. No measurements are presented here; this piece argues from experience.",
+    "read_span_id": "h2-10:0:393",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 1,
+  "task_id": "h2-q08",
+  "question": "Claim to check: ion migration in PV-7 is caused by iodine vacancies alone.",
+  "arm": "agent",
+  "outcome": "abstained",
+  "claim": "",
+  "conditions": {},
+  "rationale": "",
+  "citations": [],
+  "abstain_reason": "The corpus contains only an opinion without measurements or experimental data to support or refute the claim that ion migration in PV-7 is caused by iodine vacancies alone.",
+  "stop_reason": "abstained"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 1,
+  "task_id": "h2-q08",
+  "question": "Claim to check: ion migration in PV-7 is caused by iodine vacancies alone.",
+  "arm": "agent_no_expand",
+  "outcome": "failed",
+  "claim": "",
+  "conditions": {},
+  "rationale": "",
+  "citations": [],
+  "abstain_reason": null,
+  "stop_reason": "max_tool_calls"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 1,
+  "task_id": "h2-q09",
+  "question": "Claim to check: broken PV-7 modules release less than 1 mg of lead per square metre.",
+  "arm": "lexical",
+  "outcome": "insufficient",
+  "claim": "",
+  "conditions": {},
+  "rationale": "best sentence covers 0.46 of query terms (threshold 0.5)",
+  "citations": [],
+  "abstain_reason": null,
+  "stop_reason": null
+ },
+ {
+  "family": "heldout_v2",
+  "run": 1,
+  "task_id": "h2-q09",
+  "question": "Claim to check: broken PV-7 modules release less than 1 mg of lead per square metre.",
+  "arm": "single_call",
+  "outcome": "supported",
+  "claim": "broken PV-7 modules release less than 1 mg of lead per square metre",
+  "conditions": {
+   "module type": "glass-glass PV-7 mini-modules with EN-4 encapsulant",
+   "damage method": "broken with a steel ball",
+   "exposure": "soaked in simulated rain for 24 hours",
+   "temperature": "room temperature"
+  },
+  "rationale": "The passage directly reports lead release below 0.6 mg/m2 under specified conditions, which supports the claim that broken PV-7 modules release less than 1 mg/m2 of lead.",
+  "citations": [
+   {
+    "doc_id": "h2-11",
+    "start": 263,
+    "end": 331,
+    "doc_hash": "26b6964dd40ead0ba6ee5aad3a44c073a5d1e346578919addecfa3809e09ae0b",
+    "quote": "Lead release stayed below 0.6 mg m-2 of module area in every sample.",
+    "read_span_id": "h2-11:0:405",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 1,
+  "task_id": "h2-q09",
+  "question": "Claim to check: broken PV-7 modules release less than 1 mg of lead per square metre.",
+  "arm": "agent",
+  "outcome": "supported",
+  "claim": "Broken PV-7 modules release less than 1 mg of lead per square metre.",
+  "conditions": {
+   "temperature": "room temperature",
+   "test": "simulated rain soak for 24 hours"
+  },
+  "rationale": "Document h2-11 reports that encapsulated PV-7 mini-modules broken with a steel ball and soaked in simulated rain for 24 hours released less than 0.6 mg lead per square meter at room temperature.",
+  "citations": [
+   {
+    "doc_id": "h2-11",
+    "start": 159,
+    "end": 405,
+    "doc_hash": "26b6964dd40ead0ba6ee5aad3a44c073a5d1e346578919addecfa3809e09ae0b",
+    "quote": "Encapsulated PV-7 mini-modules were broken with a steel ball and soaked in simulated rain for 24 hours. Lead release stayed below 0.6 mg m-2 of module area in every sample.\n\nConditions: glass-glass modules with EN-4 encapsulant, room temperature.",
+    "read_span_id": "h2-11:0:405",
+    "whitespace_normalized": true
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 1,
+  "task_id": "h2-q09",
+  "question": "Claim to check: broken PV-7 modules release less than 1 mg of lead per square metre.",
+  "arm": "agent_no_expand",
+  "outcome": "supported",
+  "claim": "Broken PV-7 modules release less than 1 mg of lead per square metre.",
+  "conditions": {},
+  "rationale": "Document h2-11 reports that encapsulated PV-7 mini-modules broken and soaked in simulated rain released below 0.6 mg lead per square meter at room temperature.",
+  "citations": [
+   {
+    "doc_id": "h2-11",
+    "start": 159,
+    "end": 405,
+    "doc_hash": "26b6964dd40ead0ba6ee5aad3a44c073a5d1e346578919addecfa3809e09ae0b",
+    "quote": "Encapsulated PV-7 mini-modules were broken with a steel ball and soaked in simulated rain for 24 hours. Lead release stayed below 0.6 mg m-2 of module area in every sample.\n\nConditions: glass-glass modules with EN-4 encapsulant, room temperature.",
+    "read_span_id": "h2-11:0:405",
+    "whitespace_normalized": true
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 1,
+  "task_id": "h2-q10",
+  "question": "Claim to check: unencapsulated PV-7 cells lose more than half of their efficiency within 300 hours at 85 °C and 85% relative humidity.",
+  "arm": "lexical",
+  "outcome": "supported",
+  "claim": "Abstract: Unencapsulated PV-7 cells were exposed to damp heat at 85 °C and 85% relative humidity.",
+  "conditions": {},
+  "rationale": "best sentence covers 0.53 of query terms (threshold 0.5)",
+  "citations": [
+   {
+    "doc_id": "h2-03",
+    "start": 161,
+    "end": 258,
+    "doc_hash": "90f60a36532f5117e3900310768488c3868ec79ac7e41c7bb6f4d9ea9670d798",
+    "quote": "Abstract: Unencapsulated PV-7 cells were exposed to damp heat at 85 °C and 85% relative humidity.",
+    "read_span_id": "h2-03:0:538",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": null
+ },
+ {
+  "family": "heldout_v2",
+  "run": 1,
+  "task_id": "h2-q10",
+  "question": "Claim to check: unencapsulated PV-7 cells lose more than half of their efficiency within 300 hours at 85 °C and 85% relative humidity.",
+  "arm": "single_call",
+  "outcome": "supported",
+  "claim": "unencapsulated PV-7 cells lose more than half of their efficiency within 300 hours at 85 °C and 85% relative humidity",
+  "conditions": {
+   "temperature": "85 °C",
+   "humidity": "85% RH",
+   "encapsulation": "none"
+  },
+  "rationale": "The passage directly states that unencapsulated PV-7 cells dropped to 40% efficiency after 250 hours under the specified conditions, confirming loss of more than half efficiency within 300 hours.",
+  "citations": [
+   {
+    "doc_id": "h2-03",
+    "start": 171,
+    "end": 318,
+    "doc_hash": "90f60a36532f5117e3900310768488c3868ec79ac7e41c7bb6f4d9ea9670d798",
+    "quote": "Unencapsulated PV-7 cells were exposed to damp heat at 85 °C and 85% relative humidity. Efficiency fell to 40% of its initial value after 250 hours",
+    "read_span_id": "h2-03:0:538",
+    "whitespace_normalized": false
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 1,
+  "task_id": "h2-q10",
+  "question": "Claim to check: unencapsulated PV-7 cells lose more than half of their efficiency within 300 hours at 85 °C and 85% relative humidity.",
+  "arm": "agent",
+  "outcome": "supported",
+  "claim": "Unencapsulated PV-7 cells lose more than half of their efficiency within 300 hours at 85 °C and 85% relative humidity.",
+  "conditions": {
+   "temperature": "85 °C",
+   "humidity": "85% relative humidity",
+   "encapsulation": "none"
+  },
+  "rationale": "Document h2-03 reports that unencapsulated PV-7 cells exposed to 85 °C and 85% relative humidity lose efficiency to 40% of initial value after 250 hours, confirming the claim.",
+  "citations": [
+   {
+    "doc_id": "h2-03",
+    "start": 171,
+    "end": 373,
+    "doc_hash": "90f60a36532f5117e3900310768488c3868ec79ac7e41c7bb6f4d9ea9670d798",
+    "quote": "Unencapsulated PV-7 cells were exposed to damp heat at 85 °C and 85% relative humidity. Efficiency fell to 40% of its initial value after 250 hours, and films turned yellow as the perovskite decomposed.",
+    "read_span_id": "h2-03:100:400",
+    "whitespace_normalized": false
+   },
+   {
+    "doc_id": "h2-03",
+    "start": 400,
+    "end": 538,
+    "doc_hash": "90f60a36532f5117e3900310768488c3868ec79ac7e41c7bb6f4d9ea9670d798",
+    "quote": "ion, 85 °C, 85% relative humidity, dark.\n\nInterpretation: moisture ingress, not temperature alone, drives the loss under these conditions.",
+    "read_span_id": "h2-03:400:538",
+    "whitespace_normalized": true
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout_v2",
+  "run": 1,
+  "task_id": "h2-q10",
+  "question": "Claim to check: unencapsulated PV-7 cells lose more than half of their efficiency within 300 hours at 85 °C and 85% relative humidity.",
+  "arm": "agent_no_expand",
+  "outcome": "supported",
+  "claim": "Unencapsulated PV-7 cells lose more than half of their efficiency within 300 hours at 85 °C and 85% relative humidity.",
+  "conditions": {},
+  "rationale": "The only document with matching conditions directly reports efficiency falling to 40% after 250 hours, confirming loss of more than half efficiency within 300 hours at 85 °C and 85% RH.",
+  "citations": [
+   {
+    "doc_id": "h2-03",
+    "start": 171,
+    "end": 373,
+    "doc_hash": "90f60a36532f5117e3900310768488c3868ec79ac7e41c7bb6f4d9ea9670d798",
+    "quote": "Unencapsulated PV-7 cells were exposed to damp heat at 85 °C and 85% relative humidity. Efficiency fell to 40% of its initial value after 250 hours, and films turned yellow as the perovskite decomposed.",
+    "read_span_id": "h2-03:100:400",
+    "whitespace_normalized": false
+   },
+   {
+    "doc_id": "h2-03",
+    "start": 400,
+    "end": 538,
+    "doc_hash": "90f60a36532f5117e3900310768488c3868ec79ac7e41c7bb6f4d9ea9670d798",
+    "quote": "ion, 85 °C, 85% relative humidity, dark.\n\nInterpretation: moisture ingress, not temperature alone, drives the loss under these conditions.",
+    "read_span_id": "h2-03:400:538",
+    "whitespace_normalized": true
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ }
+]

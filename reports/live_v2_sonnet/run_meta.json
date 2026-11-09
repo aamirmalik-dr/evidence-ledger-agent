@@ -1,0 +1,72 @@
+{
+ "adapter_retries": 14,
+ "agentcore_version": "0.1.2",
+ "config": {
+  "adapter_backoff_s": 5.0,
+  "adapter_max_retries": 6,
+  "arms": [
+   "lexical",
+   "single_call",
+   "agent"
+  ],
+  "checkpoint_dir": "runs/live_v2_sonnet",
+  "episode": {
+   "max_completion_tokens": 700,
+   "max_steps": 16,
+   "max_tokens_per_episode": 40000,
+   "max_tool_calls": 10,
+   "max_wall_seconds": 300.0,
+   "recent_k": 4
+  },
+  "families": {
+   "heldout_v2": {
+    "corpus": "tests/fixtures/corpus/heldout_v2",
+    "gold": "evaluator/gold_heldout_v2.json",
+    "questions": "tests/fixtures/questions_heldout_v2.json"
+   }
+  },
+  "fixture_scripts": "tests/fixtures/scripts",
+  "lexical_coverage_threshold": 0.5,
+  "mode": "live",
+  "model": "anthropic/claude-sonnet-4.6",
+  "output_dir": "reports/live_v2_sonnet",
+  "record_timing": true,
+  "run_caps": {
+   "max_total_tokens": 1500000,
+   "max_usd": 0.85,
+   "usd_per_mtok_input": 3.0,
+   "usd_per_mtok_output": 15.0
+  },
+  "runs": 1,
+  "single_call_max_completion_tokens": 900,
+  "single_call_top_k": 4,
+  "task_limit": null
+ },
+ "config_sha256": "c80334faf3a188d208b554ff87c9c966e5b1f80a26d2711564cb23de940b592a",
+ "finished_at": "2026-11-09T14:31:14+09:00",
+ "fixture_hashes": {
+  "heldout_v2/corpus": "2f12acdeb33e7c3a212b6e9b1b3d5ccebf565ca063f2a8e517d33227c740f62e",
+  "heldout_v2/gold": "4e6cc8afc5af2b1e2a1674a3003a993d1752995ad45d6030f3cc29e753056e7e",
+  "heldout_v2/questions": "bd4b23a32cfa48665c1abab63770e5427a6495ad8b1c9e74b0873c0d68fe0afc"
+ },
+ "git_commit": "0ad47e2ffdd2f3701ac0501baeff53a947ca9a8c",
+ "git_dirty": false,
+ "hardware": {
+  "machine": "AMD64",
+  "platform": "Windows-10-10.0.26300-SP0",
+  "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
+  "python": "3.11.9"
+ },
+ "mode": "live",
+ "model": "anthropic/claude-sonnet-4.6",
+ "package_version": "0.2.0",
+ "prompt_sha256": "adeba45786ceecae7406865e30bea9f83b0a9cdf0f8d5e49a78890c58f585ee6",
+ "prompt_version": "ledger-prompts-v2",
+ "started_at": "2026-11-09T14:25:50+09:00",
+ "tokens": {
+  "completion": 7330,
+  "prompt": 110360
+ },
+ "usd": 0.44103,
+ "usd_reported_by_provider": 0.44103
+}

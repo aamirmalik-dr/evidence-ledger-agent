@@ -112,23 +112,42 @@ python -m pytest
 
 ## What was measured
 
-The headline table holds only real measurements: the lexical baseline, which calls no model, and the live pilot. The live pilot ran the held-out family (10 questions) twice per arm with `openai/gpt-4.1-mini` through OpenRouter at temperature 0, on 2026-11-09, under the caps in `configs/live.yaml`. Every failure, abstention, malformed reply and budget stop stays in the denominators. With 20 episodes per arm this is an exploratory sample, not a ranking.
+The table holds only real measurements: the lexical baseline, which calls no model, and three live runs on 2026-11-09 through OpenRouter at temperature 0. The v1 pilot ran on the original held-out family with `openai/gpt-4.1-mini`. The v2 round ran on a fresh family (`heldout_v2`, 12 new fictional documents on perovskite solar cells and 10 new questions) with the same model, and with `anthropic/claude-sonnet-4.6` as a second model. Every failure, abstention, malformed reply and budget stop stays in the denominators. With 10 to 20 episodes per arm these are exploratory samples, not a ranking.
 
 <!-- evidence-table:start -->
 | Mode | Family | Arm | Verdict accuracy | Citation validity | Support precision | Support recall | Contradiction recall | Correct abstention | Unsupported claims | Failures | Accuracy per run (min to max) | Tool calls | Model calls | Tokens | USD (provider) |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | no model, deterministic | dev | lexical | 0.50 (3/6) | 1.00 (5/5) | 0.40 (2/5) | 0.33 (2/6) | 0.00 (0/1) | 0.50 (1/2) | 3 | 0 | single deterministic run | 0 | 0 | 0 | 0 |
 | no model, deterministic | heldout | lexical | 0.40 (4/10) | 1.00 (9/9) | 0.33 (3/9) | 0.27 (3/11) | 0.00 (0/2) | 0.00 (0/3) | 6 | 0 | single deterministic run | 0 | 0 | 0 | 0 |
-| live | heldout | lexical | 0.40 (8/20) | 1.00 (18/18) | 0.33 (6/18) | 0.27 (6/22) | 0.00 (0/4) | 0.00 (0/6) | 12 | 0 | 0.40 to 0.40 (2 runs) | 0 | 0 | 0 | 0 |
-| live | heldout | single_call | 0.90 (18/20) | 0.92 (23/25) | 0.91 (21/23) | 0.73 (16/22) | 0.50 (2/4) | 1.00 (6/6) | 2 | 0 | 0.90 to 0.90 (2 runs) | 0 | 20 | 30343 | 0.0137 |
-| live | heldout | agent | 0.65 (13/20) | 0.83 (10/12) | 0.89 (8/9) | 0.36 (8/22) | 0.25 (1/4) | 1.00 (6/6) | 1 | 3 | 0.60 to 0.70 (2 runs) | 112 | 144 | 400940 | 0.1273 |
-| live | heldout | agent_no_expand | 0.75 (15/20) | 0.60 (18/30) | 0.79 (11/14) | 0.50 (11/22) | 0.00 (0/4) | 0.83 (5/6) | 0 | 4 | 0.70 to 0.80 (2 runs) | 136 | 148 | 369210 | 0.1316 |
+| live v1, gpt-4.1-mini | heldout | lexical | 0.40 (8/20) | 1.00 (18/18) | 0.33 (6/18) | 0.27 (6/22) | 0.00 (0/4) | 0.00 (0/6) | 12 | 0 | 0.40 to 0.40 (2 runs) | 0 | 0 | 0 | 0 |
+| live v1, gpt-4.1-mini | heldout | single_call | 0.90 (18/20) | 0.92 (23/25) | 0.91 (21/23) | 0.73 (16/22) | 0.50 (2/4) | 1.00 (6/6) | 2 | 0 | 0.90 to 0.90 (2 runs) | 0 | 20 | 30343 | 0.0137 |
+| live v1, gpt-4.1-mini | heldout | agent | 0.65 (13/20) | 0.83 (10/12) | 0.89 (8/9) | 0.36 (8/22) | 0.25 (1/4) | 1.00 (6/6) | 1 | 3 | 0.60 to 0.70 (2 runs) | 112 | 144 | 400940 | 0.1273 |
+| live v1, gpt-4.1-mini | heldout | agent_no_expand | 0.75 (15/20) | 0.60 (18/30) | 0.79 (11/14) | 0.50 (11/22) | 0.00 (0/4) | 0.83 (5/6) | 0 | 4 | 0.70 to 0.80 (2 runs) | 136 | 148 | 369210 | 0.1316 |
+| live v2, gpt-4.1-mini | heldout_v2 | lexical | 0.50 (10/20) | 1.00 (14/14) | 0.14 (2/14) | 0.09 (2/22) | 0.00 (0/4) | 0.33 (2/6) | 12 | 0 | 0.50 to 0.50 (2 runs) | 0 | 0 | 0 | 0 |
+| live v2, gpt-4.1-mini | heldout_v2 | single_call | 0.90 (18/20) | 0.92 (22/24) | 0.91 (20/22) | 0.73 (16/22) | 0.00 (0/4) | 1.00 (6/6) | 2 | 0 | 0.90 to 0.90 (2 runs) | 0 | 20 | 22921 | 0.0135 |
+| live v2, gpt-4.1-mini | heldout_v2 | agent | 0.80 (16/20) | 0.83 (24/29) | 0.67 (14/21) | 0.55 (12/22) | 0.00 (0/4) | 1.00 (6/6) | 2 | 2 | 0.80 to 0.80 (2 runs) | 99 | 99 | 253450 | 0.0829 |
+| live v2, gpt-4.1-mini | heldout_v2 | agent_no_expand | 0.75 (15/20) | 0.67 (24/36) | 0.59 (13/22) | 0.55 (12/22) | 0.00 (0/4) | 0.83 (5/6) | 2 | 3 | 0.70 to 0.80 (2 runs) | 112 | 112 | 276715 | 0.0987 |
+| live v2, claude-sonnet-4.6 | heldout_v2 | lexical | 0.50 (5/10) | 1.00 (7/7) | 0.14 (1/7) | 0.09 (1/11) | 0.00 (0/2) | 0.33 (1/3) | 6 | 0 | 0.50 to 0.50 (1 run) | 0 | 0 | 0 | 0 |
+| live v2, claude-sonnet-4.6 | heldout_v2 | single_call | 1.00 (10/10) | 1.00 (13/13) | 1.00 (13/13) | 1.00 (11/11) | 1.00 (2/2) | 1.00 (3/3) | 0 | 0 | 1.00 to 1.00 (1 run) | 0 | 10 | 12959 | 0.0652 |
+| live v2, claude-sonnet-4.6 | heldout_v2 | agent | 0.90 (9/10) | 1.00 (11/11) | 0.91 (10/11) | 0.82 (9/11) | 0.50 (1/2) | 1.00 (3/3) | 1 | 0 | 0.90 to 0.90 (1 run) | 36 | 37 | 104731 | 0.3758 |
 <!-- evidence-table:end -->
 
-What the live pilot shows:
+### v2 round
+
+What changed between v1 and v2, and why: in v1, 22 agent steps were rejected only because the model ended valid JSON with an extra closing brace. The reply parser (agentcore 0.1.2) now reads the first complete JSON object, and nothing else changed. Prompts, tools, caps and rubric are as in v1. The new questions were written after this fix was frozen, so neither the fix nor the prompts saw them. The plan is in [docs/v2_preregistration.md](docs/v2_preregistration.md).
+
+- The parser fix worked: malformed steps fell from 22 to 0, and the agent rose from 13 to 16 of 20 verdicts with the same model.
+- The single call still wins with gpt-4.1-mini: 18 of 20, against 16 for the agent, 15 for the agent without `expand_context` and 10 for the lexical baseline. It also used about a tenth of the tokens (23 thousand against 253 thousand).
+- Every arm missed both conflict questions (contradiction recall 0 of 4). The condition-dependent stability claim was called `supported` from the dry-nitrogen report alone. On the failed replication, the agents spent their 10 tool calls without finishing (2 of the agent's 4 misses).
+- With the second model, one run, the ranking held: the single call got 10 of 10, with every citation valid and both conflicts found. The agent got 9 of 10, missing the condition-dependent conflict. Sonnet 4.6 cost 0.065 USD for the single call and 0.376 USD for the agent.
+- Run-B note: the first attempt at the Sonnet run hit HTTP 429 rate limits while other sessions used the same model. 9 of its 20 episodes failed before any reply. That attempt is kept in `reports/aborted/` and is not counted. The run was repeated once with more adapter retries, with nothing else changed.
+
+### v1 pilot
+
+What the v1 pilot showed:
 
 - The single call wins. Given the top four BM25 passages in one prompt, the same model got 18 of 20 held-out verdicts right, against 13 of 20 for the iterative agent and 15 of 20 for the agent without `expand_context`. It also cost about a tenth as much: 30 thousand tokens for 20 answers, against 370 to 400 thousand for each agent arm. On a corpus this small, top-four retrieval already holds nearly all of the evidence, so iterating mostly adds ways to fail.
-- Most agent losses are protocol failures, not wrong verdicts. 16 agent steps and 6 ablation steps were rejected as malformed, and every one of them was a complete, valid JSON action followed by an extra closing brace. The corrective re-prompt did not fix it, and 2 agent episodes used up their token budget repeating the same malformed reply. The other failures (1 agent, 4 ablation episodes) hit the 10-call tool cap without finishing. agentcore 0.1.2 (in this repository since the pilot) decodes the first complete JSON object and ignores trailing text, and it would have accepted all 22 of those replies. The pilot was not re-run on the same held-out questions after that change, because the change was informed by them. A re-run on a fresh held-out family is pending.
+- Most agent losses are protocol failures, not wrong verdicts. 16 agent steps and 6 ablation steps were rejected as malformed, and every one of them was a complete, valid JSON action followed by an extra closing brace. The corrective re-prompt did not fix it, and 2 agent episodes used up their token budget repeating the same malformed reply. The other failures (1 agent, 4 ablation episodes) hit the 10-call tool cap without finishing. agentcore 0.1.2 decodes the first complete JSON object and ignores trailing text, and it would have accepted all 22 of those replies. The pilot was not re-run on the same held-out questions; the v2 round above measures the fix on a fresh family instead.
 - The agent abstained correctly on all 6 unanswerable episodes (5 of 6 without `expand_context`) and made 1 unsupported claim (0 without `expand_context`), against 2 for the single call and 12 for the lexical baseline. The agent also abstained on 3 answerable episodes; the ablation on none.
 - Removing `expand_context` did not hurt verdict accuracy here (15 against 13 of 20). It did produce more rejected finishes (11 against 2) and lower citation validity (18 of 30 against 10 of 12).
 - Contradiction recall is weak everywhere: 2 of 4 for the single call, 1 of 4 for the agent, 0 of 4 for the ablation and the lexical baseline.
@@ -186,7 +205,8 @@ The model has no capability beyond five finite tools over an in-memory corpus: n
 - The support overlap rule (at least half of the shorter span) and the substring check for conditions are simple, and both are documented in [docs/rubric.md](docs/rubric.md).
 - The `conflicted` label covers both genuine disagreement and condition-dependent results. The rubric requires the condition to be named, but the scorer only checks for the term.
 - If the process dies after a tool runs but before its result is checkpointed, that action runs again on resume. Every tool here is read-only, so this is harmless, and a tool with side effects would need to honour the idempotency key itself.
-- The live pilot is one model, 10 held-out questions and two runs at temperature 0. Its agent rows reflect the stricter 0.1.1 reply parser (see above).
+- Each live run covers 10 held-out questions; the gpt-4.1-mini runs use two runs per arm and the Sonnet run uses one. The v1 agent rows reflect the stricter 0.1.1 reply parser.
+- The v1 and v2 numbers come from different question families, so the v1 to v2 change mixes the parser fix with a change of questions.
 
 ## Author
 

@@ -1,0 +1,71 @@
+{
+ "adapter_retries": 0,
+ "agentcore_version": "0.1.2",
+ "config": {
+  "arms": [
+   "lexical",
+   "single_call",
+   "agent",
+   "agent_no_expand"
+  ],
+  "checkpoint_dir": "runs/live_v2",
+  "episode": {
+   "max_completion_tokens": 700,
+   "max_steps": 16,
+   "max_tokens_per_episode": 40000,
+   "max_tool_calls": 10,
+   "max_wall_seconds": 300.0,
+   "recent_k": 4
+  },
+  "families": {
+   "heldout_v2": {
+    "corpus": "tests/fixtures/corpus/heldout_v2",
+    "gold": "evaluator/gold_heldout_v2.json",
+    "questions": "tests/fixtures/questions_heldout_v2.json"
+   }
+  },
+  "fixture_scripts": "tests/fixtures/scripts",
+  "lexical_coverage_threshold": 0.5,
+  "mode": "live",
+  "model": "openai/gpt-4.1-mini",
+  "output_dir": "reports/live_v2",
+  "record_timing": true,
+  "run_caps": {
+   "max_total_tokens": 1500000,
+   "max_usd": 0.5,
+   "usd_per_mtok_input": 0.4,
+   "usd_per_mtok_output": 1.6
+  },
+  "runs": 2,
+  "single_call_max_completion_tokens": 900,
+  "single_call_top_k": 4,
+  "task_limit": null
+ },
+ "config_sha256": "38c2d16de0051570103b48b06dcd2ce982e9d99b567aba4d0eedeb37c73bdd18",
+ "finished_at": "2026-11-09T14:24:56+09:00",
+ "fixture_hashes": {
+  "heldout_v2/corpus": "2f12acdeb33e7c3a212b6e9b1b3d5ccebf565ca063f2a8e517d33227c740f62e",
+  "heldout_v2/gold": "4e6cc8afc5af2b1e2a1674a3003a993d1752995ad45d6030f3cc29e753056e7e",
+  "heldout_v2/questions": "bd4b23a32cfa48665c1abab63770e5427a6495ad8b1c9e74b0873c0d68fe0afc"
+ },
+ "git_commit": "cacaf36573708f83666db49a050303816593e09d",
+ "git_dirty": false,
+ "hardware": {
+  "machine": "AMD64",
+  "platform": "Windows-10-10.0.26300-SP0",
+  "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
+  "python": "3.11.9"
+ },
+ "mode": "live",
+ "model": "openai/gpt-4.1-mini",
+ "package_version": "0.2.0",
+ "prompt_sha256": "8df09e930c93887d250233e79c111c42a46b2273ce8a9fa7811dd3918850a2b1",
+ "prompt_version": "ledger-prompts-v2",
+ "started_at": "2026-11-09T14:15:25+09:00",
+ "tokens": {
+  "completion": 32425,
+  "prompt": 520661
+ },
+ "usd": 0.2601444,
+ "usd_reported_by_provider": 0.195135
+}
