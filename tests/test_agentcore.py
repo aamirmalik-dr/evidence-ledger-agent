@@ -254,6 +254,17 @@ def test_oversized_output_is_malformed() -> None:
     assert decision is not None and decision.action.tool == "t"
 
 
+def test_trailing_text_after_complete_object_is_ignored() -> None:
+    # Seen in the live pilot: the model closed its reply with one brace too many.
+    reply = '{"summary": "s", "action": {"tool": "t", "arguments": {"a": {"b": 1}}}}}'
+    decision, err = parse_decision(reply, 6000)
+    assert err is None and decision is not None and decision.action.arguments == {"a": {"b": 1}}
+    decision, err = parse_decision('{"summary": "s", "action": {"tool": "t"', 6000)
+    assert decision is None and "invalid JSON" in err
+    decision, err = parse_decision('note: {"summary": "s"} then {"action": 1}', 6000)
+    assert decision is None and "schema error" in err
+
+
 def test_exhausted_fixture_fails_without_fallback(dev_corpus: Corpus) -> None:
     final = make_loop(
         FixtureAdapter([act("search", query="LX-4")]), counting_policy(dev_corpus, {})

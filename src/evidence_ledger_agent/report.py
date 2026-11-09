@@ -185,10 +185,10 @@ def metrics_table(evidence: dict[str, Any]) -> str:
                 f"{r['verdict_accuracy_min_run']:.2f} to {r['verdict_accuracy_max_run']:.2f} "
                 f"({r['runs']} runs)"
             )
+            usd = _money(r.get("reported_cost_usd_total")) if r["model_calls_total"] else "0"
             lines.append(
                 _quality_cells("live", r) + f" | {spread} | {r['tool_calls_total']} "
-                f"| {r['model_calls_total']} | {r['tokens_total'] or 0} "
-                f"| {_money(r.get('reported_cost_usd_total'))} |"
+                f"| {r['model_calls_total']} | {r['tokens_total'] or 0} | {usd} |"
             )
     return head + "\n".join(lines) + "\n"
 

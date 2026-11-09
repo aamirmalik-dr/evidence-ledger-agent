@@ -73,17 +73,22 @@ class CheckpointStore:
 def parse_decision(text: str, max_chars: int) -> tuple[Decision | None, str | None]:
     """Parse one model reply into a ``Decision``.
 
+    The first complete JSON object in the reply is decoded; text after it
+    (for example a stray closing brace) is ignored, because the object itself
+    is unambiguous. Anything that is not a complete object is malformed.
+
     Returns:
         ``(decision, None)`` on success or ``(None, error message)``.
     """
     if len(text) > max_chars:
         return None, f"reply was {len(text)} characters, the limit is {max_chars}"
     body = re.sub(r"^\s*```(?:json)?\s*|\s*```\s*$", "", text.strip())
-    start, end = body.find("{"), body.rfind("}")
-    if start < 0 or end <= start:
+    start = body.find("{")
+    if start < 0:
         return None, "no JSON object found"
     try:
-        return Decision.model_validate(json.loads(body[start : end + 1])), None
+        obj, _ = json.JSONDecoder().raw_decode(body, start)
+        return Decision.model_validate(obj), None
     except json.JSONDecodeError as exc:
         return None, f"invalid JSON: {exc.msg} at position {exc.pos}"
     except ValidationError as exc:

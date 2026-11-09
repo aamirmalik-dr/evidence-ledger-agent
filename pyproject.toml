@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "evidence-ledger-agent"
-version = "0.1.0"
+version = "0.2.0"
 description = "Auditable evidence agent: LLM-chosen searches and span reads over a local corpus, hash-verified quotes, and abstention when support is inadequate."
 readme = "README.md"
 requires-python = ">=3.11"

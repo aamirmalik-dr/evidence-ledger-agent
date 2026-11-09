@@ -188,10 +188,12 @@ def test_require_live_fails_clearly(monkeypatch: pytest.MonkeyPatch, capsys) -> 
     for var in ("AGENT_MODEL_BASE_URL", "AGENT_MODEL_NAME", "AGENT_MODEL_API_KEY"):
         monkeypatch.delenv(var, raising=False)
     monkeypatch.chdir(ROOT)
+    live_meta = ROOT / "reports" / "live" / "run_meta.json"
+    before = live_meta.read_bytes() if live_meta.exists() else None
     assert main(["evaluate", "--config", "configs/fixture.yaml", "--require-live"]) == 2
     assert main(["evaluate", "--config", "configs/live.yaml", "--require-live"]) == 2
     assert "fixture fallback is disabled" in " ".join(capsys.readouterr().out.split())
-    assert not (ROOT / "reports" / "live" / "run_meta.json").exists()
+    assert (live_meta.read_bytes() if live_meta.exists() else None) == before
 
 
 def test_demo_reproduces_committed_ledger() -> None:
