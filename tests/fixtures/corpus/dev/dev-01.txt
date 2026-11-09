@@ -1,0 +1,11 @@
+FICTIONAL EXAMPLE DOCUMENT. The materials, laboratories and measurements below are invented for software testing.
+
+Long-term durability of the layered nickel-iron catalyst LX-4 in strongly alkaline electrolyte
+
+Summary. We report the chronopotentiometric durability of LX-4, a layered nickel-iron oxyhydroxide deposited on nickel foam, during oxygen evolution in 1 M KOH (pH 14) at 25 °C.
+
+Method. Three electrodes were held at a constant current density of 10 mA cm-2 for 100 hours in purified 1 M KOH. The electrolyte was replaced every 24 hours. Potentials were corrected for uncompensated resistance using impedance measured before and after the run.
+
+Results. All three LX-4 electrodes remained stable for the full 100 hours at pH 14, with the overpotential drifting by less than 15 mV over the run. Inductively coupled plasma analysis of the spent electrolyte found iron below the 5 ppb detection limit, indicating no measurable iron leaching. The layered morphology was retained in post-test electron micrographs.
+
+Scope. These conclusions apply to strongly alkaline electrolyte only. We did not test near-neutral or acidic media, and we caution against extrapolating the durability result to those conditions.

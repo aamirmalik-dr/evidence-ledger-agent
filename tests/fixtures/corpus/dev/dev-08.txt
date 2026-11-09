@@ -1,0 +1,11 @@
+FICTIONAL EXAMPLE DOCUMENT. The materials, laboratories and measurements below are invented for software testing.
+
+Isotope-labelling test of the oxygen evolution pathway on LX-4
+
+Summary. To test whether lattice oxygen participates in oxygen evolution on LX-4, we labelled the catalyst with oxygen-18 and analysed the evolved gas by online mass spectrometry.
+
+Method. LX-4 films were cycled in oxygen-18 enriched KOH to exchange surface oxygen, rinsed, and then operated at 10 mA cm-2 in unlabelled 1 M KOH at pH 14. The fraction of mass-34 and mass-36 oxygen in the product gas was monitored for 30 minutes.
+
+Results. The mass-34 signal remained within the natural-abundance background throughout the measurement. Because the expected lattice-oxygen contribution for a thin film is close to the detection limit of our spectrometer, the experiment is inconclusive: it neither confirms nor rules out the lattice-oxygen mechanism for LX-4.
+
+Outlook. Thicker films and a more sensitive spectrometer will be needed before the oxygen evolution pathway of LX-4 can be assigned.

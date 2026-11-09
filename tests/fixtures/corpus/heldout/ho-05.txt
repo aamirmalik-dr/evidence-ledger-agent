@@ -1,0 +1,9 @@
+FICTIONAL EXAMPLE DOCUMENT. Every compound, group and number in this text is invented for software testing.
+
+Withdrawal of the AL-3 coating preprint
+
+The authors have withdrawn the preprint describing the AL-3 alumina-phosphate coating for nickel-rich cathodes.
+
+Reason: during an internal audit the authors found that several cells labelled as AL-3-coated had been assembled with uncoated cathodes, and the cycling records could not be matched reliably to the coated and uncoated groups. The capacity retention values reported in the preprint, including the retention after 500 cycles, are therefore unreliable and should not be cited.
+
+The authors are repeating the cycling study with independently verified cell labels. No replacement data are available at this time.

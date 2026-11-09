@@ -1,0 +1,9 @@
+FICTIONAL EXAMPLE DOCUMENT. Every compound, group and number in this text is invented for software testing.
+
+Sintering atmosphere and lithium loss in garnet electrolytes
+
+Abstract: Garnet electrolytes lose lithium during high-temperature sintering, which lowers density and conductivity. We compared sintering of the undoped garnet GZ-7 under dry oxygen, argon and ambient air.
+
+Finding: GZ-7 sintered in ambient air reached only 88% density and an ionic conductivity of 0.3 mS cm-1 at 25 °C, while sintering in dry oxygen with a lithium-rich mother powder gave 95% density and 0.7 mS cm-1.
+
+Relevance: lithium loss is a likely cause of the scatter in conductivity values reported for garnet electrolytes. This study did not include doped garnets such as GZ-9, and the numbers here should not be transferred to other compositions.

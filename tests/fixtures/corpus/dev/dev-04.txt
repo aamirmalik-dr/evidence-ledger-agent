@@ -1,0 +1,11 @@
+FICTIONAL EXAMPLE DOCUMENT. The materials, laboratories and measurements below are invented for software testing.
+
+Comparative screening of spinel and layered oxygen evolution catalysts
+
+Summary. We screened six catalysts, including CM-2 and LX-4, in a single three-electrode cell under identical conditions to remove laboratory-to-laboratory variation.
+
+Method. Each catalyst was loaded at 0.5 mg cm-2 on glassy carbon and measured in 1 M KOH at 25 °C with a rotating disk at 1600 rpm. Linear sweep voltammograms were recorded at 5 mV s-1.
+
+Results. At a fixed potential of 1.6 V versus the reversible hydrogen electrode, CM-2 delivered 62 mA cm-2 and LX-4 delivered 95 mA cm-2. The other four catalysts delivered between 8 and 40 mA cm-2. The ranking was reproducible across two independent catalyst batches.
+
+Limitations. Rotating disk measurements at low loading do not represent device operation. The current densities here should not be compared directly with flow-cell or membrane-electrode-assembly results, which use different loadings, temperatures and cell voltages.

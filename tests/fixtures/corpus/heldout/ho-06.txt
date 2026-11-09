@@ -1,0 +1,11 @@
+FICTIONAL EXAMPLE DOCUMENT. Every compound, group and number in this text is invented for software testing.
+
+Moisture sensitivity of the thiophosphate electrolyte SX-2
+
+Abstract: Sulfide electrolytes are highly conductive but react with water. We exposed cold-pressed SX-2 pellets to controlled humidity and tracked hydrogen sulfide release with a gas sensor.
+
+Finding 1: at 30% relative humidity and 25 °C, SX-2 released detectable hydrogen sulfide within 2 minutes, and its conductivity fell by 60% after 1 hour of exposure.
+
+Finding 2: in a dry room with a dew point of -50 °C, corresponding to well below 1% relative humidity, SX-2 pellets showed no hydrogen sulfide release and no measurable conductivity loss over 48 hours.
+
+Caveat: handling SX-2 in ordinary laboratory air is not advisable. The dry-room result should not be extended to exposures longer than 48 hours, which were not tested.

@@ -1,0 +1,163 @@
+{
+  "family": "heldout",
+  "description": "Fictional solid-state battery materials reports written for testing. Not real publications.",
+  "documents": [
+    {
+      "doc_id": "ho-01",
+      "file": "ho-01.txt",
+      "title": "Room-temperature lithium-ion transport in GZ-9",
+      "kind": "report",
+      "date": "2024-03-11",
+      "conditions": {
+        "temperature": "25 C",
+        "atmosphere": "argon"
+      },
+      "supersedes": null,
+      "fictional": true,
+      "sha256": "6655fd348d71ddf851117745f69778a35b46dbf6e719a1b497982fe8f32a54ca"
+    },
+    {
+      "doc_id": "ho-02",
+      "file": "ho-02.txt",
+      "title": "Temperature dependence of conductivity in GZ-9",
+      "kind": "report",
+      "date": "2024-08-27",
+      "conditions": {
+        "temperature": "25-100 C",
+        "atmosphere": "argon"
+      },
+      "supersedes": null,
+      "fictional": true,
+      "sha256": "a2d1d7772a2dd0cbd926d735e8e6838434b33ba090fe6efb0c008c319579f4e7"
+    },
+    {
+      "doc_id": "ho-03",
+      "file": "ho-03.txt",
+      "title": "Sintering atmosphere and lithium loss in garnets",
+      "kind": "report",
+      "date": "2023-10-05",
+      "conditions": {
+        "temperature": "25 C"
+      },
+      "supersedes": null,
+      "fictional": true,
+      "sha256": "32812534ba9c5a1fd79e48a84d8801a9b326a4d84903e49d7f4e9498278e4a17"
+    },
+    {
+      "doc_id": "ho-04",
+      "file": "ho-04.txt",
+      "title": "Preprint: AL-3 coating for nickel-rich cathodes",
+      "kind": "preprint",
+      "date": "2024-02-14",
+      "conditions": {
+        "temperature": "25 C"
+      },
+      "supersedes": null,
+      "fictional": true,
+      "sha256": "317c9cdbda093db638ccc868357043801916ba7f9b122ebc779daeef74b46c8c"
+    },
+    {
+      "doc_id": "ho-05",
+      "file": "ho-05.txt",
+      "title": "Withdrawal of the AL-3 coating preprint",
+      "kind": "withdrawal",
+      "date": "2024-06-30",
+      "conditions": {},
+      "supersedes": "ho-04",
+      "fictional": true,
+      "sha256": "de563a554265d4d40314faaedbb7529aa1b53138f6cdad7de2e9d4d1b92ee62d"
+    },
+    {
+      "doc_id": "ho-06",
+      "file": "ho-06.txt",
+      "title": "Moisture sensitivity of SX-2",
+      "kind": "report",
+      "date": "2024-01-09",
+      "conditions": {
+        "temperature": "25 C"
+      },
+      "supersedes": null,
+      "fictional": true,
+      "sha256": "684eb46e1817e8039eabb2db0e381aab6e2f4f31e439acd814ae394360c2b979"
+    },
+    {
+      "doc_id": "ho-07",
+      "file": "ho-07.txt",
+      "title": "Interfacial resistance of SX-2 with lithium-indium",
+      "kind": "report",
+      "date": "2024-05-21",
+      "conditions": {
+        "temperature": "0-25 C",
+        "stack pressure": "10 MPa"
+      },
+      "supersedes": null,
+      "fictional": true,
+      "sha256": "5867424d9d5560daba977018e2b7866b4a2639fd88c556a31fb058d9396b5e66"
+    },
+    {
+      "doc_id": "ho-08",
+      "file": "ho-08.txt",
+      "title": "Independent replication of TQ-5 conductivity",
+      "kind": "replication",
+      "date": "2024-09-02",
+      "conditions": {
+        "temperature": "25 C",
+        "atmosphere": "argon"
+      },
+      "supersedes": null,
+      "fictional": true,
+      "sha256": "95fe4b2fae6991be25d03313dc5b5ede15bb6bc7fdc86c0bea84bc9c38a8ade2"
+    },
+    {
+      "doc_id": "ho-09",
+      "file": "ho-09.txt",
+      "title": "TQ-5, an argyrodite sulfide electrolyte",
+      "kind": "report",
+      "date": "2023-12-18",
+      "conditions": {
+        "temperature": "25 C",
+        "atmosphere": "argon"
+      },
+      "supersedes": null,
+      "fictional": true,
+      "sha256": "61cb8b3d233ab010550f3f6e2b9b80737d5a471742a75851eca964b93a6a5a54"
+    },
+    {
+      "doc_id": "ho-10",
+      "file": "ho-10.txt",
+      "title": "Supplier technical datasheet: PB-1 binder",
+      "kind": "datasheet",
+      "date": "2024-04-04",
+      "conditions": {
+        "temperature": "25 C"
+      },
+      "supersedes": null,
+      "fictional": true,
+      "sha256": "6c98caec2c3c82f46cc1f13360c24b0f32a748e228f9e75a2267d871fb324bbf"
+    },
+    {
+      "doc_id": "ho-11",
+      "file": "ho-11.txt",
+      "title": "Opinion: the real cause of dendrites in garnets",
+      "kind": "opinion",
+      "date": "2024-07-07",
+      "conditions": {},
+      "supersedes": null,
+      "fictional": true,
+      "sha256": "0e64e0042195d0d92322e648f3e2bba72ecaaee2ab7871bccd6995c9a5aa799a"
+    },
+    {
+      "doc_id": "ho-12",
+      "file": "ho-12.txt",
+      "title": "Stack pressure and short circuits in garnet cells",
+      "kind": "report",
+      "date": "2024-10-01",
+      "conditions": {
+        "temperature": "25 C"
+      },
+      "supersedes": null,
+      "fictional": true,
+      "sha256": "bb1183a9103e3b4dab2fadc58dacc53f6511c4d391a0505ef142097004ad60d8"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+FICTIONAL EXAMPLE DOCUMENT. The materials, laboratories and measurements below are invented for software testing.
+
+Perspective: why LX-4 must run on lattice oxygen
+
+In this perspective we argue that the exceptional activity of LX-4 can only be explained by the lattice-oxygen mechanism, in which oxygen atoms from the catalyst itself participate in forming molecular oxygen.
+
+It is clear beyond reasonable doubt that LX-4 evolves oxygen exclusively through the lattice-oxygen pathway. The layered structure, the presence of iron, and the low Tafel slope all point in this direction, and no other mechanism is consistent with the activity reported by several groups.
+
+We note that this perspective presents no new measurements. Our argument is based on structural reasoning and on comparison with activity trends published for other oxyhydroxides. Direct isotope-labelling evidence for LX-4 has, to our knowledge, not yet been reported, and we encourage experimental groups to perform such tests.
+
+If confirmed, the lattice-oxygen picture would change how the community designs layered catalysts.

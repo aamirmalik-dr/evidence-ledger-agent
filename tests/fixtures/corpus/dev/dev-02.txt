@@ -1,0 +1,11 @@
+FICTIONAL EXAMPLE DOCUMENT. The materials, laboratories and measurements below are invented for software testing.
+
+Rapid deactivation of LX-4 in near-neutral phosphate buffer
+
+Summary. Layered nickel-iron catalysts are attractive for seawater and near-neutral electrolysis. We examined whether LX-4, which performs well in alkaline media, retains its activity in 0.5 M potassium phosphate buffer at pH 7.
+
+Method. LX-4 films were prepared following the published recipe and operated at 10 mA cm-2 in phosphate buffer at pH 7 and 25 °C. Activity was tracked by the potential required to sustain the current.
+
+Results. At pH 7 the LX-4 electrodes were not stable: the required potential rose continuously, and the catalyst lost about 40% of its initial activity within 12 hours. Dissolved iron in the electrolyte reached 180 ppb after 12 hours, consistent with iron leaching from the layered structure. Repeated cyclic voltammetry showed a shrinking nickel redox wave.
+
+Interpretation. We attribute the deactivation to the instability of the iron sites at near-neutral pH, where the oxyhydroxide is not thermodynamically favoured. Claims of long-term LX-4 stability should therefore always state the electrolyte pH.

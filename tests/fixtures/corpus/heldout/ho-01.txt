@@ -1,0 +1,9 @@
+FICTIONAL EXAMPLE DOCUMENT. Every compound, group and number in this text is invented for software testing.
+
+Room-temperature lithium-ion transport in the doped garnet GZ-9
+
+Abstract: Gallium-zirconium co-doped lithium garnet GZ-9 was densified by hot pressing to 97% of theoretical density. Electrochemical impedance spectroscopy with gold blocking electrodes gave a total ionic conductivity of 1.2 mS cm-1 at 25 °C, with grain-boundary resistance contributing less than 10% of the total. The activation energy between 0 °C and 60 °C was 0.29 eV.
+
+Conditions: pellets were stored and measured in an argon glovebox; no exposure to humid air occurred before measurement.
+
+Context: GZ-9 belongs to a family of garnet electrolytes considered for solid-state batteries with lithium metal anodes. This report covers bulk transport only and makes no statement about interface stability or cycling with lithium metal.

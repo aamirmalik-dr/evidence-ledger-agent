@@ -1,0 +1,8 @@
+[
+  {"task_id": "dev-q1", "family": "dev", "question": "Claim to check: catalyst LX-4 is stable for 100 hours of continuous oxygen evolution.", "conditions": {}},
+  {"task_id": "dev-q2", "family": "dev", "question": "Claim to check: a CM-2 anode sustains a current density above 500 mA cm-2 at a cell voltage of 1.8 V.", "conditions": {}},
+  {"task_id": "dev-q3", "family": "dev", "question": "Claim to check: RT-1 reaches a Faradaic efficiency above 95% for oxygen evolution.", "conditions": {}},
+  {"task_id": "dev-q4", "family": "dev", "question": "Claim to check: LX-4 evolves oxygen through the lattice-oxygen mechanism.", "conditions": {}},
+  {"task_id": "dev-q5", "family": "dev", "question": "Claim to check: CM-2 remains stable during oxygen evolution in acidic electrolyte at pH 1.", "conditions": {"pH": "1"}},
+  {"task_id": "dev-q6", "family": "dev", "question": "Claim to check: CM-2 powder is made by calcining a dried gel in air at 450 °C.", "conditions": {}}
+]

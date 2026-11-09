@@ -1,0 +1,11 @@
+FICTIONAL EXAMPLE DOCUMENT. Every compound, group and number in this text is invented for software testing.
+
+Temperature dependence of ionic conductivity in GZ-9 pellets
+
+Abstract: We measured GZ-9 pellets from a second synthesis route between 25 °C and 100 °C to support operation of warm solid-state cells.
+
+Finding: ionic conductivity rose from 1.1 × 10-3 S cm-1 at 25 °C to 6.5 × 10-3 S cm-1 at 80 °C. Above 80 °C the Arrhenius plot remained linear, with no sign of a phase transition up to 100 °C.
+
+Interpretation: the conductivity values above 5 mS cm-1 in this study were reached only at elevated temperature. At room temperature, the GZ-9 conductivity is close to the value reported by the original synthesis group.
+
+Caveat: all values were measured on pellets with sputtered gold electrodes in argon. Values were reported in S cm-1 rather than mS cm-1 to match the convention of the solid-state ionics literature.

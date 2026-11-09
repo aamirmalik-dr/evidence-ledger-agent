@@ -1,0 +1,11 @@
+FICTIONAL EXAMPLE DOCUMENT. Every compound, group and number in this text is invented for software testing.
+
+TQ-5, an argyrodite sulfide electrolyte with high room-temperature conductivity
+
+Abstract: We report the synthesis of TQ-5 by ball milling followed by a short anneal, and its densification by cold pressing at 370 MPa.
+
+Finding: impedance measurements at 25 °C with stainless-steel blocking electrodes gave an ionic conductivity of 3.1 mS cm-1, among the highest values reported for this structural family.
+
+Conditions: all handling and measurements took place in an argon glovebox with water and oxygen below 0.1 ppm.
+
+Outlook: TQ-5 is a candidate separator material for room-temperature sulfide solid-state batteries.

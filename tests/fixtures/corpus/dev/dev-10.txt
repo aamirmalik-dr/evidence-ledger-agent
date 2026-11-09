@@ -1,0 +1,11 @@
+FICTIONAL EXAMPLE DOCUMENT. The materials, laboratories and measurements below are invented for software testing.
+
+Effect of electrolyte purity on nickel-based oxygen evolution catalysts
+
+Summary. Trace iron in commercial potassium hydroxide is known to change the activity of nickel oxyhydroxides. We quantified this effect for unmodified nickel hydroxide films.
+
+Method. Films were tested in reagent-grade 1 M KOH and in the same electrolyte after purification over nickel hydroxide powder to remove iron. Iron content was measured before each test.
+
+Results. In unpurified KOH containing 0.6 ppm iron, the overpotential at 10 mA cm-2 decreased by 80 mV over the first hour as iron was incorporated into the film. In purified KOH the overpotential remained high and nearly constant.
+
+Implication. Durability and activity comparisons between laboratories are only meaningful if the electrolyte iron content is reported. This study did not examine LX-4 or any intentionally iron-doped catalyst.

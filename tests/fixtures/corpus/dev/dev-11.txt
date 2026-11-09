@@ -1,0 +1,11 @@
+FICTIONAL EXAMPLE DOCUMENT. The materials, laboratories and measurements below are invented for software testing.
+
+Practical notes on reference electrode calibration for alkaline electrolysis
+
+Reference electrodes drift during long experiments, and an uncorrected drift of a few tens of millivolts can be mistaken for catalyst degradation.
+
+We recommend calibrating mercury oxide reference electrodes against a reversible hydrogen electrode in the same electrolyte before and after every durability test. In our hands, an unattended mercury oxide electrode drifted by 22 mV over 72 hours in 1 M KOH at 25 °C.
+
+We also recommend reporting the electrolyte temperature, because the reversible hydrogen electrode potential shifts with temperature. Durability claims that rely on a potential change smaller than the expected reference drift should be treated with caution.
+
+These notes do not report catalyst performance data.

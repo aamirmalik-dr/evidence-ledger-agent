@@ -1,0 +1,11 @@
+FICTIONAL EXAMPLE DOCUMENT. Every compound, group and number in this text is invented for software testing.
+
+Interfacial resistance between SX-2 and lithium-indium electrodes
+
+Abstract: Area-specific resistance (ASR) at the electrolyte-electrode interface often limits the rate capability of sulfide solid-state cells. We measured symmetric lithium-indium cells built on SX-2 separators under 10 MPa stack pressure.
+
+Finding: the interfacial ASR of SX-2 was 0.035 kΩ cm2 at 25 °C after 24 hours of rest. On cooling to 0 °C the ASR increased to 0.12 kΩ cm2.
+
+Note on units: resistances are given in kilo-ohm square centimetres because the same table also lists polymer separators with resistances above 1 kΩ cm2.
+
+Caveat: the measurement used lithium-indium alloy electrodes. The ASR against pure lithium metal was not measured.

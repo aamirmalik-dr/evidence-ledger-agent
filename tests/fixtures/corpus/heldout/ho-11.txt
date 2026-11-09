@@ -1,0 +1,9 @@
+FICTIONAL EXAMPLE DOCUMENT. Every compound, group and number in this text is invented for software testing.
+
+Opinion: the real cause of dendrites in garnet electrolytes
+
+Lithium filaments that grow through garnet separators remain the main obstacle to garnet solid-state batteries. In our view the debate is settled: grain-boundary electronic conductivity is unquestionably the sole cause of dendrite growth in GZ-9 and related garnets.
+
+Our position follows from the observation that filaments in other garnets often appear along grain boundaries. We have not measured the electronic conductivity of GZ-9 grain boundaries, and this article reports no new experiments on GZ-9.
+
+We expect that future measurements will confirm the grain-boundary picture, and we urge the community to stop investigating alternative explanations such as current focusing at interfacial voids.

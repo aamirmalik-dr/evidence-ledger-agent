@@ -1,0 +1,11 @@
+FICTIONAL EXAMPLE DOCUMENT. The materials, laboratories and measurements below are invented for software testing.
+
+Bubble detachment on porous nickel electrodes at high current density
+
+Summary. Gas bubbles that remain attached to porous electrodes block active area and raise the cell voltage. We imaged bubble detachment on nickel foam electrodes with a high-speed camera.
+
+Results. At 500 mA cm-2 in 1 M KOH at 60 °C, the mean bubble departure diameter on untreated nickel foam was 180 micrometres. A hydrophilic coating reduced the departure diameter to 70 micrometres and lowered the cell voltage by 45 mV.
+
+Relevance. Electrode wetting and bubble management can change apparent catalyst performance at high current density. Catalyst comparisons at high current should therefore state the electrode substrate and any surface treatment.
+
+This study did not test CM-2, LX-4 or RT-1.

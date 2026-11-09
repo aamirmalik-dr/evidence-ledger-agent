@@ -1,0 +1,11 @@
+FICTIONAL EXAMPLE DOCUMENT. Every compound, group and number in this text is invented for software testing.
+
+Independent replication of the TQ-5 conductivity report
+
+Abstract: TQ-5, an argyrodite-type sulfide electrolyte, was reported to reach a room-temperature conductivity of about 3 mS cm-1. We attempted to reproduce this result in a second laboratory.
+
+Method: we followed the published synthesis and cold-pressing protocol exactly, including the 370 MPa pressing pressure, and measured at 25 °C with stainless-steel blocking electrodes in an argon glovebox.
+
+Finding: across six pellets from two batches, TQ-5 showed an ionic conductivity of 0.9 mS cm-1 at 25 °C, with a batch-to-batch spread of plus or minus 0.1 mS cm-1. X-ray diffraction matched the reported phase.
+
+Discussion: we could not identify a difference in conditions that would explain the factor-of-three gap. The source of the discrepancy with the original report remains unresolved.

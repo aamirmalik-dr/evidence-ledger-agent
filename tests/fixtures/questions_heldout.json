@@ -1,0 +1,12 @@
+[
+  {"task_id": "ho-q01", "family": "heldout", "question": "Claim to check: the garnet electrolyte GZ-9 has an ionic conductivity above 1 mS cm-1 at room temperature.", "conditions": {"temperature": "25 C"}},
+  {"task_id": "ho-q02", "family": "heldout", "question": "Claim to check: GZ-9 reaches an ionic conductivity above 5 mS cm-1.", "conditions": {}},
+  {"task_id": "ho-q03", "family": "heldout", "question": "Claim to check: an AL-3 coating lets nickel-rich cathodes keep more than 90% of their capacity after 500 cycles.", "conditions": {}},
+  {"task_id": "ho-q04", "family": "heldout", "question": "Claim to check: SX-2 stays stable for at least 48 hours under dry-room conditions.", "conditions": {}},
+  {"task_id": "ho-q05", "family": "heldout", "question": "Claim to check: TQ-5 has an ionic conductivity of about 3 mS cm-1 at 25 °C.", "conditions": {"temperature": "25 C"}},
+  {"task_id": "ho-q06", "family": "heldout", "question": "Claim to check: the binder PB-1 is electrochemically stable up to 4.5 V vs Li/Li+.", "conditions": {}},
+  {"task_id": "ho-q07", "family": "heldout", "question": "Claim to check: GZ-9 separators cycle stably against lithium metal for more than 1000 cycles.", "conditions": {}},
+  {"task_id": "ho-q08", "family": "heldout", "question": "Claim to check: dendrite growth in GZ-9 is caused by grain-boundary electronic conductivity.", "conditions": {}},
+  {"task_id": "ho-q09", "family": "heldout", "question": "Claim to check: the SX-2 interface has an area-specific resistance below 50 ohm cm2 at 25 °C.", "conditions": {"temperature": "25 C"}},
+  {"task_id": "ho-q10", "family": "heldout", "question": "Claim to check: SX-2 releases hydrogen sulfide when exposed to air at 30% relative humidity.", "conditions": {}}
+]

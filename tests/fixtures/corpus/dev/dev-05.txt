@@ -1,0 +1,11 @@
+FICTIONAL EXAMPLE DOCUMENT. The materials, laboratories and measurements below are invented for software testing.
+
+Selective oxygen evolution on ruthenium-doped titania RT-1
+
+Summary. We introduce RT-1, a titania host doped with 2 atomic percent ruthenium, as a stable anode for oxygen evolution in acidic media.
+
+Method. RT-1 anodes were operated at 10 mA cm-2 in 0.5 M sulfuric acid. Evolved oxygen was quantified with a fluorescence oxygen probe in a sealed cell, and the charge passed was integrated to compute the Faradaic efficiency.
+
+Results. RT-1 showed a Faradaic efficiency of 99% for oxygen evolution over a 2-hour measurement, indicating that almost all of the charge produced oxygen rather than side products such as ozone or dissolved ruthenium species.
+
+Conclusion. The near-unity Faradaic efficiency makes RT-1 a promising candidate for acidic water electrolysis.

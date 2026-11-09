@@ -1,0 +1,11 @@
+FICTIONAL EXAMPLE DOCUMENT. The materials, laboratories and measurements below are invented for software testing.
+
+Correction notice: Faradaic efficiency of RT-1
+
+This notice corrects the RT-1 oxygen evolution report published earlier by the same group and supersedes the efficiency value given there.
+
+After publication, the authors found that the fluorescence oxygen probe had been calibrated against a reference gas with an incorrectly certified oxygen fraction. The original calibration overstated the detected oxygen.
+
+Recalculating all runs with a recertified reference gas, the corrected Faradaic efficiency of RT-1 for oxygen evolution is 91%, not the 99% stated in the original report. The remaining charge is attributed to partial ruthenium dissolution, which was confirmed by mass spectrometry of the electrolyte.
+
+The activity data, overpotentials and morphology results in the original report are unaffected. The conclusion that RT-1 is a near-unity efficiency anode is withdrawn. The authors regret the error.

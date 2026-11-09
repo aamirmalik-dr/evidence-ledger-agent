@@ -1,0 +1,11 @@
+FICTIONAL EXAMPLE DOCUMENT. The materials, laboratories and measurements below are invented for software testing.
+
+Activity and high-current operation of the cobalt-manganese spinel CM-2
+
+Summary. CM-2 is a cobalt-manganese spinel oxide prepared as a fine powder and sprayed onto carbon paper. This note reports its activity at low current density and its behaviour at industrially relevant current densities.
+
+Low-current activity. In 1 M KOH at 25 °C, CM-2 required an overpotential of 0.32 V to deliver 10 mA cm-2, averaged over four electrodes. The Tafel slope was 58 mV per decade.
+
+High-current operation. In a zero-gap flow cell with 1 M KOH at 60 °C, the CM-2 anode sustained 0.62 A cm-2 at a cell voltage of 1.8 V for 8 hours without visible delamination. At 1.6 V the same cell delivered 0.21 A cm-2.
+
+Remarks. Reported current densities in this note are given in A cm-2 for the flow-cell data and in mA cm-2 for the three-electrode data. Readers comparing the two regimes should convert units before comparison.

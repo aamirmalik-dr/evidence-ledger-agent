@@ -1,0 +1,169 @@
+{
+  "family": "dev",
+  "description": "Fictional oxygen-evolution catalyst reports written for testing. Not real publications.",
+  "documents": [
+    {
+      "doc_id": "dev-01",
+      "file": "dev-01.txt",
+      "title": "Long-term durability of LX-4 in strongly alkaline electrolyte",
+      "kind": "report",
+      "date": "2024-02-10",
+      "conditions": {
+        "pH": "14",
+        "electrolyte": "1 M KOH"
+      },
+      "supersedes": null,
+      "fictional": true,
+      "sha256": "69439517de63cc16252f7700b10a4dd3858a1dfa4d883ddf588b6e10f80bec70"
+    },
+    {
+      "doc_id": "dev-02",
+      "file": "dev-02.txt",
+      "title": "Rapid deactivation of LX-4 in near-neutral phosphate buffer",
+      "kind": "report",
+      "date": "2024-06-02",
+      "conditions": {
+        "pH": "7",
+        "electrolyte": "0.5 M phosphate buffer"
+      },
+      "supersedes": null,
+      "fictional": true,
+      "sha256": "559113fc8e9e67e45a7e8c4fbe1099dce47f3c0394cc92d3101b643e309cda33"
+    },
+    {
+      "doc_id": "dev-03",
+      "file": "dev-03.txt",
+      "title": "Activity and high-current operation of CM-2",
+      "kind": "report",
+      "date": "2023-11-20",
+      "conditions": {
+        "pH": "14",
+        "electrolyte": "1 M KOH"
+      },
+      "supersedes": null,
+      "fictional": true,
+      "sha256": "b0a663608bf3f405c8f1364009c812a3f724df53541c196d62a91e67ab2d0b52"
+    },
+    {
+      "doc_id": "dev-04",
+      "file": "dev-04.txt",
+      "title": "Comparative screening of spinel and layered catalysts",
+      "kind": "report",
+      "date": "2024-03-15",
+      "conditions": {
+        "pH": "14",
+        "electrolyte": "1 M KOH"
+      },
+      "supersedes": null,
+      "fictional": true,
+      "sha256": "ff7490e8fc70d9b55644ae23cfdff5f4bbcce170303eb422875c753af11e74b6"
+    },
+    {
+      "doc_id": "dev-05",
+      "file": "dev-05.txt",
+      "title": "Selective oxygen evolution on RT-1",
+      "kind": "report",
+      "date": "2023-05-08",
+      "conditions": {
+        "pH": "0",
+        "electrolyte": "0.5 M sulfuric acid"
+      },
+      "supersedes": null,
+      "fictional": true,
+      "sha256": "abcb1b5acea038d92b2acee60a1aa441590cdb225ee2fd2bf1a9625812553c07"
+    },
+    {
+      "doc_id": "dev-06",
+      "file": "dev-06.txt",
+      "title": "Correction notice: Faradaic efficiency of RT-1",
+      "kind": "correction",
+      "date": "2024-01-17",
+      "conditions": {
+        "pH": "0",
+        "electrolyte": "0.5 M sulfuric acid"
+      },
+      "supersedes": "dev-05",
+      "fictional": true,
+      "sha256": "820774971bfff0a6240e1da52dd65f169d60bad3901d9ec48095f2acb3a7d835"
+    },
+    {
+      "doc_id": "dev-07",
+      "file": "dev-07.txt",
+      "title": "Perspective: why LX-4 must run on lattice oxygen",
+      "kind": "perspective",
+      "date": "2024-04-01",
+      "conditions": {},
+      "supersedes": null,
+      "fictional": true,
+      "sha256": "0ef31b9ec58a22d2210d859b0c7f5036d25750744746fba4974ae87b2ab48d1d"
+    },
+    {
+      "doc_id": "dev-08",
+      "file": "dev-08.txt",
+      "title": "Isotope-labelling test of the OER pathway on LX-4",
+      "kind": "report",
+      "date": "2024-07-22",
+      "conditions": {
+        "pH": "14",
+        "electrolyte": "1 M KOH"
+      },
+      "supersedes": null,
+      "fictional": true,
+      "sha256": "1de75a592193a4e2c9de6b2a5bb50a02c0962693dedd6b22247858af5fffdcd4"
+    },
+    {
+      "doc_id": "dev-09",
+      "file": "dev-09.txt",
+      "title": "Laboratory notebook summary: synthesis of CM-2",
+      "kind": "notebook",
+      "date": "2023-09-03",
+      "conditions": {},
+      "supersedes": null,
+      "fictional": true,
+      "sha256": "86168ba3aa9dc19490ab692efb1957c62f95f753406de4f730683e9a9092b4aa"
+    },
+    {
+      "doc_id": "dev-10",
+      "file": "dev-10.txt",
+      "title": "Electrolyte purity and nickel-based catalysts",
+      "kind": "report",
+      "date": "2022-12-12",
+      "conditions": {
+        "pH": "14",
+        "electrolyte": "1 M KOH"
+      },
+      "supersedes": null,
+      "fictional": true,
+      "sha256": "3c22f6030997c06a2133dd786cfcd68560b26f51021fcd16c8352629822bdd48"
+    },
+    {
+      "doc_id": "dev-11",
+      "file": "dev-11.txt",
+      "title": "Reference electrode calibration notes",
+      "kind": "guide",
+      "date": "2023-03-30",
+      "conditions": {
+        "pH": "14",
+        "electrolyte": "1 M KOH"
+      },
+      "supersedes": null,
+      "fictional": true,
+      "sha256": "57b2b99ab8cc1e2d14d0cf4a82efd56407ee76502017e964690dade4a1753f4d"
+    },
+    {
+      "doc_id": "dev-12",
+      "file": "dev-12.txt",
+      "title": "Bubble detachment on porous nickel electrodes",
+      "kind": "report",
+      "date": "2024-05-19",
+      "conditions": {
+        "pH": "14",
+        "electrolyte": "1 M KOH",
+        "temperature": "60 C"
+      },
+      "supersedes": null,
+      "fictional": true,
+      "sha256": "4976a52bc4eee766e618a02312e97156a9ad0bd0aa8ddbbaa9aa2844cccd49fb"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+FICTIONAL EXAMPLE DOCUMENT. Every compound, group and number in this text is invented for software testing.
+
+Stack pressure and short circuits in garnet cells with lithium metal
+
+Abstract: We cycled symmetric lithium metal cells on GZ-9 separators at stack pressures of 1, 5 and 10 MPa and a current density of 0.2 mA cm-2 at 25 °C.
+
+Finding: at 5 MPa, GZ-9 cells cycled stably for 200 cycles before the study ended, with no short circuit. At 10 MPa, two of three cells short-circuited within 40 cycles. At 1 MPa, voids formed at the lithium interface and the overpotential doubled within 50 cycles.
+
+Limitation: the study stopped at 200 cycles and did not test longer cycling, higher current densities, or full cells with a cathode.

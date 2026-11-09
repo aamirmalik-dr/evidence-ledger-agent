@@ -1,0 +1,9 @@
+FICTIONAL EXAMPLE DOCUMENT. Every compound, group and number in this text is invented for software testing.
+
+Preprint: alumina-phosphate coating AL-3 extends the life of nickel-rich cathodes
+
+Abstract: Nickel-rich layered cathodes degrade quickly at high voltage. We applied a 5 nm alumina-phosphate coating, AL-3, by atomic layer deposition.
+
+Finding: coin cells with AL-3-coated cathodes retained 92% of their initial capacity after 500 cycles at 1C between 2.8 V and 4.4 V at 25 °C, compared with 71% for uncoated cathodes.
+
+Status: this manuscript is a preprint and has not been peer reviewed.
