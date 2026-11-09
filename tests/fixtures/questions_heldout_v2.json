@@ -1,0 +1,66 @@
+[
+ {
+  "task_id": "h2-q01",
+  "family": "heldout_v2",
+  "question": "Claim to check: the perovskite PV-7 has an optical bandgap of about 1.55 eV.",
+  "conditions": {}
+ },
+ {
+  "task_id": "h2-q02",
+  "family": "heldout_v2",
+  "question": "Claim to check: PV-7 cells retain more than 90% of their efficiency after 1000 hours at 85 °C.",
+  "conditions": {
+   "temperature": "85 C"
+  }
+ },
+ {
+  "task_id": "h2-q03",
+  "family": "heldout_v2",
+  "question": "Claim to check: an HX-2 hole-transport layer raises PV-7 cell efficiency to 24%.",
+  "conditions": {}
+ },
+ {
+  "task_id": "h2-q04",
+  "family": "heldout_v2",
+  "question": "Claim to check: PV-7 cells reach 21.4% efficiency under AM1.5G illumination at 25 °C.",
+  "conditions": {
+   "temperature": "25 C"
+  }
+ },
+ {
+  "task_id": "h2-q05",
+  "family": "heldout_v2",
+  "question": "Claim to check: PV-7 cells have a series resistance below 5 Ohm cm2.",
+  "conditions": {}
+ },
+ {
+  "task_id": "h2-q06",
+  "family": "heldout_v2",
+  "question": "Claim to check: the EN-4 encapsulant has a water vapour transmission rate below 1 × 10-3 g m-2 day-1.",
+  "conditions": {}
+ },
+ {
+  "task_id": "h2-q07",
+  "family": "heldout_v2",
+  "question": "Claim to check: PV-7 modules have passed 3000 hours of outdoor field testing.",
+  "conditions": {}
+ },
+ {
+  "task_id": "h2-q08",
+  "family": "heldout_v2",
+  "question": "Claim to check: ion migration in PV-7 is caused by iodine vacancies alone.",
+  "conditions": {}
+ },
+ {
+  "task_id": "h2-q09",
+  "family": "heldout_v2",
+  "question": "Claim to check: broken PV-7 modules release less than 1 mg of lead per square metre.",
+  "conditions": {}
+ },
+ {
+  "task_id": "h2-q10",
+  "family": "heldout_v2",
+  "question": "Claim to check: unencapsulated PV-7 cells lose more than half of their efficiency within 300 hours at 85 °C and 85% relative humidity.",
+  "conditions": {}
+ }
+]

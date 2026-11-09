@@ -1,0 +1,7 @@
+FICTIONAL EXAMPLE DOCUMENT. Every compound, group and number in this text is invented for software testing.
+
+Independent replication of PV-7 cell efficiency
+
+Abstract: A second laboratory followed the published PV-7 recipe and cell stack. Under AM1.5G illumination at 25 °C with a calibrated mask, the best of 40 cells reached 17.9% and the median was 16.2%.
+
+Conditions: the same as the original report. The replicating group could not reproduce the 21.4% value.

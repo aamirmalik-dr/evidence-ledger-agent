@@ -1,0 +1,9 @@
+FICTIONAL EXAMPLE DOCUMENT. Every compound, group and number in this text is invented for software testing.
+
+Optical bandgap of the perovskite absorber PV-7
+
+Abstract: Films of the mixed-cation perovskite PV-7 were spin coated on quartz and annealed at 100 °C. Absorption onsets and photoluminescence peaks gave an optical bandgap of 1.55 eV at 25 °C, with a Urbach energy of 14 meV.
+
+Conditions: films were measured in nitrogen immediately after annealing.
+
+Context: the bandgap places PV-7 close to the single-junction optimum. This report does not measure device efficiency.

@@ -1,0 +1,7 @@
+FICTIONAL EXAMPLE DOCUMENT. Every compound, group and number in this text is invented for software testing.
+
+Lead release from damaged PV-7 modules
+
+Abstract: Encapsulated PV-7 mini-modules were broken with a steel ball and soaked in simulated rain for 24 hours. Lead release stayed below 0.6 mg m-2 of module area in every sample.
+
+Conditions: glass-glass modules with EN-4 encapsulant, room temperature.

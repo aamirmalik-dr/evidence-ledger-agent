@@ -1,0 +1,30 @@
+# v2 round on the fresh held-out family heldout_v2 (written after the v2
+# pre-registration, frozen 2026-11-09). The only change from the v1 pilot is the
+# agentcore 0.1.2 reply parser. Run A: same model as the v1 pilot, all four arms, two runs.
+mode: live
+model: openai/gpt-4.1-mini        # via OpenRouter
+families:
+  heldout_v2:
+    corpus: tests/fixtures/corpus/heldout_v2
+    questions: tests/fixtures/questions_heldout_v2.json
+    gold: evaluator/gold_heldout_v2.json
+arms: [lexical, single_call, agent, agent_no_expand]
+runs: 2
+episode:
+  max_steps: 16
+  max_tool_calls: 10
+  max_tokens_per_episode: 40000
+  max_wall_seconds: 300
+  recent_k: 4
+  max_completion_tokens: 700
+single_call_top_k: 4
+single_call_max_completion_tokens: 900
+lexical_coverage_threshold: 0.5
+run_caps:
+  max_total_tokens: 1500000
+  max_usd: 0.50
+  usd_per_mtok_input: 0.40       # OpenRouter listed price, 2026-11-09
+  usd_per_mtok_output: 1.60
+output_dir: reports/live_v2
+checkpoint_dir: runs/live_v2
+record_timing: true

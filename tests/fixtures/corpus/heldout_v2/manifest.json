@@ -1,0 +1,154 @@
+{
+  "family": "heldout_v2",
+  "description": "Fictional perovskite photovoltaic reports written for testing. Not real publications.",
+  "documents": [
+    {
+      "doc_id": "h2-01",
+      "file": "h2-01.txt",
+      "title": "Optical bandgap of the perovskite absorber PV-7",
+      "kind": "report",
+      "date": "2025-02-03",
+      "conditions": {
+        "temperature": "25 C"
+      },
+      "supersedes": null,
+      "fictional": true,
+      "sha256": "2d43f191c1ca65dac8ccda6249110c6fa9e1256d233f911f7f1c7e546d8957a6"
+    },
+    {
+      "doc_id": "h2-02",
+      "file": "h2-02.txt",
+      "title": "Thermal stability of encapsulated PV-7 cells",
+      "kind": "report",
+      "date": "2025-04-18",
+      "conditions": {
+        "temperature": "85 C",
+        "atmosphere": "nitrogen"
+      },
+      "supersedes": null,
+      "fictional": true,
+      "sha256": "3d7e6a17e5aadccd58c70693474edf21403c580c5d09499d20b4694cbea665df"
+    },
+    {
+      "doc_id": "h2-03",
+      "file": "h2-03.txt",
+      "title": "Damp-heat degradation of unencapsulated PV-7 films",
+      "kind": "report",
+      "date": "2025-05-30",
+      "conditions": {
+        "temperature": "85 C",
+        "humidity": "85% RH"
+      },
+      "supersedes": null,
+      "fictional": true,
+      "sha256": "90f60a36532f5117e3900310768488c3868ec79ac7e41c7bb6f4d9ea9670d798"
+    },
+    {
+      "doc_id": "h2-04",
+      "file": "h2-04.txt",
+      "title": "Preprint: HX-2 hole-transport layer for PV-7 cells",
+      "kind": "preprint",
+      "date": "2025-06-12",
+      "conditions": {},
+      "supersedes": null,
+      "fictional": true,
+      "sha256": "4183780bfa3d16b33c421519dd0ba93091f689fcb6ebd90c8ca6993c8bf06c57"
+    },
+    {
+      "doc_id": "h2-05",
+      "file": "h2-05.txt",
+      "title": "Correction to the HX-2 hole-transport layer preprint",
+      "kind": "correction",
+      "date": "2025-07-02",
+      "conditions": {},
+      "supersedes": "h2-04",
+      "fictional": true,
+      "sha256": "a6c4cd763157101c3bdee2dce3f48b71d5b9f71c9938c2389607eaa87e0bc958"
+    },
+    {
+      "doc_id": "h2-06",
+      "file": "h2-06.txt",
+      "title": "Champion efficiency of PV-7 single-junction cells",
+      "kind": "report",
+      "date": "2025-03-21",
+      "conditions": {
+        "temperature": "25 C",
+        "illumination": "AM1.5G"
+      },
+      "supersedes": null,
+      "fictional": true,
+      "sha256": "d0be3d3aaed37f4c0699c487d755e25db3c4d6e363b00cf43c925f522430a3c4"
+    },
+    {
+      "doc_id": "h2-07",
+      "file": "h2-07.txt",
+      "title": "Independent replication of PV-7 cell efficiency",
+      "kind": "replication",
+      "date": "2025-09-08",
+      "conditions": {
+        "temperature": "25 C",
+        "illumination": "AM1.5G"
+      },
+      "supersedes": null,
+      "fictional": true,
+      "sha256": "a3b716c472109c51b38456822cfcbd9a822c8b8f2b74ed9ead294056d8ef4d3a"
+    },
+    {
+      "doc_id": "h2-08",
+      "file": "h2-08.txt",
+      "title": "Series resistance of PV-7 cells",
+      "kind": "report",
+      "date": "2025-01-15",
+      "conditions": {
+        "temperature": "25 C"
+      },
+      "supersedes": null,
+      "fictional": true,
+      "sha256": "85d54b06717a2c01ba5c5a63158dc00d1a6a2394124d60b11fae4eeb60f7591d"
+    },
+    {
+      "doc_id": "h2-09",
+      "file": "h2-09.txt",
+      "title": "Supplier datasheet: EN-4 encapsulant",
+      "kind": "datasheet",
+      "date": "2024-11-01",
+      "conditions": {},
+      "supersedes": null,
+      "fictional": true,
+      "sha256": "2da361eed3286598398879bd65cfaa397f7fbe9e9622214ac0d98378856aac7c"
+    },
+    {
+      "doc_id": "h2-10",
+      "file": "h2-10.txt",
+      "title": "Opinion: what really drives ion migration in PV-7",
+      "kind": "opinion",
+      "date": "2025-08-14",
+      "conditions": {},
+      "supersedes": null,
+      "fictional": true,
+      "sha256": "a22def4015d2f0d40204cbd1ef21b5cb6faa260eeddb5d0e423b70faa337276d"
+    },
+    {
+      "doc_id": "h2-11",
+      "file": "h2-11.txt",
+      "title": "Lead release from damaged PV-7 modules",
+      "kind": "report",
+      "date": "2025-10-03",
+      "conditions": {},
+      "supersedes": null,
+      "fictional": true,
+      "sha256": "26b6964dd40ead0ba6ee5aad3a44c073a5d1e346578919addecfa3809e09ae0b"
+    },
+    {
+      "doc_id": "h2-12",
+      "file": "h2-12.txt",
+      "title": "Outlook for PV-7 tandem cells",
+      "kind": "report",
+      "date": "2025-09-25",
+      "conditions": {},
+      "supersedes": null,
+      "fictional": true,
+      "sha256": "08c97fdf4e1aadbd8283febfbaf5cad8499410e9fcc6084ba42bc0f504c3c3f6"
+    }
+  ]
+}

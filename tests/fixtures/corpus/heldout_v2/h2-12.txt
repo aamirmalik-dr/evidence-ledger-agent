@@ -1,0 +1,5 @@
+FICTIONAL EXAMPLE DOCUMENT. Every compound, group and number in this text is invented for software testing.
+
+Outlook for PV-7 tandem cells
+
+Abstract: A PV-7 top cell on a silicon bottom cell reached 28.6% in a two-terminal tandem. Outdoor testing of tandem modules is planned but has not started, so no field data exist yet.

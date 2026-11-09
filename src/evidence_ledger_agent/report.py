@@ -13,7 +13,20 @@ import re
 from pathlib import Path
 from typing import Any
 
-MODES = ("fixture", "live")
+MODES = ("fixture", "live", "live_v2", "live_v2_sonnet")
+LIVE_MODES = MODES[1:]
+LIVE_LABELS = {
+    "live": "live v1, gpt-4.1-mini",
+    "live_v2": "live v2, gpt-4.1-mini",
+    "live_v2_sonnet": "live v2, claude-sonnet-4.6",
+}
+LIVE_NOTES = {
+    "live": "v1 pilot on the held-out family, agentcore 0.1.1 (strict reply parser).",
+    "live_v2": "v2 round on the fresh heldout_v2 family, agentcore 0.1.2 (parser accepts "
+    "trailing text after a complete JSON reply). Same model, prompts and caps as v1.",
+    "live_v2_sonnet": "v2 round, second model on the same heldout_v2 questions: the agent arm, "
+    "the strongest v1 baseline (single call) and the lexical baseline, one run.",
+}
 README_START, README_END = "<!-- evidence-table:start -->", "<!-- evidence-table:end -->"
 SCORER_START, SCORER_END = "<!-- scorer-table:start -->", "<!-- scorer-table:end -->"
 SCRIPTED_NOTE = (
@@ -93,7 +106,7 @@ def build_evidence(root: Path) -> dict[str, Any]:
         m = data["meta"]
         evidence["modes"][mode] = {
             "mode": mode,
-            "interpretation": SCRIPTED_NOTE if mode == "fixture" else "live model results",
+            "interpretation": SCRIPTED_NOTE if mode == "fixture" else LIVE_NOTES[mode],
             "git_commit": m["git_commit"],
             "git_dirty": m["git_dirty"],
             "model": m["model"],
@@ -116,12 +129,18 @@ def build_evidence(root: Path) -> dict[str, Any]:
             "episodes": data["n_rows"],
         }
     live_state = "pending" if evidence["modes"]["live"] == "pending" else "done"
+    # all live modes share the same limitation text
     evidence["limitations"] = LIMITATIONS + [LIVE_LIMITATIONS[live_state]]
     evidence["reproduce"] = {
         "fixture": "python -m evidence_ledger_agent evaluate --config configs/fixture.yaml "
         "&& python -m evidence_ledger_agent report --update-readme",
-        "live": "python -m evidence_ledger_agent evaluate --config configs/live.yaml "
-        "--require-live && python -m evidence_ledger_agent report --update-readme",
+        "live": "git checkout 9d07e38 && python -m evidence_ledger_agent evaluate "
+        "--config configs/live.yaml --require-live",
+        "live_v2": "python -m evidence_ledger_agent evaluate --config configs/live_v2_mini.yaml "
+        "--require-live",
+        "live_v2_sonnet": "python -m evidence_ledger_agent evaluate --config "
+        "configs/live_v2_sonnet.yaml --require-live && python -m evidence_ledger_agent report "
+        "--update-readme",
         "audit": "python -m evidence_ledger_agent verify",
     }
     return evidence
@@ -137,7 +156,7 @@ def _frac(row: dict[str, Any], name: str) -> str:
 def _label(mode: str, arm: str) -> str:
     if mode == "fixture":
         return "no model, deterministic" if arm == "lexical" else "fixture, scripted"
-    return "live"
+    return LIVE_LABELS[mode]
 
 
 QUALITY_HEAD = (
@@ -176,18 +195,19 @@ def metrics_table(evidence: dict[str, Any]) -> str:
                 lines.append(
                     _quality_cells("fixture", r) + " | single deterministic run | 0 | 0 | 0 | 0 |"
                 )
-    live = evidence["modes"]["live"]
-    if live == "pending":
-        lines.append("| live: pending |" + " |" * (QUALITY_COLS + 4))
-    else:
+    for mode in LIVE_MODES:
+        live = evidence["modes"][mode]
+        if live == "pending":
+            lines.append(f"| {LIVE_LABELS[mode]}: pending |" + " |" * (QUALITY_COLS + 4))
+            continue
         for r in live["metrics"]:
             spread = (
                 f"{r['verdict_accuracy_min_run']:.2f} to {r['verdict_accuracy_max_run']:.2f} "
-                f"({r['runs']} runs)"
+                f"({r['runs']} run{'s' if r['runs'] > 1 else ''})"
             )
             usd = _money(r.get("reported_cost_usd_total")) if r["model_calls_total"] else "0"
             lines.append(
-                _quality_cells("live", r) + f" | {spread} | {r['tool_calls_total']} "
+                _quality_cells(mode, r) + f" | {spread} | {r['tool_calls_total']} "
                 f"| {r['model_calls_total']} | {r['tokens_total'] or 0} | {usd} |"
             )
     return head + "\n".join(lines) + "\n"
@@ -220,7 +240,7 @@ def evidence_markdown(evidence: dict[str, Any]) -> str:
     ]
     for mode in MODES:
         data = evidence["modes"][mode]
-        out += [f"## {mode.capitalize()} mode", ""]
+        out += [f"## Mode: {mode}", ""]
         if data == "pending":
             out += ["Pending. No saved outputs exist for this mode.", ""]
             continue

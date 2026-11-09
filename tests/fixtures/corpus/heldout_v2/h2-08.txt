@@ -1,0 +1,7 @@
+FICTIONAL EXAMPLE DOCUMENT. Every compound, group and number in this text is invented for software testing.
+
+Series resistance of PV-7 cells
+
+Abstract: Light-intensity dependent current-voltage curves of PV-7 cells were fitted with a one-diode model. The series resistance was 0.0042 kOhm cm2 and the shunt resistance exceeded 2 kOhm cm2.
+
+Conditions: 25 °C, six cells averaged.

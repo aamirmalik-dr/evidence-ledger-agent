@@ -120,3 +120,14 @@ def test_search_filters_on_metadata(dev_index: BM25Index) -> None:
 def test_empty_retrieval(dev_index: BM25Index) -> None:
     assert dev_index.search("zeolite desalination graphene") == []
     assert dev_index.search("the of and") == []
+
+
+def test_heldout_v2_family_loads_and_every_gold_anchor_resolves() -> None:
+    from evidence_ledger_agent.evaluation import load_gold, load_tasks
+
+    root = Path(__file__).resolve().parents[1]
+    corpus = Corpus.load(root / "tests/fixtures/corpus/heldout_v2")
+    gold = load_gold(root / "evaluator/gold_heldout_v2.json", corpus)
+    tasks = load_tasks(root / "tests/fixtures/questions_heldout_v2.json")
+    assert len(corpus) == 12 and len(tasks) == 10 and set(gold) == {t.task_id for t in tasks}
+    assert all(d.fictional for d in corpus)

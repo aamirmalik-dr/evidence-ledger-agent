@@ -1,0 +1,30 @@
+# v2 round on the fresh held-out family heldout_v2 (written after the v2
+# pre-registration, frozen 2026-11-09). The only change from the v1 pilot is the
+# agentcore 0.1.2 reply parser. Run B: second model, the agent arm plus the strongest v1 baseline (single_call) and the free lexical baseline, one run.
+mode: live
+model: anthropic/claude-sonnet-4.6        # via OpenRouter
+families:
+  heldout_v2:
+    corpus: tests/fixtures/corpus/heldout_v2
+    questions: tests/fixtures/questions_heldout_v2.json
+    gold: evaluator/gold_heldout_v2.json
+arms: [lexical, single_call, agent]
+runs: 1
+episode:
+  max_steps: 16
+  max_tool_calls: 10
+  max_tokens_per_episode: 40000
+  max_wall_seconds: 300
+  recent_k: 4
+  max_completion_tokens: 700
+single_call_top_k: 4
+single_call_max_completion_tokens: 900
+lexical_coverage_threshold: 0.5
+run_caps:
+  max_total_tokens: 1500000
+  max_usd: 1.00
+  usd_per_mtok_input: 3.00       # OpenRouter listed price, 2026-11-09
+  usd_per_mtok_output: 15.00
+output_dir: reports/live_v2_sonnet
+checkpoint_dir: runs/live_v2_sonnet
+record_timing: true

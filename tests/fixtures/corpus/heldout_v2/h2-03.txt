@@ -1,0 +1,9 @@
+FICTIONAL EXAMPLE DOCUMENT. Every compound, group and number in this text is invented for software testing.
+
+Damp-heat degradation of unencapsulated PV-7 films
+
+Abstract: Unencapsulated PV-7 cells were exposed to damp heat at 85 °C and 85% relative humidity. Efficiency fell to 40% of its initial value after 250 hours, and films turned yellow as the perovskite decomposed.
+
+Conditions: no encapsulation, 85 °C, 85% relative humidity, dark.
+
+Interpretation: moisture ingress, not temperature alone, drives the loss under these conditions.

@@ -1,0 +1,7 @@
+FICTIONAL EXAMPLE DOCUMENT. Every compound, group and number in this text is invented for software testing.
+
+Preprint: HX-2 hole-transport layer for PV-7 cells
+
+Abstract: Replacing the standard hole-transport layer with the polymer HX-2 raised the champion efficiency of PV-7 cells to 24.0% under AM1.5G illumination. The gain is attributed to better band alignment.
+
+Status: preprint, not peer reviewed.

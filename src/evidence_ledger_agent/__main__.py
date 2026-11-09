@@ -101,7 +101,9 @@ def run_demo(
 
 def verify_ledger(path: Path, root: Path) -> list[str]:
     """Re-audit every citation in a saved ledger against the hashed corpora."""
-    corpora = {f: Corpus.load(root / FIX / "corpus" / f) for f in ("dev", "heldout")}
+    corpora = {
+        d.name: Corpus.load(d) for d in sorted((root / FIX / "corpus").iterdir()) if d.is_dir()
+    }
     problems = []
     for item in json.loads(path.read_text(encoding="utf-8")):
         family = item.pop("family")

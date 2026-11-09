@@ -1,0 +1,7 @@
+FICTIONAL EXAMPLE DOCUMENT. Every compound, group and number in this text is invented for software testing.
+
+Champion efficiency of PV-7 single-junction cells
+
+Abstract: Opaque PV-7 cells with a gold back contact reached a power conversion efficiency of 21.4% under AM1.5G illumination at 25 °C, measured with a calibrated mask of 0.09 cm2.
+
+Conditions: reverse scan, stabilised output over 60 seconds.

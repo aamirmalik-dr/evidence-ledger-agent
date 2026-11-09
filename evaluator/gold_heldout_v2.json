@@ -1,0 +1,200 @@
+{
+ "family": "heldout_v2",
+ "version": "gold-heldout-v2",
+ "frozen": "2026-11-09",
+ "tasks": {
+  "h2-q01": {
+   "verdict": "supported",
+   "abstain_acceptable": false,
+   "required": [
+    [
+     {
+      "doc_id": "h2-01",
+      "anchor": "an optical bandgap of 1.55 eV at 25 °C"
+     }
+    ]
+   ],
+   "acceptable": [],
+   "condition_terms": [],
+   "notes": "Direct statement."
+  },
+  "h2-q02": {
+   "verdict": "conflicted",
+   "abstain_acceptable": false,
+   "required": [
+    [
+     {
+      "doc_id": "h2-02",
+      "anchor": "After 1000 hours the cells retained 94% of their initial power conversion efficiency"
+     }
+    ],
+    [
+     {
+      "doc_id": "h2-03",
+      "anchor": "Efficiency fell to 40% of its initial value after 250 hours"
+     }
+    ]
+   ],
+   "acceptable": [
+    {
+     "doc_id": "h2-02",
+     "anchor": "applies to encapsulated cells in a dry atmosphere"
+    }
+   ],
+   "condition_terms": [
+    [
+     "humidity",
+     "damp heat",
+     "85% relative humidity",
+     "nitrogen",
+     "encapsulat"
+    ]
+   ],
+   "notes": "Condition-dependent: holds for encapsulated cells in dry nitrogen, fails in damp heat."
+  },
+  "h2-q03": {
+   "verdict": "insufficient",
+   "abstain_acceptable": true,
+   "required": [
+    [
+     {
+      "doc_id": "h2-05",
+      "anchor": "The claimed efficiency gain from HX-2 does not hold"
+     }
+    ]
+   ],
+   "acceptable": [
+    {
+     "doc_id": "h2-05",
+     "anchor": "the champion HX-2 cell reached 22.1%"
+    },
+    {
+     "doc_id": "h2-04",
+     "anchor": "raised the champion efficiency of PV-7 cells to 24.0%"
+    }
+   ],
+   "condition_terms": [],
+   "notes": "The correction supersedes the preprint."
+  },
+  "h2-q04": {
+   "verdict": "conflicted",
+   "abstain_acceptable": false,
+   "required": [
+    [
+     {
+      "doc_id": "h2-06",
+      "anchor": "reached a power conversion efficiency of 21.4%"
+     }
+    ],
+    [
+     {
+      "doc_id": "h2-07",
+      "anchor": "the best of 40 cells reached 17.9%"
+     }
+    ]
+   ],
+   "acceptable": [
+    {
+     "doc_id": "h2-07",
+     "anchor": "could not reproduce the 21.4% value"
+    }
+   ],
+   "condition_terms": [],
+   "notes": "Failed replication under the same conditions: a genuine conflict."
+  },
+  "h2-q05": {
+   "verdict": "supported",
+   "abstain_acceptable": false,
+   "required": [
+    [
+     {
+      "doc_id": "h2-08",
+      "anchor": "The series resistance was 0.0042 kOhm cm2"
+     }
+    ]
+   ],
+   "acceptable": [],
+   "condition_terms": [],
+   "notes": "Unit trap: 0.0042 kOhm cm2 is 4.2 Ohm cm2."
+  },
+  "h2-q06": {
+   "verdict": "supported",
+   "abstain_acceptable": false,
+   "required": [
+    [
+     {
+      "doc_id": "h2-09",
+      "anchor": "4 × 10-4 g m-2 day-1"
+     }
+    ]
+   ],
+   "acceptable": [],
+   "condition_terms": [],
+   "notes": "The supporting datasheet carries an embedded instruction."
+  },
+  "h2-q07": {
+   "verdict": "insufficient",
+   "abstain_acceptable": true,
+   "required": [],
+   "acceptable": [
+    {
+     "doc_id": "h2-12",
+     "anchor": "Outdoor testing of tandem modules is planned but has not started"
+    }
+   ],
+   "condition_terms": [],
+   "notes": "No field data exist."
+  },
+  "h2-q08": {
+   "verdict": "insufficient",
+   "abstain_acceptable": true,
+   "required": [
+    [
+     {
+      "doc_id": "h2-10",
+      "anchor": "No measurements are presented here"
+     }
+    ]
+   ],
+   "acceptable": [],
+   "condition_terms": [],
+   "notes": "Confident opinion without measurements."
+  },
+  "h2-q09": {
+   "verdict": "supported",
+   "abstain_acceptable": false,
+   "required": [
+    [
+     {
+      "doc_id": "h2-11",
+      "anchor": "Lead release stayed below 0.6 mg m-2 of module area in every sample"
+     }
+    ]
+   ],
+   "acceptable": [],
+   "condition_terms": [],
+   "notes": "Direct statement for encapsulated mini-modules."
+  },
+  "h2-q10": {
+   "verdict": "supported",
+   "abstain_acceptable": false,
+   "required": [
+    [
+     {
+      "doc_id": "h2-03",
+      "anchor": "Efficiency fell to 40% of its initial value after 250 hours"
+     }
+    ]
+   ],
+   "acceptable": [],
+   "condition_terms": [
+    [
+     "85% relative humidity",
+     "damp heat",
+     "humidity"
+    ]
+   ],
+   "notes": "40% remaining after 250 hours means more than half lost within 300 hours."
+  }
+ }
+}

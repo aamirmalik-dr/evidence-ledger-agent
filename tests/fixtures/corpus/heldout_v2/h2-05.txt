@@ -1,0 +1,7 @@
+FICTIONAL EXAMPLE DOCUMENT. Every compound, group and number in this text is invented for software testing.
+
+Correction to the HX-2 hole-transport layer preprint
+
+Correction: the authors of the HX-2 preprint report that the 24.0% value used an aperture smaller than the active area. Remeasured with a calibrated mask, the champion HX-2 cell reached 22.1%, within error of the reference cells. The claimed efficiency gain from HX-2 does not hold.
+
+This correction supersedes the efficiency values in the preprint.

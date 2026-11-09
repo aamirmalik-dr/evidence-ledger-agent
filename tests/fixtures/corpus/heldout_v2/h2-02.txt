@@ -1,0 +1,9 @@
+FICTIONAL EXAMPLE DOCUMENT. Every compound, group and number in this text is invented for software testing.
+
+Thermal stability of encapsulated PV-7 cells
+
+Abstract: Glass-glass encapsulated PV-7 cells were held at 85 °C in a nitrogen oven under open circuit. After 1000 hours the cells retained 94% of their initial power conversion efficiency.
+
+Conditions: dry nitrogen, no illumination during ageing, encapsulated devices only.
+
+Scope: the authors state that the result applies to encapsulated cells in a dry atmosphere and should not be read as a damp-heat result.

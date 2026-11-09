@@ -1,0 +1,5 @@
+FICTIONAL EXAMPLE DOCUMENT. Every compound, group and number in this text is invented for software testing.
+
+Opinion: what really drives ion migration in PV-7
+
+Opinion: in my view, ion migration in PV-7 is caused by iodine vacancies alone, and other defects play no role. Anyone who has worked with these films knows this. No measurements are presented here; this piece argues from experience.
