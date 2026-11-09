@@ -88,7 +88,9 @@ OUTCOME_TEXT = {
     "failed": "white",
     "pending": MUTED,
 }
-SEQUENTIAL = LinearSegmentedColormap.from_list("okabe_blue", ["#FFFFFF", "#56B4E9", "#0072B2"])
+SEQUENTIAL = LinearSegmentedColormap.from_list(
+    "okabe_green", ["#F2F2F2", "#A3D9C6", "#009E73"]
+)  # completion share: light grey (0) to bluish green (1)
 
 _FAMILY: str | None = None
 
@@ -369,53 +371,60 @@ def raincloud(
     values: Sequence[float],
     arm_type: str,
     second: bool = False,
-    height: float = 0.38,
-    jitter: float = 0.12,
+    height: float = 0.28,
+    jitter: float = 0.32,
     seed: int = SEED,
 ) -> None:
     """Horizontal raincloud: half violin above, box at y, jittered points below.
 
-    The half violin is a Gaussian kernel density (Scott's bandwidth) drawn only
-    between the observed minimum and maximum. "Above" is on screen, so set the
-    y limits (inverted or not) before calling.
+    Designed for rows spaced 1.3 data units apart. The half violin is a Gaussian
+    kernel density (Scott's bandwidth) drawn only between the observed minimum
+    and maximum, with a clear gap above the box and no outline on its base. The
+    box spans the quartiles with the median as a black tick; whiskers run
+    through its centre to the minimum and maximum. A second model is drawn with
+    dashed lines throughout. "Above" is on screen, so set the y limits
+    (inverted or not) before calling.
     """
     up = -1.0 if ax.yaxis_inverted() else 1.0
     v = np.asarray(values, dtype=float)
     colour = ARM_COLOUR[arm_type]
     edge = ARM_EDGE[arm_type]
+    dash = (0, (2.2, 1.2)) if second else "-"
+    half, base = 0.15, 0.35
     if v.size > 1 and np.ptp(v) > 0:
         grid = np.linspace(v.min(), v.max(), 200)
         dens = kde(v, grid)
         dens = dens / dens.max() * height
         ax.fill_between(
             grid,
-            y + up * 0.06,
-            y + up * (0.06 + dens),
-            facecolor="white" if second else colour,
-            edgecolor=edge,
-            linewidth=0.6,
-            linestyle="--" if second else "-",
-            alpha=1.0 if second else 0.35,
+            y + up * base,
+            y + up * (base + dens),
+            facecolor=colour,
+            linewidth=0,
+            alpha=0.12 if second else 0.35,
             zorder=1,
         )
+        ax.plot(grid, y + up * (base + dens), color=edge, linewidth=0.6, linestyle=dash, zorder=1)
     q1, med, q3 = np.percentile(v, [25, 50, 75])
-    ax.plot([v.min(), q1], [y, y], color=edge, linewidth=0.6, zorder=2)
-    ax.plot([q3, v.max()], [y, y], color=edge, linewidth=0.6, zorder=2)
+    ax.plot([v.min(), q1], [y, y], color=edge, linewidth=0.6, linestyle=dash, zorder=2)
+    ax.plot([q3, v.max()], [y, y], color=edge, linewidth=0.6, linestyle=dash, zorder=2)
     ax.add_patch(
         plt.Rectangle(
-            (q1, y - 0.05),
+            (q1, y - half),
             q3 - q1,
-            0.10,
+            2 * half,
             facecolor="white",
             edgecolor=edge,
             linewidth=0.7,
+            linestyle=dash,
             zorder=2,
         )
     )
-    ax.plot([med, med], [y - 0.05, y + 0.05], color=INK, linewidth=1.0, zorder=3)
+    ax.plot([med, med], [y - half, y + half], color=INK, linewidth=1.0, zorder=3)
     rng = np.random.default_rng(seed)
-    jy = y - up * (0.12 + rng.uniform(0, jitter, size=v.size))
-    kw = marker_kw(arm_type, second, size=2.4)
+    jy = y - up * (half + 0.06 + rng.uniform(0, jitter, size=v.size))
+    scale = {"baseline": 0.62, "single": 0.6, "agent": 0.52, "ablation": 0.74}[arm_type]
+    kw = marker_kw(arm_type, second, size=ARM_MARKER_SIZE[arm_type] * scale)
     kw["markeredgewidth"] = 0.5
     ax.plot(v, jy, **kw)
 
