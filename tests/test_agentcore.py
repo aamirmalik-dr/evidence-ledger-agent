@@ -306,8 +306,58 @@ def test_live_adapter_parses_response_with_mock_transport() -> None:
 
     failing = httpx.Client(transport=httpx.MockTransport(lambda r: httpx.Response(500)))
     with pytest.raises(AdapterError) as info:
-        OpenAICompatibleAdapter("http://x/v1", "m", "k-123", client=failing).complete([], 5)
+        OpenAICompatibleAdapter(
+            "http://x/v1", "m", "k-123", client=failing, backoff_s=0.0
+        ).complete([], 5)
     assert "k-123" not in str(info.value)
+
+
+def _ok_reply(text: str = "ok", cost: float | None = None) -> httpx.Response:
+    usage: dict = {"prompt_tokens": 10, "completion_tokens": 2}
+    if cost is not None:
+        usage["cost"] = cost
+    return httpx.Response(200, json={"choices": [{"message": {"content": text}}], "usage": usage})
+
+
+def test_live_adapter_retries_transient_failures_then_succeeds() -> None:
+    replies = iter([httpx.Response(429), httpx.Response(200, json={"error": "busy"}), _ok_reply()])
+    client = httpx.Client(transport=httpx.MockTransport(lambda r: next(replies)))
+    adapter = OpenAICompatibleAdapter("http://x/v1", "m", client=client, backoff_s=0.0)
+    assert adapter.complete([{"role": "user", "content": "hi"}], 5).text == "ok"
+    assert adapter.retries == 2
+
+
+def test_live_adapter_does_not_retry_client_errors() -> None:
+    calls = []
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        calls.append(1)
+        return httpx.Response(400, json={"error": "bad model"})
+
+    client = httpx.Client(transport=httpx.MockTransport(handler))
+    adapter = OpenAICompatibleAdapter("http://x/v1", "m", client=client, backoff_s=0.0)
+    with pytest.raises(AdapterError):
+        adapter.complete([], 5)
+    assert len(calls) == 1 and adapter.retries == 0
+
+
+def test_live_adapter_reports_provider_cost_and_loop_accumulates_it(
+    dev_corpus: Corpus, tmp_path: Path
+) -> None:
+    client = httpx.Client(transport=httpx.MockTransport(lambda r: _ok_reply("not json", 0.25)))
+    adapter = OpenAICompatibleAdapter("http://x/v1", "m", client=client)
+    assert adapter.complete([], 5).cost_usd == 0.25
+    policy = Policy(ToolRegistry(build_tools(dev_corpus)), Budget(max_steps=1, max_tool_calls=3))
+    state = make_loop(adapter, policy).run(make_state(calls=3))
+    assert state.malformed_actions == 1 and state.model_calls == 2
+    assert state.reported_cost_usd == pytest.approx(0.5)
+
+
+def test_live_adapter_model_override_beats_environment(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setenv("AGENT_MODEL_BASE_URL", "http://x/v1")
+    monkeypatch.setenv("AGENT_MODEL_NAME", "auto-select")
+    assert OpenAICompatibleAdapter.from_env().name == "auto-select"
+    assert OpenAICompatibleAdapter.from_env(model="vendor/model-a").name == "vendor/model-a"
 
 
 def test_sanitize_redacts_keys_and_paths() -> None:

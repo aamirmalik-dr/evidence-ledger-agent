@@ -36,6 +36,7 @@ class ModelResponse(BaseModel):
     model: str
     prompt_tokens: int | None = None
     completion_tokens: int | None = None
+    cost_usd: float | None = None
     latency_s: float = 0.0
 
 
@@ -99,10 +100,13 @@ class OpenAICompatibleAdapter:
 
     Works with local servers (Ollama, vLLM, LM Studio) and hosted providers.
     Plain chat completion is used instead of native tool calling so that small
-    local models work with the same protocol.
+    local models work with the same protocol. Transient failures (HTTP 429 and
+    5xx, timeouts, connection errors and replies without choices) are retried
+    a bounded number of times; anything else fails immediately.
     """
 
     is_live = True
+    RETRY_STATUS = frozenset({408, 409, 425, 429, 500, 502, 503, 504})
 
     def __init__(
         self,
@@ -112,17 +116,27 @@ class OpenAICompatibleAdapter:
         timeout_s: float = 120.0,
         temperature: float = 0.0,
         client: httpx.Client | None = None,
+        max_retries: int = 2,
+        backoff_s: float = 2.0,
     ) -> None:
         self.name = model
         self._url = base_url.rstrip("/") + "/chat/completions"
         self._headers = {"Authorization": f"Bearer {api_key}"} if api_key else {}
         self._temperature = temperature
         self._client = client or httpx.Client(timeout=timeout_s)
+        self.max_retries, self.backoff_s = max_retries, backoff_s
+        self.retries = 0
 
     @classmethod
-    def from_env(cls, **kwargs: Any) -> OpenAICompatibleAdapter:
-        """Build from environment variables, or raise ``LiveModelUnavailable``."""
-        base, model = os.environ.get(ENV_BASE_URL), os.environ.get(ENV_MODEL)
+    def from_env(cls, model: str | None = None, **kwargs: Any) -> OpenAICompatibleAdapter:
+        """Build from environment variables, or raise ``LiveModelUnavailable``.
+
+        Args:
+            model: Explicit model id. When given it overrides ``AGENT_MODEL_NAME``,
+                so a frozen config can pin the exact model.
+            **kwargs: Passed to the constructor.
+        """
+        base, model = os.environ.get(ENV_BASE_URL), model or os.environ.get(ENV_MODEL)
         if not base or not model:
             raise LiveModelUnavailable(
                 f"live mode needs {ENV_BASE_URL} and {ENV_MODEL} (and {ENV_API_KEY} for "
@@ -130,8 +144,25 @@ class OpenAICompatibleAdapter:
             )
         return cls(base, model, os.environ.get(ENV_API_KEY) or None, **kwargs)
 
+    def _post_once(self, body: dict[str, Any]) -> tuple[dict[str, Any] | None, str]:
+        """One request. Returns ``(data, "")`` or ``(None, reason)`` if retryable."""
+        try:
+            resp = self._client.post(self._url, json=body, headers=self._headers)
+        except (httpx.TimeoutException, httpx.TransportError) as exc:
+            return None, type(exc).__name__
+        if resp.status_code in self.RETRY_STATUS:
+            return None, f"HTTP {resp.status_code}"
+        try:
+            resp.raise_for_status()
+            data = resp.json()
+        except (httpx.HTTPError, ValueError) as exc:
+            raise AdapterError(f"model request failed: {type(exc).__name__}") from None
+        if not isinstance(data, dict) or not data.get("choices"):
+            return None, "reply without choices"
+        return data, ""
+
     def complete(self, messages: list[dict[str, str]], max_tokens: int) -> ModelResponse:
-        """Send one chat-completions request and parse text and usage."""
+        """Send one chat-completions request and parse text, usage and cost."""
         body = {
             "model": self.name,
             "messages": messages,
@@ -139,18 +170,26 @@ class OpenAICompatibleAdapter:
             "temperature": self._temperature,
         }
         start = time.perf_counter()
+        data, reason = self._post_once(body)
+        for attempt in range(self.max_retries):
+            if data is not None:
+                break
+            self.retries += 1
+            time.sleep(self.backoff_s * (2**attempt))
+            data, reason = self._post_once(body)
+        if data is None:
+            raise AdapterError(f"model request failed after retries: {reason}")
         try:
-            resp = self._client.post(self._url, json=body, headers=self._headers)
-            resp.raise_for_status()
-            data = resp.json()
             text = data["choices"][0]["message"]["content"] or ""
-        except (httpx.HTTPError, KeyError, IndexError, ValueError) as exc:
-            raise AdapterError(f"model request failed: {type(exc).__name__}") from None
+        except (KeyError, IndexError, TypeError):
+            raise AdapterError("model request failed: unexpected reply shape") from None
         usage = data.get("usage") or {}
+        cost = usage.get("cost")
         return ModelResponse(
             text=text,
             model=str(data.get("model", self.name)),
             prompt_tokens=usage.get("prompt_tokens"),
             completion_tokens=usage.get("completion_tokens"),
+            cost_usd=float(cost) if isinstance(cost, (int, float)) else None,
             latency_s=time.perf_counter() - start,
         )

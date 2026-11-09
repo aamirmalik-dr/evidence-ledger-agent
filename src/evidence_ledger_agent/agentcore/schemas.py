@@ -109,6 +109,7 @@ class BaseAgentState(BaseModel):
     reprompts: int = 0
     prompt_chars: int = 0
     token_usage: TokenUsage = Field(default_factory=TokenUsage)
+    reported_cost_usd: float = 0.0
     elapsed_seconds: float = 0.0
     checkpoint_version: int = 0
     status: Status = "running"

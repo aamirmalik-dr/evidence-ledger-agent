@@ -196,6 +196,7 @@ class AgentLoop:
         state.model_calls += 1
         state.token_usage.prompt += resp.prompt_tokens or 0
         state.token_usage.completion += resp.completion_tokens or 0
+        state.reported_cost_usd += resp.cost_usd or 0.0
         return resp.text, resp.latency_s
 
     def _decide(
