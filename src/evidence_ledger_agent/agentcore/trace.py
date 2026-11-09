@@ -66,7 +66,7 @@ class TraceWriter:
         if not self.record_timing and "latency_s" in event:
             event = {**event, "latency_s": None}
         line = json.dumps(sanitize(event, self._secrets), ensure_ascii=False, sort_keys=True)
-        with self.path.open("a", encoding="utf-8") as fh:
+        with self.path.open("a", encoding="utf-8", newline="\n") as fh:
             fh.write(line + "\n")
 
 
