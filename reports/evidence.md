@@ -6,11 +6,11 @@ Generated from saved run outputs by `python -m evidence_ledger_agent report`. Do
 
 Fixture mode replays hand-written scripted replies for the single_call, agent and agent_no_expand arms, including deliberately planted failures. Those rows validate the loop, policy and scorer; they are not measurements of any model. The lexical arm uses no model, so its fixture rows are genuine measurements of that baseline on this corpus.
 
-- Commit: `aa2d2950a0d053419b724e2defe755acb723cc9a` (working tree dirty: False)
+- Commit: `bfeebdfa5f567f65715c005b93726ea2b77242f7` (working tree dirty: False)
 - Model: none (scripted fixture adapter)
 - Prompt: ledger-prompts-v1, sha256 `fc7d2e3c607462af`
 - Config sha256: `3c8f29c3b833765b`
-- Run: 2026-11-09T11:13:28+09:00 to 2026-11-09T11:13:45+09:00
+- Run: 2026-11-09T11:16:37+09:00 to 2026-11-09T11:16:53+09:00
 - Hardware: Windows-10-10.0.26300-SP0, Python 3.11.9
 - Episodes scored: 64
 - Tokens: None, USD: None

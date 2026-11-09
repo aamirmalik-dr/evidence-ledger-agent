@@ -4,7 +4,7 @@
   "fixture": {
    "mode": "fixture",
    "interpretation": "Fixture mode replays hand-written scripted replies for the single_call, agent and agent_no_expand arms, including deliberately planted failures. Those rows validate the loop, policy and scorer; they are not measurements of any model. The lexical arm uses no model, so its fixture rows are genuine measurements of that baseline on this corpus.",
-   "git_commit": "aa2d2950a0d053419b724e2defe755acb723cc9a",
+   "git_commit": "bfeebdfa5f567f65715c005b93726ea2b77242f7",
    "git_dirty": false,
    "model": "none (scripted fixture adapter)",
    "prompt_version": "ledger-prompts-v1",
@@ -30,8 +30,8 @@
     "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
     "python": "3.11.9"
    },
-   "started_at": "2026-11-09T11:13:28+09:00",
-   "finished_at": "2026-11-09T11:13:45+09:00",
+   "started_at": "2026-11-09T11:16:37+09:00",
+   "finished_at": "2026-11-09T11:16:53+09:00",
    "caps": {
     "episode": {
      "max_completion_tokens": 700,
