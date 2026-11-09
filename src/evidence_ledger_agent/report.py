@@ -45,8 +45,9 @@ LIMITATIONS = [
 ]
 LIVE_LIMITATIONS = {
     "pending": "No live model has been evaluated yet; live results are pending.",
-    "done": "The live pilot is one model, 10 held-out questions and two runs at temperature 0: "
-    "an exploratory sample, not a ranking. Run-to-run spread is shown as min and max.",
+    "done": "Each live run covers 10 held-out questions at temperature 0 (two runs per arm "
+    "for gpt-4.1-mini, one for the second model): exploratory samples, not a ranking. "
+    "Run-to-run spread is shown as min and max.",
 }
 
 
