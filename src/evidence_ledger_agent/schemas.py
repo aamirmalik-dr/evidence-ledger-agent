@@ -53,6 +53,7 @@ class VerifiedCitation(SpanRef):
 
     quote: str
     read_span_id: str
+    whitespace_normalized: bool = False
 
 
 class Claim(BaseModel):

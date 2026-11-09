@@ -7,6 +7,7 @@ Whether the quote supports the claim is judged separately by the evaluator.
 
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass
 
 from pydantic import BaseModel, Field
@@ -25,7 +26,7 @@ class CitationArg(BaseModel):
     quote: str = Field(
         min_length=MIN_QUOTE_CHARS,
         max_length=MAX_QUOTE_CHARS,
-        description="exact text copied from inside that span",
+        description="exact text copied from inside that span (line breaks may be spaces)",
     )
 
 
@@ -64,14 +65,38 @@ def check_span(corpus: Corpus, doc_id: str, start: int, end: int) -> str | None:
     return None
 
 
+def find_quote(text: str, quote: str, start: int, end: int) -> tuple[int, int, bool] | None:
+    """Locate ``quote`` inside ``text[start:end]``.
+
+    An exact match is tried first. Failing that, runs of whitespace in the
+    quote match any run of whitespace in the text, so a quote that turns a
+    paragraph break into a space is still found. Nothing else is tolerated:
+    every non-space character must match exactly.
+
+    Returns:
+        ``(match_start, match_end, whitespace_normalized)`` or None.
+    """
+    pos = text.find(quote, start, end)
+    if pos >= 0:
+        return pos, pos + len(quote), False
+    words = quote.split()
+    if not words:
+        return None
+    match = re.compile(r"\s+".join(re.escape(w) for w in words)).search(text, start, end)
+    if match is None:
+        return None
+    return match.start(), match.end(), True
+
+
 def resolve_citation(
     corpus: Corpus, read_spans: list[SpanRef], index: int, cit: CitationArg
 ) -> VerifiedCitation | CitationProblem:
     """Turn a proposed citation into a verified one, or explain the rejection.
 
     The quote must occur verbatim inside a span the agent read in this
-    episode. The returned citation carries the exact offsets of the quote and
-    the document hash.
+    episode, up to whitespace (see ``find_quote``). The returned citation
+    carries the exact stored text, its offsets and the document hash, so a
+    later audit is byte-exact.
     """
     parsed = parse_span_id(cit.span_id)
     if parsed is None:
@@ -84,18 +109,20 @@ def resolve_citation(
         return CitationProblem(index, cit.span_id, "span_not_read", "cite only spans you have read")
     doc = corpus.get(doc_id)
     assert doc is not None
-    pos = doc.text.find(cit.quote, start, end)
-    if pos < 0:
+    found = find_quote(doc.text, cit.quote, start, end)
+    if found is None:
         return CitationProblem(
             index, cit.span_id, "quote_mismatch", "quote is not verbatim text of that span"
         )
+    q_start, q_end, normalized = found
     return VerifiedCitation(
         doc_id=doc_id,
-        start=pos,
-        end=pos + len(cit.quote),
+        start=q_start,
+        end=q_end,
         doc_hash=doc.sha256,
-        quote=cit.quote,
+        quote=doc.text[q_start:q_end],
         read_span_id=cit.span_id,
+        whitespace_normalized=normalized,
     )
 
 

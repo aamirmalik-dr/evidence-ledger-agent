@@ -12,7 +12,7 @@ from .agentcore.loop import render_recent
 from .agentcore.policy import ToolRegistry
 from .agentcore.schemas import BaseAgentState, HistoryEntry
 
-PROMPT_VERSION = "ledger-prompts-v1"
+PROMPT_VERSION = "ledger-prompts-v2"
 
 VERDICTS = """Verdicts:
 - supported: the corpus directly supports the claim as stated, under the stated conditions.
