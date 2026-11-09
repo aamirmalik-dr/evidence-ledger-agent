@@ -211,3 +211,14 @@ def test_headline_table_holds_only_real_measurements(tmp_path: Path) -> None:
     headline, scorer = metrics_table(evidence), scorer_table(evidence)
     assert "fixture, scripted" not in headline and "no model, deterministic" in headline
     assert "fixture, scripted" in scorer and "| lexical |" not in scorer
+
+
+def test_config_passes_adapter_retry_settings(monkeypatch: pytest.MonkeyPatch) -> None:
+    from evidence_ledger_agent.agentcore.adapters import OpenAICompatibleAdapter
+
+    cfg, _ = load_config(ROOT / "configs" / "live_v2_sonnet.yaml")
+    monkeypatch.setenv("AGENT_MODEL_BASE_URL", "http://x/v1")
+    adapter = OpenAICompatibleAdapter.from_env(
+        model=cfg.model, max_retries=cfg.adapter_max_retries, backoff_s=cfg.adapter_backoff_s
+    )
+    assert (adapter.max_retries, adapter.backoff_s) == (6, 5.0)

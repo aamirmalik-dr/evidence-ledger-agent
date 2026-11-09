@@ -22,9 +22,11 @@ single_call_max_completion_tokens: 900
 lexical_coverage_threshold: 0.5
 run_caps:
   max_total_tokens: 1500000
-  max_usd: 1.00
+  max_usd: 0.85                  # re-run cap; the aborted HTTP 429 attempt spent 0.248
   usd_per_mtok_input: 3.00       # OpenRouter listed price, 2026-11-09
   usd_per_mtok_output: 15.00
+adapter_max_retries: 6           # added after the first attempt hit HTTP 429 rate limits
+adapter_backoff_s: 5.0
 output_dir: reports/live_v2_sonnet
 checkpoint_dir: runs/live_v2_sonnet
 record_timing: true

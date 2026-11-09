@@ -85,6 +85,8 @@ class EvalConfig(BaseModel):
     single_call_max_completion_tokens: int = 900
     lexical_coverage_threshold: float = 0.5
     run_caps: RunCaps = Field(default_factory=RunCaps)
+    adapter_max_retries: int = 2
+    adapter_backoff_s: float = 2.0
     output_dir: str = "reports/fixture"
     checkpoint_dir: str = "runs"
     record_timing: bool = True
@@ -279,7 +281,9 @@ def run_evaluation(cfg: EvalConfig, cfg_sha: str, root: Path, require_live: bool
     """
     live_adapter: ModelAdapter | None = None
     if cfg.mode == "live":
-        live_adapter = OpenAICompatibleAdapter.from_env(model=cfg.model)
+        live_adapter = OpenAICompatibleAdapter.from_env(
+            model=cfg.model, max_retries=cfg.adapter_max_retries, backoff_s=cfg.adapter_backoff_s
+        )
     elif require_live:
         raise LiveModelUnavailable("--require-live was given but the config is in fixture mode")
     out = root / cfg.output_dir
