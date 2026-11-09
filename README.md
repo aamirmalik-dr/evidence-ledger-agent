@@ -4,6 +4,12 @@ An LLM agent that checks narrow materials-science claims against a local documen
 
 The corpus is original and fictional: 24 short documents written for this project, each marked as a fictional example.
 
+## Results at a glance
+
+![Verdict accuracy by arm: the single call reaches 18 of 20 in v1 and v2 with gpt-4.1-mini and 10 of 10 with claude-sonnet-4.6, above the iterative agent in every round](docs/figures/accuracy_by_arm.png)
+
+On held-out questions, one model call over the top four retrieved passages beat the iterative agent with both models: 18 of 20 against 16 of 20 with gpt-4.1-mini in v2, and 10 of 10 against 9 of 10 with claude-sonnet-4.6. Fixing the reply parser between v1 and v2 lifted the agent from 13 to 16 of 20 but did not close the gap.
+
 ## A ledger entry, and how to check it
 
 The pH-dependent stability question from the fixture demo produces this record (`reports/demo_ledger.json`, first citation shown):
@@ -59,6 +65,22 @@ Does not:
 - Show that iterating beats a single well-retrieved prompt. On this corpus it did not (see below).
 
 ## How it works
+
+```mermaid
+flowchart LR
+    subgraph episode["Agent episode"]
+        S["Observable state<br/>question, spans read, budget left"] --> M["Model adapter<br/>fixture, replay or live"]
+        M --> P["Reply parser<br/>one JSON action, one re-prompt"]
+        P --> G{"Policy gate<br/>allowlist, argument schemas,<br/>step, call, token and time budgets"}
+        G -->|"search, read_span, expand_context"| T["Tools"]
+        T --> C[("Hashed fictional corpus")]
+        T -->|"result as untrusted data"| S
+        G -->|"finish or abstain"| F["Citation precheck<br/>span read, verbatim quote, document hash"]
+        S --> K["Checkpoint and sanitized trace<br/>after every result"]
+    end
+    F --> L["Ledger entry"]
+    L --> E["Evaluator<br/>gold labels and rubric, outside the package"]
+```
 
 ```
 src/evidence_ledger_agent/
@@ -138,9 +160,21 @@ What changed between v1 and v2, and why: in v1, 22 agent steps were rejected onl
 
 - The parser fix worked: malformed steps fell from 22 to 0, and the agent rose from 13 to 16 of 20 verdicts with the same model.
 - The single call still wins with gpt-4.1-mini: 18 of 20, against 16 for the agent, 15 for the agent without `expand_context` and 10 for the lexical baseline. It also used about a tenth of the tokens (23 thousand against 253 thousand).
-- Every arm missed both conflict questions (contradiction recall 0 of 4). The condition-dependent stability claim was called `supported` from the dry-nitrogen report alone. On the failed replication, the agents spent their 10 tool calls without finishing (2 of the agent's 4 misses).
+- No gpt-4.1-mini arm cited both sides of a conflict (contradiction recall 0 of 4 in every arm). Every arm called the condition-dependent stability claim `supported` from the dry-nitrogen report alone. On the failed replication, the single call answered `conflicted` in both runs but cited only one side, and the agents spent their 10 tool calls without finishing (2 of the agent's 4 misses).
 - With the second model, one run, the ranking held: the single call got 10 of 10, with every citation valid and both conflicts found. The agent got 9 of 10, missing the condition-dependent conflict. Sonnet 4.6 cost 0.065 USD for the single call and 0.376 USD for the agent.
 - Run-B note: the first attempt at the Sonnet run hit HTTP 429 rate limits while other sessions used the same model. 9 of its 20 episodes failed before any reply. That attempt is kept in `reports/aborted/` and is not counted. The run was repeated once with more adapter retries, with nothing else changed.
+
+![Malformed replies fall from 16 and 6 in v1 to 0 in v2 for the agent arms, while the single call stays at 18 correct episodes of 20 in both rounds](docs/figures/failure_breakdown.png)
+
+*Left: reply steps rejected by the parser per arm. Right: each episode classified once, in this order: budget stop, wrong verdict, right verdict with an unsupported claim, right and supported. Live, gpt-4.1-mini, v1 held-out and v2 heldout_v2, 10 questions x 2 runs per arm.*
+
+![Per-question outcomes on heldout_v2: every gpt-4.1-mini arm gets h2-q02 wrong, the agent arms run out of tool calls on h2-q04, and the claude-sonnet-4.6 single call is correct on all ten](docs/figures/v2_question_outcomes.png)
+
+*One cell per question and run. Live, heldout_v2, 10 questions; gpt-4.1-mini with 2 runs per arm, claude-sonnet-4.6 with 1 run.*
+
+![Tool calls per episode: the gpt-4.1-mini agent arms use a median of 5 to 6.5 calls with several episodes at the cap of 10, while claude-sonnet-4.6 uses 3 or 4](docs/figures/tool_calls_per_episode.png)
+
+*Each point is one episode. Live held-out runs; gpt-4.1-mini 20 episodes per arm and round, claude-sonnet-4.6 10 episodes.*
 
 ### v1 pilot
 
@@ -192,6 +226,7 @@ The model has no capability beyond five finite tools over an in-memory corpus: n
 
 ## Reproducibility
 
+- Figures: `python scripts/make_figures.py` redraws every PNG in `docs/figures/` from the saved `reports/*/task_results.jsonl`. It calls no model and gives identical files on every run (matplotlib comes with the `dev` extras).
 - Corpus documents are normalized and hashed. Loading fails if any document changes, and `scripts/freeze_corpus.py` re-records the hashes after a deliberate edit.
 - Prompts are versioned (`ledger-prompts-v2`) and hashed. The prompt hash, config hash, corpus fingerprints, question, gold and script hashes, commit, agentcore version, model, token counts, cost, hardware and timestamps are written to each `run_meta.json` and carried into `reports/evidence.json`.
 - The live pilot ran at commit `9d07e38` with agentcore 0.1.1. Checking out that commit and running the live command reproduces the protocol, though not necessarily the exact replies, since a hosted model can change behind a fixed id.
