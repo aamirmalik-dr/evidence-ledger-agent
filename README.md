@@ -4,11 +4,13 @@ An LLM agent that checks narrow materials-science claims against a local documen
 
 The corpus is original and fictional: 24 short documents written for this project, each marked as a fictional example.
 
-## Results at a glance
+## Main result
 
-![Verdict accuracy by arm: the single call reaches 18 of 20 in v1 and v2 with gpt-4.1-mini and 10 of 10 with claude-sonnet-4.6, above the iterative agent in every round](docs/figures/accuracy_by_arm.png)
+![Figure 1: the single call reaches 18 of 20 held-out verdicts in both gpt-4.1-mini rounds and 10 of 10 with claude-sonnet-4.6, and the agent trails it in every round; the parser fix removes all malformed steps between v1 and v2](docs/figures/fig1_main.svg)
 
-On held-out questions, one model call over the top four retrieved passages beat the iterative agent with both models: 18 of 20 against 16 of 20 with gpt-4.1-mini in v2, and 10 of 10 against 9 of 10 with claude-sonnet-4.6. Fixing the reply parser between v1 and v2 lifted the agent from 13 to 16 of 20 but did not close the gap.
+**Figure 1. One model call over the top four retrieved passages matched or beat the iterative agent on verdict accuracy in every live round.** (a) Verdict accuracy by arm on held-out questions for v1 and v2 with gpt-4.1-mini (filled markers, solid lines) and v2 with claude-sonnet-4.6 (open markers, dashed lines); the numbers give correct verdicts over episodes. "Agent, no expand" is the ablation without the `expand_context` tool; the lexical baseline calls no model. (b) Paired difference in verdict accuracy, each agent arm minus the single call on the same questions, with each question's accuracy averaged over its runs first; n = 10 questions per row. (c) Every gpt-4.1-mini episode classified once: a budget stop (tool-call or token cap) first; then a right verdict, split by whether the answer carried an unsupported claim (a correct abstention counts as a right verdict); then an abstention where an answer was expected; otherwise a wrong verdict. The right-hand column counts reply steps rejected as malformed (not applicable to the lexical baseline, which calls no model); the v2 parser fix took them from 16 and 6 to 0. (d) Outcome of every held-out v2 question for every arm and run, with the same classes as (c); questions are ordered by the mean, over the seven arm and model pairs, of each pair's run-averaged accuracy (top bar). The key below (c) applies to (c) and (d). Points show rates; lines show Wilson 95% CIs in (a), which treat the episodes as independent although the two runs share questions, and paired question-level bootstrap 95% CIs (10,000 resamples) in (b); n = 20 episodes per gpt-4.1-mini arm (10 questions × 2 runs) and 10 per claude-sonnet-4.6 arm.
+
+The single call got 18 of 20 verdicts right in both gpt-4.1-mini rounds and 10 of 10 with claude-sonnet-4.6, and the agent trailed it each time by a paired difference of -0.25 (95% CI -0.45 to -0.05) in v1, -0.10 (-0.30 to 0.00) in v2 and -0.10 (-0.30 to 0.00) with the second model. After the reply parser was fixed, the agent made no malformed steps and scored 16 of 20 (13 of 20 in v1, on a different question family), but it did not close the gap; with 10 questions per round the intervals are wide.
 
 ## A ledger entry, and how to check it
 
@@ -164,17 +166,17 @@ What changed between v1 and v2, and why: in v1, 22 agent steps were rejected onl
 - With the second model, one run, the ranking held: the single call got 10 of 10, with every citation valid and both conflicts found. The agent got 9 of 10, missing the condition-dependent conflict. Sonnet 4.6 cost 0.065 USD for the single call and 0.376 USD for the agent.
 - Run-B note: the first attempt at the Sonnet run hit HTTP 429 rate limits while other sessions used the same model. 9 of its 20 episodes failed before any reply. That attempt is kept in `reports/aborted/` and is not counted. The run was repeated once with more adapter retries, with nothing else changed.
 
-![Malformed replies fall from 16 and 6 in v1 to 0 in v2 for the agent arms, while the single call stays at 18 correct episodes of 20 in both rounds](docs/figures/failure_breakdown.png)
+![Figure S1: the gpt-4.1-mini agent arms use 3 to 10 tool calls per episode with a median of 5 to 6.5 and several episodes at the cap, while the claude-sonnet-4.6 agent stops after 3 or 4](docs/figures/figS1_tool_calls.svg)
 
-*Left: reply steps rejected by the parser per arm. Right: each episode classified once, in this order: budget stop, wrong verdict, right verdict with an unsupported claim, right and supported. Live, gpt-4.1-mini, v1 held-out and v2 heldout_v2, 10 questions x 2 runs per arm.*
+**Figure S1. The gpt-4.1-mini agent arms spread their tool calls up to the 10-call cap, while claude-sonnet-4.6 finished after 3 or 4 calls.** Empirical cumulative distribution of tool calls per episode for the agent arms on held-out questions: (a) v1 and (b) v2 with gpt-4.1-mini, (c) v2 with claude-sonnet-4.6. Markers sit at observed values; in (a) and (b) the two arms are drawn 0.06 calls left and right of their true integer values so that coinciding steps stay visible. The dotted line is the per-episode cap of 10 tool calls. Medians, descriptive only: agent 5 and 5, agent without `expand_context` 6.5 and 5 (v1 and v2), claude-sonnet-4.6 agent 4. n = 20 episodes per gpt-4.1-mini arm and round, 10 for claude-sonnet-4.6.
 
-![Per-question outcomes on heldout_v2: every gpt-4.1-mini arm gets h2-q02 wrong, the agent arms run out of tool calls on h2-q04, and the claude-sonnet-4.6 single call is correct on all ten](docs/figures/v2_question_outcomes.png)
+![Figure S2: removing expand_context lowers citation validity to 18 of 30 in v1 and 24 of 36 in v2 without lowering verdict accuracy, and every claude-sonnet-4.6 citation is valid](docs/figures/figS2_citation_vs_accuracy.svg)
 
-*One cell per question and run. Live, heldout_v2, 10 questions; gpt-4.1-mini with 2 runs per arm, claude-sonnet-4.6 with 1 run.*
+**Figure S2. Without `expand_context` the agent's citation validity had a lower point estimate in both rounds, with overlapping intervals, while its verdict accuracy stayed similar.** Citation validity (valid citations over citations emitted) against verdict accuracy for each arm, (a) v1 and (b) v2 with gpt-4.1-mini, (c) v2 with claude-sonnet-4.6 (open markers, dashed lines). Lines show Wilson 95% CIs on both axes; they treat episodes, and citations, as independent, although citations cluster within episodes and episodes share questions. n = 20 episodes per gpt-4.1-mini arm and 10 per claude-sonnet-4.6 arm on the x axis; on the y axis n is the number of citations: 18, 25, 12 and 30 in v1 and 14, 24, 29 and 36 in v2 (lexical, single call, agent, agent without `expand_context`), and 7, 13 and 11 with claude-sonnet-4.6. In (c) all three arms have citation validity 1; only their horizontal accuracy intervals are drawn at 1, 0.975 and 0.95 (lexical, single call, agent) so that they stay visible.
 
-![Tool calls per episode: the gpt-4.1-mini agent arms use a median of 5 to 6.5 calls with several episodes at the cap of 10, while claude-sonnet-4.6 uses 3 or 4](docs/figures/tool_calls_per_episode.png)
+### Statistical methods
 
-*Each point is one episode. Live held-out runs; gpt-4.1-mini 20 episodes per arm and round, claude-sonnet-4.6 10 episodes.*
+Rates are binomial proportions with Wilson score 95% intervals, where n is the number of episodes (questions x runs) for verdict accuracy and the number of emitted citations for citation validity. Episodes from two runs of the same question are not independent, so these intervals are, if anything, too narrow. Differences between arms are paired by question: each question's accuracy is averaged over its runs for each arm, the per-question differences are averaged, and the 95% interval is the percentile interval of 10,000 bootstrap resamples of the 10 questions (seed 20261109). With 10 questions per round all intervals are descriptive, not tests, and no p-values are reported. Every plotted value and interval is written to `docs/figures/figure_stats.json`.
 
 ### v1 pilot
 
@@ -226,7 +228,7 @@ The model has no capability beyond five finite tools over an in-memory corpus: n
 
 ## Reproducibility
 
-- Figures: `python scripts/make_figures.py` redraws every PNG in `docs/figures/` from the saved `reports/*/task_results.jsonl`. It calls no model and gives identical files on every run (matplotlib comes with the `dev` extras).
+- Figures: `python scripts/make_figures.py` redraws every figure in `docs/figures/` (SVG for the README, 300 dpi PNG for reuse) and `figure_stats.json` from the saved `reports/*/task_results.jsonl`. It calls no model, reruns nothing, and gives byte-identical files on every run. matplotlib comes with the `dev` extras; the typeface, Liberation Sans, is vendored in `scripts/fonts/` under the SIL Open Font License.
 - Corpus documents are normalized and hashed. Loading fails if any document changes, and `scripts/freeze_corpus.py` re-records the hashes after a deliberate edit.
 - Prompts are versioned (`ledger-prompts-v2`) and hashed. The prompt hash, config hash, corpus fingerprints, question, gold and script hashes, commit, agentcore version, model, token counts, cost, hardware and timestamps are written to each `run_meta.json` and carried into `reports/evidence.json`.
 - The live pilot ran at commit `9d07e38` with agentcore 0.1.1. Checking out that commit and running the live command reproduces the protocol, though not necessarily the exact replies, since a hosted model can change behind a fixed id.
@@ -252,4 +254,4 @@ Aamir Malik
 
 ## License
 
-MIT, see [LICENSE](LICENSE). The corpus, questions and gold labels are original and released under the same license.
+MIT, see [LICENSE](LICENSE). The corpus, questions and gold labels are original and released under the same license. The Liberation Sans font files in `scripts/fonts/`, used only to draw the figures, are third-party and licensed under the SIL Open Font License 1.1 (`scripts/fonts/LICENSE-LiberationSans.txt`).
