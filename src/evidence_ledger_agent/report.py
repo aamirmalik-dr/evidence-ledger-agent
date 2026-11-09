@@ -15,6 +15,7 @@ from typing import Any
 
 MODES = ("fixture", "live")
 README_START, README_END = "<!-- evidence-table:start -->", "<!-- evidence-table:end -->"
+SCORER_START, SCORER_END = "<!-- scorer-table:start -->", "<!-- scorer-table:end -->"
 SCRIPTED_NOTE = (
     "Fixture mode replays hand-written scripted replies for the single_call, agent and "
     "agent_no_expand arms, including deliberately planted failures. Those rows validate the "
@@ -28,8 +29,12 @@ LIMITATIONS = [
     "scored against hand-written gold spans with a 50 percent overlap rule.",
     "Condition recall is a substring check over the answer's conditions, claim and rationale.",
     "Fixture results for model arms are scripted and carry no information about model quality.",
-    "No live model has been evaluated yet; live results are pending.",
 ]
+LIVE_LIMITATIONS = {
+    "pending": "No live model has been evaluated yet; live results are pending.",
+    "done": "The live pilot is one model, 10 held-out questions and two runs at temperature 0: "
+    "an exploratory sample, not a ranking. Run-to-run spread is shown as min and max.",
+}
 
 
 def _num(v: str) -> Any:
@@ -100,12 +105,18 @@ def build_evidence(root: Path) -> dict[str, Any]:
             "started_at": m["started_at"],
             "finished_at": m["finished_at"],
             "caps": {"episode": m["config"]["episode"], "run": m["config"]["run_caps"]},
-            "cost": {"tokens": m["tokens"], "usd": m["usd"]},
+            "cost": {
+                "tokens": m["tokens"],
+                "usd": m["usd"],
+                "usd_reported_by_provider": m.get("usd_reported_by_provider"),
+                "adapter_retries": m.get("adapter_retries"),
+            },
             "metrics": data["metrics"],
             "failures": data["failures"],
             "episodes": data["n_rows"],
         }
-    evidence["limitations"] = LIMITATIONS
+    live_state = "pending" if evidence["modes"]["live"] == "pending" else "done"
+    evidence["limitations"] = LIMITATIONS + [LIVE_LIMITATIONS[live_state]]
     evidence["reproduce"] = {
         "fixture": "python -m evidence_ledger_agent evaluate --config configs/fixture.yaml "
         "&& python -m evidence_ledger_agent report --update-readme",
@@ -125,33 +136,76 @@ def _frac(row: dict[str, Any], name: str) -> str:
 
 def _label(mode: str, arm: str) -> str:
     if mode == "fixture":
-        return "fixture, deterministic" if arm == "lexical" else "fixture, scripted"
+        return "no model, deterministic" if arm == "lexical" else "fixture, scripted"
     return "live"
 
 
+QUALITY_HEAD = (
+    "| Mode | Family | Arm | Verdict accuracy | Citation validity | Support precision "
+    "| Support recall | Contradiction recall | Correct abstention | Unsupported claims "
+    "| Failures"
+)
+QUALITY_COLS = 11
+
+
+def _quality_cells(mode: str, r: dict[str, Any]) -> str:
+    return (
+        f"| {_label(mode, r['arm'])} | {r['family']} | {r['arm']} "
+        f"| {_frac(r, 'verdict_accuracy')} | {_frac(r, 'citation_validity')} "
+        f"| {_frac(r, 'support_precision')} | {_frac(r, 'support_recall')} "
+        f"| {_frac(r, 'contradiction_recall')} | {_frac(r, 'correct_abstention')} "
+        f"| {r['unsupported_claims']} | {r['failures']}"
+    )
+
+
+def _money(v: Any) -> str:
+    return "" if v is None else f"{v:.4f}"
+
+
 def metrics_table(evidence: dict[str, Any]) -> str:
-    """Markdown table of every measured row, with the mode in every row."""
+    """Headline table: only real measurements (the no-model baseline and live rows)."""
     head = (
-        "| Mode | Family | Arm | Verdict accuracy | Citation validity | Support precision "
-        "| Support recall | Contradiction recall | Correct abstention | Unsupported claims "
-        "| Failures | Tool calls | Model calls |\n"
-        "|---|---|---|---|---|---|---|---|---|---|---|---|---|\n"
+        QUALITY_HEAD + " | Accuracy per run (min to max) | Tool calls | Model calls | Tokens "
+        "| USD (provider) |\n" + "|---" * (QUALITY_COLS + 5) + "|\n"
     )
     lines = []
-    for mode in MODES:
-        data = evidence["modes"][mode]
-        if data == "pending":
-            lines.append(f"| {mode}: pending | | | | | | | | | | | | |")
-            continue
-        for r in data["metrics"]:
-            lines.append(
-                f"| {_label(mode, r['arm'])} | {r['family']} | {r['arm']} "
-                f"| {_frac(r, 'verdict_accuracy')} | {_frac(r, 'citation_validity')} "
-                f"| {_frac(r, 'support_precision')} | {_frac(r, 'support_recall')} "
-                f"| {_frac(r, 'contradiction_recall')} | {_frac(r, 'correct_abstention')} "
-                f"| {r['unsupported_claims']} | {r['failures']} | {r['tool_calls_total']} "
-                f"| {r['model_calls_total']} |"
+    fixture = evidence["modes"]["fixture"]
+    if fixture != "pending":
+        for r in fixture["metrics"]:
+            if r["arm"] == "lexical":
+                lines.append(
+                    _quality_cells("fixture", r) + " | single deterministic run | 0 | 0 | 0 | 0 |"
+                )
+    live = evidence["modes"]["live"]
+    if live == "pending":
+        lines.append("| live: pending |" + " |" * (QUALITY_COLS + 4))
+    else:
+        for r in live["metrics"]:
+            spread = (
+                f"{r['verdict_accuracy_min_run']:.2f} to {r['verdict_accuracy_max_run']:.2f} "
+                f"({r['runs']} runs)"
             )
+            lines.append(
+                _quality_cells("live", r) + f" | {spread} | {r['tool_calls_total']} "
+                f"| {r['model_calls_total']} | {r['tokens_total'] or 0} "
+                f"| {_money(r.get('reported_cost_usd_total'))} |"
+            )
+    return head + "\n".join(lines) + "\n"
+
+
+def scorer_table(evidence: dict[str, Any]) -> str:
+    """Scripted fixture rows: checks of the policy and scorer, not model results."""
+    head = (
+        QUALITY_HEAD + " | Rejected finishes | Tool calls |\n" + "|---" * (QUALITY_COLS + 2) + "|\n"
+    )
+    fixture = evidence["modes"]["fixture"]
+    if fixture == "pending":
+        return head + "| fixture: pending |" + " |" * (QUALITY_COLS + 1) + "\n"
+    lines = [
+        _quality_cells("fixture", r) + f" | {r['rejected_finishes']} | {r['tool_calls_total']} |"
+        for r in fixture["metrics"]
+        if r["arm"] != "lexical"
+    ]
     return head + "\n".join(lines) + "\n"
 
 
@@ -180,7 +234,9 @@ def evidence_markdown(evidence: dict[str, Any]) -> str:
             f"- Run: {data['started_at']} to {data['finished_at']}",
             f"- Hardware: {data['hardware']['platform']}, Python {data['hardware']['python']}",
             f"- Episodes scored: {data['episodes']}",
-            f"- Tokens: {data['cost']['tokens']}, USD: {data['cost']['usd']}",
+            f"- Tokens: {data['cost']['tokens']}, USD at listed prices: {data['cost']['usd']}, "
+            f"USD reported by provider: {data['cost'].get('usd_reported_by_provider')}, "
+            f"adapter retries: {data['cost'].get('adapter_retries')}",
             "",
             "### Fixture hashes",
             "",
@@ -201,7 +257,16 @@ def evidence_markdown(evidence: dict[str, Any]) -> str:
             for f in data["failures"]
         ]
         out.append("")
-    out += ["## Metrics", "", metrics_table(evidence), "## Limitations", ""]
+    out += [
+        "## Measured results (no-model baseline and live model)",
+        "",
+        metrics_table(evidence),
+        "## Scorer checks (scripted replies, not model results)",
+        "",
+        scorer_table(evidence),
+        "## Limitations",
+        "",
+    ]
     out += [f"- {x}" for x in evidence["limitations"]]
     out += ["", "## Reproduce", ""]
     out += [f"- {k}: `{v}`" for k, v in evidence["reproduce"].items()]
@@ -221,9 +286,14 @@ def write_reports(root: Path, update_readme: bool = False) -> dict[str, Any]:
     if update_readme:
         readme = root / "README.md"
         text = readme.read_text(encoding="utf-8")
-        pattern = re.compile(re.escape(README_START) + ".*?" + re.escape(README_END), re.S)
-        if not pattern.search(text):
-            raise ValueError("README has no evidence-table markers")
-        block = f"{README_START}\n{metrics_table(evidence)}{README_END}"
-        readme.write_text(pattern.sub(lambda _: block, text), encoding="utf-8", newline="\n")
+        for start, end, table in (
+            (README_START, README_END, metrics_table(evidence)),
+            (SCORER_START, SCORER_END, scorer_table(evidence)),
+        ):
+            pattern = re.compile(re.escape(start) + ".*?" + re.escape(end), re.S)
+            if not pattern.search(text):
+                raise ValueError(f"README has no {start} marker")
+            block = f"{start}\n{table}{end}"
+            text = pattern.sub(lambda _, b=block: b, text)
+        readme.write_text(text, encoding="utf-8", newline="\n")
     return evidence

@@ -199,3 +199,13 @@ def test_demo_reproduces_committed_ledger() -> None:
     committed = json.loads((ROOT / "reports" / "demo_ledger.json").read_text(encoding="utf-8"))
     assert [e.model_dump() for e in entries] == committed
     assert [e.outcome for e in entries] == ["conflicted", "abstained"]
+
+
+def test_headline_table_holds_only_real_measurements(tmp_path: Path) -> None:
+    from evidence_ledger_agent.report import build_evidence, metrics_table, scorer_table
+
+    root = Path(__file__).resolve().parents[1]
+    evidence = build_evidence(root)
+    headline, scorer = metrics_table(evidence), scorer_table(evidence)
+    assert "fixture, scripted" not in headline and "no model, deterministic" in headline
+    assert "fixture, scripted" in scorer and "| lexical |" not in scorer

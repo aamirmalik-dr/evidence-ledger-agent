@@ -74,6 +74,7 @@ class EvalConfig(BaseModel):
     """Frozen evaluation settings, loaded from configs/*.yaml."""
 
     mode: Literal["fixture", "live"]
+    model: str | None = None
     families: dict[str, FamilyPaths]
     arms: list[str]
     runs: int = 1
@@ -230,6 +231,7 @@ def _agent_info(state: LedgerState, cfg: EvalConfig) -> dict[str, Any]:
         "prompt_chars": state.prompt_chars,
         "prompt_tokens": state.token_usage.prompt if live else None,
         "completion_tokens": state.token_usage.completion if live else None,
+        "reported_cost_usd": round(state.reported_cost_usd, 6) if live else None,
         "latency_s": round(state.elapsed_seconds, 3) if cfg.record_timing else None,
         "malformed_actions": state.malformed_actions,
         "reprompts": state.reprompts,
@@ -277,7 +279,7 @@ def run_evaluation(cfg: EvalConfig, cfg_sha: str, root: Path, require_live: bool
     """
     live_adapter: ModelAdapter | None = None
     if cfg.mode == "live":
-        live_adapter = OpenAICompatibleAdapter.from_env()
+        live_adapter = OpenAICompatibleAdapter.from_env(model=cfg.model)
     elif require_live:
         raise LiveModelUnavailable("--require-live was given but the config is in fixture mode")
     out = root / cfg.output_dir
@@ -287,6 +289,7 @@ def run_evaluation(cfg: EvalConfig, cfg_sha: str, root: Path, require_live: bool
     rows: list[dict[str, Any]] = []
     ledger: list[dict[str, Any]] = []
     tok_in = tok_out = 0
+    reported_usd = 0.0
     fixture_hashes: dict[str, str] = {}
     registries = []
 
@@ -368,6 +371,7 @@ def run_evaluation(cfg: EvalConfig, cfg_sha: str, root: Path, require_live: bool
                         info = _agent_info(state, cfg)
                     tok_in += info.get("prompt_tokens") or 0
                     tok_out += info.get("completion_tokens") or 0
+                    reported_usd += info.get("reported_cost_usd") or 0.0
                     scores = score_entry(entry, gold[task.task_id])
                     rows.append(
                         {
@@ -409,6 +413,8 @@ def run_evaluation(cfg: EvalConfig, cfg_sha: str, root: Path, require_live: bool
         },
         "tokens": {"prompt": tok_in, "completion": tok_out} if cfg.mode == "live" else None,
         "usd": _cost_usd(tok_in, tok_out, cfg.run_caps) if cfg.mode == "live" else None,
+        "usd_reported_by_provider": round(reported_usd, 6) if cfg.mode == "live" else None,
+        "adapter_retries": getattr(live_adapter, "retries", None),
     }
     write_outputs(out, rows, ledger, meta)
     return out
@@ -467,6 +473,10 @@ def aggregate(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
             None
             if all(t is None for t in toks)
             else sum((r.get("prompt_tokens") or 0) + (r.get("completion_tokens") or 0) for r in rs)
+        )
+        costs = [r.get("reported_cost_usd") for r in rs]
+        row["reported_cost_usd_total"] = (
+            None if all(c is None for c in costs) else round(sum(c or 0.0 for c in costs), 6)
         )
         lat = [r.get("latency_s") for r in rs if r.get("latency_s") is not None]
         row["latency_s_mean"] = round(sum(lat) / len(lat), 3) if lat else None

@@ -47,6 +47,7 @@ def _empty_info() -> dict[str, Any]:
         "prompt_chars": 0,
         "prompt_tokens": None,
         "completion_tokens": None,
+        "reported_cost_usd": None,
         "latency_s": 0.0,
         "malformed_actions": 0,
         "reprompts": 0,
@@ -190,6 +191,7 @@ def run_single_call(
         for key, val in (
             ("prompt_tokens", resp.prompt_tokens),
             ("completion_tokens", resp.completion_tokens),
+            ("reported_cost_usd", resp.cost_usd),
         ):
             if val is not None:
                 info[key] = (info[key] or 0) + val

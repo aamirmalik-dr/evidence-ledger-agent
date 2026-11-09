@@ -70,11 +70,13 @@ def _ledger_table(entries: list[LedgerEntry]) -> Table:
     return t
 
 
-def run_demo(mode: str, root: Path, console: Console | None = None) -> list[LedgerEntry]:
+def run_demo(
+    mode: str, root: Path, console: Console | None = None, model: str | None = None
+) -> list[LedgerEntry]:
     """Audit the pH question and the unanswerable question; return the ledger."""
     corpus = Corpus.load(root / FIX / "corpus" / "dev")
     tasks = {t.task_id: t for t in load_tasks(root / FIX / "questions_dev.json")}
-    live = OpenAICompatibleAdapter.from_env() if mode == "live" else None
+    live = OpenAICompatibleAdapter.from_env(model=model) if mode == "live" else None
     entries = []
     for task_id in DEMO_TASKS:
         adapter = live or FixtureAdapter.from_file(
@@ -117,6 +119,7 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("demo", help="run the two demo questions and print the ledger")
     p.add_argument("--mode", choices=("fixture", "live"), default="fixture")
     p.add_argument("--save", type=Path, help="write the ledger as JSON")
+    p.add_argument("--model", help="model id for live mode; overrides AGENT_MODEL_NAME")
     p = sub.add_parser("evaluate", help="run all arms on all tasks of a config")
     p.add_argument("--config", type=Path, required=True)
     p.add_argument(
@@ -132,7 +135,7 @@ def main(argv: list[str] | None = None) -> int:
     console = Console(width=160)
     try:
         if args.cmd == "demo":
-            entries = run_demo(args.mode, ROOT, console)
+            entries = run_demo(args.mode, ROOT, console, model=args.model)
             if args.save:
                 args.save.write_text(
                     json.dumps([e.model_dump() for e in entries], indent=1, ensure_ascii=False)

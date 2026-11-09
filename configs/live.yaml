@@ -1,8 +1,10 @@
 # Live pilot against an OpenAI-compatible endpoint configured through
-# AGENT_MODEL_BASE_URL, AGENT_MODEL_NAME and AGENT_MODEL_API_KEY.
-# Not yet run: no model route was available when this repository was published.
-# Held-out family only (10 tasks), two runs, all four arms, hard caps below.
+# AGENT_MODEL_BASE_URL and AGENT_MODEL_API_KEY. The model is pinned here and
+# overrides AGENT_MODEL_NAME. Held-out family only (10 tasks), two runs, all
+# four arms, hard caps below. Episode caps are unchanged from the version
+# frozen on 2026-11-09; model and prices were filled in before the first run.
 mode: live
+model: openai/gpt-4.1-mini        # via OpenRouter, chosen 2026-11-09
 families:
   heldout:
     corpus: tests/fixtures/corpus/heldout
@@ -22,8 +24,8 @@ single_call_max_completion_tokens: 900
 lexical_coverage_threshold: 0.5
 run_caps:
   max_total_tokens: 1500000       # whole evaluation run; later episodes are recorded as failed
-  max_usd: 5.0                    # enforced only when both prices below are filled in
-  usd_per_mtok_input: null
-  usd_per_mtok_output: null
+  max_usd: 5.0                    # checked before every episode at the prices below
+  usd_per_mtok_input: 0.40        # OpenRouter listed price, 2026-11-09
+  usd_per_mtok_output: 1.60
 output_dir: reports/live
 record_timing: true
