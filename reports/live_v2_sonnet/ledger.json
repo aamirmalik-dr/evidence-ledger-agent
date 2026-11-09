@@ -399,7 +399,7 @@
    "temperature": "25 °C",
    "cells": "six cells averaged"
   },
-  "rationale": "Document h2-08 reports a series resistance of 0.0042 kOhm cm2, which converts to 4.2 Ohm cm2 — below the claimed threshold of 5 Ohm cm2. No correction, withdrawal, or superseding document for h2-08 was found in the corpus.",
+  "rationale": "Document h2-08 reports a series resistance of 0.0042 kOhm cm2, which converts to 4.2 Ohm cm2 \u2014 below the claimed threshold of 5 Ohm cm2. No correction, withdrawal, or superseding document for h2-08 was found in the corpus.",
   "citations": [
    {
     "doc_id": "h2-08",
