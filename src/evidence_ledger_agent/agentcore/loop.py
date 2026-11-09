@@ -15,7 +15,7 @@ from pydantic import ValidationError
 
 from .adapters import AdapterError, ModelAdapter
 from .policy import Policy
-from .schemas import BaseAgentState, Decision, HistoryEntry, PendingAction, StopReason
+from .schemas import BaseAgentState, Decision, HistoryEntry, PendingAction, Status, StopReason
 from .trace import TraceWriter
 
 S = TypeVar("S", bound=BaseAgentState)
@@ -259,8 +259,8 @@ class AgentLoop:
         )
         self._save(state)
 
-    def _finish(self, state: BaseAgentState, status: str, reason: StopReason) -> None:
-        state.status = status  # type: ignore[assignment]
+    def _finish(self, state: BaseAgentState, status: Status, reason: StopReason) -> None:
+        state.status = status
         state.stop_reason = reason
         self._event(
             state, {"event": "stop", "status": status, "stop_reason": reason, "steps": state.steps}
