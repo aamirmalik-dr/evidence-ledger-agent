@@ -1,0 +1,1513 @@
+[
+ {
+  "family": "dev",
+  "run": 0,
+  "task_id": "dev-q1",
+  "question": "Claim to check: catalyst LX-4 is stable for 100 hours of continuous oxygen evolution.",
+  "arm": "lexical",
+  "outcome": "supported",
+  "claim": "All three LX-4 electrodes remained stable for the full 100 hours at pH 14, with the overpotential drifting by less than 15 mV over the run.",
+  "conditions": {},
+  "rationale": "best sentence covers 0.60 of query terms (threshold 0.5)",
+  "citations": [
+   {
+    "doc_id": "dev-01",
+    "start": 665,
+    "end": 804,
+    "doc_hash": "69439517de63cc16252f7700b10a4dd3858a1dfa4d883ddf588b6e10f80bec70",
+    "quote": "All three LX-4 electrodes remained stable for the full 100 hours at pH 14, with the overpotential drifting by less than 15 mV over the run.",
+    "read_span_id": "dev-01:0:1217"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": null
+ },
+ {
+  "family": "dev",
+  "run": 0,
+  "task_id": "dev-q1",
+  "question": "Claim to check: catalyst LX-4 is stable for 100 hours of continuous oxygen evolution.",
+  "arm": "single_call",
+  "outcome": "conflicted",
+  "claim": "Stable at pH 14 for 100 hours, unstable at pH 7.",
+  "conditions": {
+   "pH": "14 versus 7"
+  },
+  "rationale": "Results depend on pH.",
+  "citations": [
+   {
+    "doc_id": "dev-01",
+    "start": 665,
+    "end": 738,
+    "doc_hash": "69439517de63cc16252f7700b10a4dd3858a1dfa4d883ddf588b6e10f80bec70",
+    "quote": "All three LX-4 electrodes remained stable for the full 100 hours at pH 14",
+    "read_span_id": "dev-01:0:1217"
+   },
+   {
+    "doc_id": "dev-02",
+    "start": 617,
+    "end": 660,
+    "doc_hash": "559113fc8e9e67e45a7e8c4fbe1099dce47f3c0394cc92d3101b643e309cda33",
+    "quote": "At pH 7 the LX-4 electrodes were not stable",
+    "read_span_id": "dev-02:0:1213"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "dev",
+  "run": 0,
+  "task_id": "dev-q1",
+  "question": "Claim to check: catalyst LX-4 is stable for 100 hours of continuous oxygen evolution.",
+  "arm": "agent",
+  "outcome": "conflicted",
+  "claim": "LX-4 is stable for 100 hours at pH 14 but deactivates within 12 hours at pH 7.",
+  "conditions": {
+   "pH": "stable at pH 14 (1 M KOH), not stable at pH 7 (phosphate buffer)"
+  },
+  "rationale": "The two reports disagree, and the disagreement follows the electrolyte pH; the alkaline report explicitly limits its scope to strongly alkaline media.",
+  "citations": [
+   {
+    "doc_id": "dev-01",
+    "start": 665,
+    "end": 738,
+    "doc_hash": "69439517de63cc16252f7700b10a4dd3858a1dfa4d883ddf588b6e10f80bec70",
+    "quote": "All three LX-4 electrodes remained stable for the full 100 hours at pH 14",
+    "read_span_id": "dev-01:156:1217"
+   },
+   {
+    "doc_id": "dev-02",
+    "start": 617,
+    "end": 660,
+    "doc_hash": "559113fc8e9e67e45a7e8c4fbe1099dce47f3c0394cc92d3101b643e309cda33",
+    "quote": "At pH 7 the LX-4 electrodes were not stable",
+    "read_span_id": "dev-02:0:1213"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "dev",
+  "run": 0,
+  "task_id": "dev-q1",
+  "question": "Claim to check: catalyst LX-4 is stable for 100 hours of continuous oxygen evolution.",
+  "arm": "agent_no_expand",
+  "outcome": "conflicted",
+  "claim": "LX-4 is stable for 100 hours at pH 14 but deactivates within 12 hours at pH 7.",
+  "conditions": {
+   "pH": "stable at pH 14 (1 M KOH), not stable at pH 7 (phosphate buffer)"
+  },
+  "rationale": "The two reports disagree, and the disagreement follows the electrolyte pH; the alkaline report explicitly limits its scope to strongly alkaline media.",
+  "citations": [
+   {
+    "doc_id": "dev-01",
+    "start": 665,
+    "end": 738,
+    "doc_hash": "69439517de63cc16252f7700b10a4dd3858a1dfa4d883ddf588b6e10f80bec70",
+    "quote": "All three LX-4 electrodes remained stable for the full 100 hours at pH 14",
+    "read_span_id": "dev-01:156:1217"
+   },
+   {
+    "doc_id": "dev-02",
+    "start": 617,
+    "end": 660,
+    "doc_hash": "559113fc8e9e67e45a7e8c4fbe1099dce47f3c0394cc92d3101b643e309cda33",
+    "quote": "At pH 7 the LX-4 electrodes were not stable",
+    "read_span_id": "dev-02:0:1213"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "dev",
+  "run": 0,
+  "task_id": "dev-q2",
+  "question": "Claim to check: a CM-2 anode sustains a current density above 500 mA cm-2 at a cell voltage of 1.8 V.",
+  "arm": "lexical",
+  "outcome": "supported",
+  "claim": "In a zero-gap flow cell with 1 M KOH at 60 °C, the CM-2 anode sustained 0.62 A cm-2 at a cell voltage of 1.8 V for 8 hours without visible delamination.",
+  "conditions": {},
+  "rationale": "best sentence covers 0.57 of query terms (threshold 0.5)",
+  "citations": [
+   {
+    "doc_id": "dev-03",
+    "start": 612,
+    "end": 764,
+    "doc_hash": "b0a663608bf3f405c8f1364009c812a3f724df53541c196d62a91e67ab2d0b52",
+    "quote": "In a zero-gap flow cell with 1 M KOH at 60 °C, the CM-2 anode sustained 0.62 A cm-2 at a cell voltage of 1.8 V for 8 hours without visible delamination.",
+    "read_span_id": "dev-03:0:1022"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": null
+ },
+ {
+  "family": "dev",
+  "run": 0,
+  "task_id": "dev-q2",
+  "question": "Claim to check: a CM-2 anode sustains a current density above 500 mA cm-2 at a cell voltage of 1.8 V.",
+  "arm": "single_call",
+  "outcome": "supported",
+  "claim": "CM-2 reaches 620 mA cm-2 at 1.8 V.",
+  "conditions": {},
+  "rationale": "Planted failure: paraphrased quote.",
+  "citations": [],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "dev",
+  "run": 0,
+  "task_id": "dev-q2",
+  "question": "Claim to check: a CM-2 anode sustains a current density above 500 mA cm-2 at a cell voltage of 1.8 V.",
+  "arm": "agent",
+  "outcome": "supported",
+  "claim": "CM-2 sustained 0.62 A cm-2 (620 mA cm-2) at 1.8 V in a zero-gap flow cell.",
+  "conditions": {
+   "cell": "zero-gap flow cell",
+   "temperature": "60 °C",
+   "electrolyte": "1 M KOH"
+  },
+  "rationale": "0.62 A cm-2 equals 620 mA cm-2, above the 500 mA cm-2 threshold.",
+  "citations": [
+   {
+    "doc_id": "dev-03",
+    "start": 659,
+    "end": 722,
+    "doc_hash": "b0a663608bf3f405c8f1364009c812a3f724df53541c196d62a91e67ab2d0b52",
+    "quote": "the CM-2 anode sustained 0.62 A cm-2 at a cell voltage of 1.8 V",
+    "read_span_id": "dev-03:0:1022"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "dev",
+  "run": 0,
+  "task_id": "dev-q2",
+  "question": "Claim to check: a CM-2 anode sustains a current density above 500 mA cm-2 at a cell voltage of 1.8 V.",
+  "arm": "agent_no_expand",
+  "outcome": "supported",
+  "claim": "CM-2 sustained 0.62 A cm-2 (620 mA cm-2) at 1.8 V in a zero-gap flow cell.",
+  "conditions": {
+   "cell": "zero-gap flow cell",
+   "temperature": "60 °C",
+   "electrolyte": "1 M KOH"
+  },
+  "rationale": "0.62 A cm-2 equals 620 mA cm-2, above the 500 mA cm-2 threshold.",
+  "citations": [
+   {
+    "doc_id": "dev-03",
+    "start": 659,
+    "end": 722,
+    "doc_hash": "b0a663608bf3f405c8f1364009c812a3f724df53541c196d62a91e67ab2d0b52",
+    "quote": "the CM-2 anode sustained 0.62 A cm-2 at a cell voltage of 1.8 V",
+    "read_span_id": "dev-03:0:1022"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "dev",
+  "run": 0,
+  "task_id": "dev-q3",
+  "question": "Claim to check: RT-1 reaches a Faradaic efficiency above 95% for oxygen evolution.",
+  "arm": "lexical",
+  "outcome": "supported",
+  "claim": "RT-1 showed a Faradaic efficiency of 99% for oxygen evolution over a 2-hour measurement, indicating that almost all of the charge produced oxygen rather than side products such as ozone or dissolved ruthenium species.",
+  "conditions": {},
+  "rationale": "best sentence covers 0.70 of query terms (threshold 0.5)",
+  "citations": [
+   {
+    "doc_id": "dev-05",
+    "start": 550,
+    "end": 767,
+    "doc_hash": "abcb1b5acea038d92b2acee60a1aa441590cdb225ee2fd2bf1a9625812553c07",
+    "quote": "RT-1 showed a Faradaic efficiency of 99% for oxygen evolution over a 2-hour measurement, indicating that almost all of the charge produced oxygen rather than side products such as ozone or dissolved ruthenium species.",
+    "read_span_id": "dev-05:0:879"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": null
+ },
+ {
+  "family": "dev",
+  "run": 0,
+  "task_id": "dev-q3",
+  "question": "Claim to check: RT-1 reaches a Faradaic efficiency above 95% for oxygen evolution.",
+  "arm": "single_call",
+  "outcome": "insufficient",
+  "claim": "Corrected to 91%.",
+  "conditions": {},
+  "rationale": "The correction supersedes 99%.",
+  "citations": [
+   {
+    "doc_id": "dev-06",
+    "start": 581,
+    "end": 650,
+    "doc_hash": "820774971bfff0a6240e1da52dd65f169d60bad3901d9ec48095f2acb3a7d835",
+    "quote": "the corrected Faradaic efficiency of RT-1 for oxygen evolution is 91%",
+    "read_span_id": "dev-06:0:1023"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "dev",
+  "run": 0,
+  "task_id": "dev-q3",
+  "question": "Claim to check: RT-1 reaches a Faradaic efficiency above 95% for oxygen evolution.",
+  "arm": "agent",
+  "outcome": "insufficient",
+  "claim": "The 99% value was corrected to 91%, so efficiency above 95% is not supported.",
+  "conditions": {
+   "electrolyte": "0.5 M sulfuric acid"
+  },
+  "rationale": "A later correction supersedes the original 99% figure.",
+  "citations": [
+   {
+    "doc_id": "dev-06",
+    "start": 581,
+    "end": 693,
+    "doc_hash": "820774971bfff0a6240e1da52dd65f169d60bad3901d9ec48095f2acb3a7d835",
+    "quote": "the corrected Faradaic efficiency of RT-1 for oxygen evolution is 91%, not the 99% stated in the original report",
+    "read_span_id": "dev-06:0:1023"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "dev",
+  "run": 0,
+  "task_id": "dev-q3",
+  "question": "Claim to check: RT-1 reaches a Faradaic efficiency above 95% for oxygen evolution.",
+  "arm": "agent_no_expand",
+  "outcome": "insufficient",
+  "claim": "The 99% value was corrected to 91%, so efficiency above 95% is not supported.",
+  "conditions": {
+   "electrolyte": "0.5 M sulfuric acid"
+  },
+  "rationale": "A later correction supersedes the original 99% figure.",
+  "citations": [
+   {
+    "doc_id": "dev-06",
+    "start": 581,
+    "end": 693,
+    "doc_hash": "820774971bfff0a6240e1da52dd65f169d60bad3901d9ec48095f2acb3a7d835",
+    "quote": "the corrected Faradaic efficiency of RT-1 for oxygen evolution is 91%, not the 99% stated in the original report",
+    "read_span_id": "dev-06:0:1023"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "dev",
+  "run": 0,
+  "task_id": "dev-q4",
+  "question": "Claim to check: LX-4 evolves oxygen through the lattice-oxygen mechanism.",
+  "arm": "lexical",
+  "outcome": "supported",
+  "claim": "It is clear beyond reasonable doubt that LX-4 evolves oxygen exclusively through the lattice-oxygen pathway.",
+  "conditions": {},
+  "rationale": "best sentence covers 0.89 of query terms (threshold 0.5)",
+  "citations": [
+   {
+    "doc_id": "dev-07",
+    "start": 376,
+    "end": 484,
+    "doc_hash": "0ef31b9ec58a22d2210d859b0c7f5036d25750744746fba4974ae87b2ab48d1d",
+    "quote": "It is clear beyond reasonable doubt that LX-4 evolves oxygen exclusively through the lattice-oxygen pathway.",
+    "read_span_id": "dev-07:0:1095"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": null
+ },
+ {
+  "family": "dev",
+  "run": 0,
+  "task_id": "dev-q4",
+  "question": "Claim to check: LX-4 evolves oxygen through the lattice-oxygen mechanism.",
+  "arm": "single_call",
+  "outcome": "insufficient",
+  "claim": "The isotope test was inconclusive.",
+  "conditions": {},
+  "rationale": "No direct evidence.",
+  "citations": [
+   {
+    "doc_id": "dev-08",
+    "start": 833,
+    "end": 863,
+    "doc_hash": "1de75a592193a4e2c9de6b2a5bb50a02c0962693dedd6b22247858af5fffdcd4",
+    "quote": "the experiment is inconclusive",
+    "read_span_id": "dev-08:0:1071"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "dev",
+  "run": 0,
+  "task_id": "dev-q4",
+  "question": "Claim to check: LX-4 evolves oxygen through the lattice-oxygen mechanism.",
+  "arm": "agent",
+  "outcome": "supported",
+  "claim": "LX-4 runs on the lattice-oxygen mechanism.",
+  "conditions": {},
+  "rationale": "Planted failure: accepts a confident perspective without data.",
+  "citations": [
+   {
+    "doc_id": "dev-07",
+    "start": 376,
+    "end": 483,
+    "doc_hash": "0ef31b9ec58a22d2210d859b0c7f5036d25750744746fba4974ae87b2ab48d1d",
+    "quote": "It is clear beyond reasonable doubt that LX-4 evolves oxygen exclusively through the lattice-oxygen pathway",
+    "read_span_id": "dev-07:0:1095"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "dev",
+  "run": 0,
+  "task_id": "dev-q4",
+  "question": "Claim to check: LX-4 evolves oxygen through the lattice-oxygen mechanism.",
+  "arm": "agent_no_expand",
+  "outcome": "supported",
+  "claim": "LX-4 runs on the lattice-oxygen mechanism.",
+  "conditions": {},
+  "rationale": "Planted failure: accepts a confident perspective without data.",
+  "citations": [
+   {
+    "doc_id": "dev-07",
+    "start": 376,
+    "end": 483,
+    "doc_hash": "0ef31b9ec58a22d2210d859b0c7f5036d25750744746fba4974ae87b2ab48d1d",
+    "quote": "It is clear beyond reasonable doubt that LX-4 evolves oxygen exclusively through the lattice-oxygen pathway",
+    "read_span_id": "dev-07:0:1095"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "dev",
+  "run": 0,
+  "task_id": "dev-q5",
+  "question": "Claim to check: CM-2 remains stable during oxygen evolution in acidic electrolyte at pH 1.",
+  "arm": "lexical",
+  "outcome": "insufficient",
+  "claim": "",
+  "conditions": {},
+  "rationale": "best sentence covers 0.42 of query terms (threshold 0.5)",
+  "citations": [],
+  "abstain_reason": null,
+  "stop_reason": null
+ },
+ {
+  "family": "dev",
+  "run": 0,
+  "task_id": "dev-q5",
+  "question": "Claim to check: CM-2 remains stable during oxygen evolution in acidic electrolyte at pH 1.",
+  "arm": "single_call",
+  "outcome": "abstained",
+  "claim": "",
+  "conditions": {},
+  "rationale": "",
+  "citations": [],
+  "abstain_reason": "No passage covers CM-2 in acid.",
+  "stop_reason": "abstained"
+ },
+ {
+  "family": "dev",
+  "run": 0,
+  "task_id": "dev-q5",
+  "question": "Claim to check: CM-2 remains stable during oxygen evolution in acidic electrolyte at pH 1.",
+  "arm": "agent",
+  "outcome": "abstained",
+  "claim": "",
+  "conditions": {},
+  "rationale": "",
+  "citations": [],
+  "abstain_reason": "No document reports CM-2 in acidic electrolyte; the only acid data concern RT-1.",
+  "stop_reason": "abstained"
+ },
+ {
+  "family": "dev",
+  "run": 0,
+  "task_id": "dev-q5",
+  "question": "Claim to check: CM-2 remains stable during oxygen evolution in acidic electrolyte at pH 1.",
+  "arm": "agent_no_expand",
+  "outcome": "abstained",
+  "claim": "",
+  "conditions": {},
+  "rationale": "",
+  "citations": [],
+  "abstain_reason": "No document reports CM-2 in acidic electrolyte; the only acid data concern RT-1.",
+  "stop_reason": "abstained"
+ },
+ {
+  "family": "dev",
+  "run": 0,
+  "task_id": "dev-q6",
+  "question": "Claim to check: CM-2 powder is made by calcining a dried gel in air at 450 °C.",
+  "arm": "lexical",
+  "outcome": "supported",
+  "claim": "The dried gel was ground and calcined in air at 450 °C for 4 hours with a heating rate of 5 °C per minute, which produced phase-pure CM-2 spinel according to X-ray diffraction.",
+  "conditions": {},
+  "rationale": "best sentence covers 0.73 of query terms (threshold 0.5)",
+  "citations": [
+   {
+    "doc_id": "dev-09",
+    "start": 634,
+    "end": 810,
+    "doc_hash": "86168ba3aa9dc19490ab692efb1957c62f95f753406de4f730683e9a9092b4aa",
+    "quote": "The dried gel was ground and calcined in air at 450 °C for 4 hours with a heating rate of 5 °C per minute, which produced phase-pure CM-2 spinel according to X-ray diffraction.",
+    "read_span_id": "dev-09:0:957"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": null
+ },
+ {
+  "family": "dev",
+  "run": 0,
+  "task_id": "dev-q6",
+  "question": "Claim to check: CM-2 powder is made by calcining a dried gel in air at 450 °C.",
+  "arm": "single_call",
+  "outcome": "supported",
+  "claim": "Calcined at 450 °C in air.",
+  "conditions": {},
+  "rationale": "Stated directly.",
+  "citations": [
+   {
+    "doc_id": "dev-09",
+    "start": 663,
+    "end": 700,
+    "doc_hash": "86168ba3aa9dc19490ab692efb1957c62f95f753406de4f730683e9a9092b4aa",
+    "quote": "calcined in air at 450 °C for 4 hours",
+    "read_span_id": "dev-09:0:957"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "dev",
+  "run": 0,
+  "task_id": "dev-q6",
+  "question": "Claim to check: CM-2 powder is made by calcining a dried gel in air at 450 °C.",
+  "arm": "agent",
+  "outcome": "supported",
+  "claim": "CM-2 powder is made by calcining the dried gel in air at 450 °C.",
+  "conditions": {
+   "atmosphere": "air",
+   "duration": "4 hours"
+  },
+  "rationale": "The synthesis notebook states the calcination step directly.",
+  "citations": [
+   {
+    "doc_id": "dev-09",
+    "start": 663,
+    "end": 700,
+    "doc_hash": "86168ba3aa9dc19490ab692efb1957c62f95f753406de4f730683e9a9092b4aa",
+    "quote": "calcined in air at 450 °C for 4 hours",
+    "read_span_id": "dev-09:0:957"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "dev",
+  "run": 0,
+  "task_id": "dev-q6",
+  "question": "Claim to check: CM-2 powder is made by calcining a dried gel in air at 450 °C.",
+  "arm": "agent_no_expand",
+  "outcome": "supported",
+  "claim": "CM-2 powder is made by calcining the dried gel in air at 450 °C.",
+  "conditions": {
+   "atmosphere": "air",
+   "duration": "4 hours"
+  },
+  "rationale": "The synthesis notebook states the calcination step directly.",
+  "citations": [
+   {
+    "doc_id": "dev-09",
+    "start": 663,
+    "end": 700,
+    "doc_hash": "86168ba3aa9dc19490ab692efb1957c62f95f753406de4f730683e9a9092b4aa",
+    "quote": "calcined in air at 450 °C for 4 hours",
+    "read_span_id": "dev-09:0:957"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout",
+  "run": 0,
+  "task_id": "ho-q01",
+  "question": "Claim to check: the garnet electrolyte GZ-9 has an ionic conductivity above 1 mS cm-1 at room temperature.",
+  "arm": "lexical",
+  "outcome": "supported",
+  "claim": "Interpretation: the conductivity values above 5 mS cm-1 in this study were reached only at elevated temperature.",
+  "conditions": {},
+  "rationale": "best sentence covers 0.50 of query terms (threshold 0.5)",
+  "citations": [
+   {
+    "doc_id": "ho-02",
+    "start": 504,
+    "end": 616,
+    "doc_hash": "a2d1d7772a2dd0cbd926d735e8e6838434b33ba090fe6efb0c008c319579f4e7",
+    "quote": "Interpretation: the conductivity values above 5 mS cm-1 in this study were reached only at elevated temperature.",
+    "read_span_id": "ho-02:0:922"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": null
+ },
+ {
+  "family": "heldout",
+  "run": 0,
+  "task_id": "ho-q01",
+  "question": "Claim to check: the garnet electrolyte GZ-9 has an ionic conductivity above 1 mS cm-1 at room temperature.",
+  "arm": "single_call",
+  "outcome": "supported",
+  "claim": "1.2 mS cm-1 at 25 °C.",
+  "conditions": {
+   "temperature": "25 °C"
+  },
+  "rationale": "Above 1 mS cm-1.",
+  "citations": [
+   {
+    "doc_id": "ho-01",
+    "start": 366,
+    "end": 416,
+    "doc_hash": "6655fd348d71ddf851117745f69778a35b46dbf6e719a1b497982fe8f32a54ca",
+    "quote": "a total ionic conductivity of 1.2 mS cm-1 at 25 °C",
+    "read_span_id": "ho-01:0:910"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout",
+  "run": 0,
+  "task_id": "ho-q01",
+  "question": "Claim to check: the garnet electrolyte GZ-9 has an ionic conductivity above 1 mS cm-1 at room temperature.",
+  "arm": "agent",
+  "outcome": "supported",
+  "claim": "GZ-9 conducts 1.2 mS cm-1 at 25 °C.",
+  "conditions": {
+   "temperature": "25 °C",
+   "atmosphere": "argon"
+  },
+  "rationale": "Direct impedance measurement above the 1 mS cm-1 threshold.",
+  "citations": [
+   {
+    "doc_id": "ho-01",
+    "start": 366,
+    "end": 416,
+    "doc_hash": "6655fd348d71ddf851117745f69778a35b46dbf6e719a1b497982fe8f32a54ca",
+    "quote": "a total ionic conductivity of 1.2 mS cm-1 at 25 °C",
+    "read_span_id": "ho-01:0:910"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout",
+  "run": 0,
+  "task_id": "ho-q01",
+  "question": "Claim to check: the garnet electrolyte GZ-9 has an ionic conductivity above 1 mS cm-1 at room temperature.",
+  "arm": "agent_no_expand",
+  "outcome": "supported",
+  "claim": "GZ-9 conducts 1.2 mS cm-1 at 25 °C.",
+  "conditions": {
+   "temperature": "25 °C",
+   "atmosphere": "argon"
+  },
+  "rationale": "Direct impedance measurement above the 1 mS cm-1 threshold.",
+  "citations": [
+   {
+    "doc_id": "ho-01",
+    "start": 366,
+    "end": 416,
+    "doc_hash": "6655fd348d71ddf851117745f69778a35b46dbf6e719a1b497982fe8f32a54ca",
+    "quote": "a total ionic conductivity of 1.2 mS cm-1 at 25 °C",
+    "read_span_id": "ho-01:0:910"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout",
+  "run": 0,
+  "task_id": "ho-q02",
+  "question": "Claim to check: GZ-9 reaches an ionic conductivity above 5 mS cm-1.",
+  "arm": "lexical",
+  "outcome": "supported",
+  "claim": "Interpretation: the conductivity values above 5 mS cm-1 in this study were reached only at elevated temperature.",
+  "conditions": {},
+  "rationale": "best sentence covers 0.58 of query terms (threshold 0.5)",
+  "citations": [
+   {
+    "doc_id": "ho-02",
+    "start": 504,
+    "end": 616,
+    "doc_hash": "a2d1d7772a2dd0cbd926d735e8e6838434b33ba090fe6efb0c008c319579f4e7",
+    "quote": "Interpretation: the conductivity values above 5 mS cm-1 in this study were reached only at elevated temperature.",
+    "read_span_id": "ho-02:0:922"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": null
+ },
+ {
+  "family": "heldout",
+  "run": 0,
+  "task_id": "ho-q02",
+  "question": "Claim to check: GZ-9 reaches an ionic conductivity above 5 mS cm-1.",
+  "arm": "single_call",
+  "outcome": "supported",
+  "claim": "GZ-9 reaches 6.5 mS cm-1.",
+  "conditions": {},
+  "rationale": "Planted failure: ignores the temperature condition.",
+  "citations": [
+   {
+    "doc_id": "ho-02",
+    "start": 378,
+    "end": 404,
+    "doc_hash": "a2d1d7772a2dd0cbd926d735e8e6838434b33ba090fe6efb0c008c319579f4e7",
+    "quote": "6.5 × 10-3 S cm-1 at 80 °C",
+    "read_span_id": "ho-02:0:922"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout",
+  "run": 0,
+  "task_id": "ho-q02",
+  "question": "Claim to check: GZ-9 reaches an ionic conductivity above 5 mS cm-1.",
+  "arm": "agent",
+  "outcome": "conflicted",
+  "claim": "GZ-9 exceeds 5 mS cm-1 only at 80 °C; at 25 °C it is about 1.1 to 1.2 mS cm-1.",
+  "conditions": {
+   "temperature": "above 5 mS cm-1 at 80 °C only"
+  },
+  "rationale": "6.5 × 10-3 S cm-1 is 6.5 mS cm-1, reached only at elevated temperature.",
+  "citations": [
+   {
+    "doc_id": "ho-02",
+    "start": 378,
+    "end": 404,
+    "doc_hash": "a2d1d7772a2dd0cbd926d735e8e6838434b33ba090fe6efb0c008c319579f4e7",
+    "quote": "6.5 × 10-3 S cm-1 at 80 °C",
+    "read_span_id": "ho-02:10:810"
+   },
+   {
+    "doc_id": "ho-01",
+    "start": 366,
+    "end": 416,
+    "doc_hash": "6655fd348d71ddf851117745f69778a35b46dbf6e719a1b497982fe8f32a54ca",
+    "quote": "a total ionic conductivity of 1.2 mS cm-1 at 25 °C",
+    "read_span_id": "ho-01:0:910"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout",
+  "run": 0,
+  "task_id": "ho-q02",
+  "question": "Claim to check: GZ-9 reaches an ionic conductivity above 5 mS cm-1.",
+  "arm": "agent_no_expand",
+  "outcome": "conflicted",
+  "claim": "GZ-9 exceeds 5 mS cm-1 only at 80 °C; at 25 °C it is about 1.1 to 1.2 mS cm-1.",
+  "conditions": {
+   "temperature": "above 5 mS cm-1 at 80 °C only"
+  },
+  "rationale": "6.5 × 10-3 S cm-1 is 6.5 mS cm-1, reached only at elevated temperature.",
+  "citations": [
+   {
+    "doc_id": "ho-02",
+    "start": 378,
+    "end": 404,
+    "doc_hash": "a2d1d7772a2dd0cbd926d735e8e6838434b33ba090fe6efb0c008c319579f4e7",
+    "quote": "6.5 × 10-3 S cm-1 at 80 °C",
+    "read_span_id": "ho-02:10:810"
+   },
+   {
+    "doc_id": "ho-01",
+    "start": 366,
+    "end": 416,
+    "doc_hash": "6655fd348d71ddf851117745f69778a35b46dbf6e719a1b497982fe8f32a54ca",
+    "quote": "a total ionic conductivity of 1.2 mS cm-1 at 25 °C",
+    "read_span_id": "ho-01:0:910"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout",
+  "run": 0,
+  "task_id": "ho-q03",
+  "question": "Claim to check: an AL-3 coating lets nickel-rich cathodes keep more than 90% of their capacity after 500 cycles.",
+  "arm": "lexical",
+  "outcome": "supported",
+  "claim": "Preprint: alumina-phosphate coating AL-3 extends the life of nickel-rich cathodes",
+  "conditions": {},
+  "rationale": "best sentence covers 0.50 of query terms (threshold 0.5)",
+  "citations": [
+   {
+    "doc_id": "ho-04",
+    "start": 109,
+    "end": 190,
+    "doc_hash": "317c9cdbda093db638ccc868357043801916ba7f9b122ebc779daeef74b46c8c",
+    "quote": "Preprint: alumina-phosphate coating AL-3 extends the life of nickel-rich cathodes",
+    "read_span_id": "ho-04:0:597"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": null
+ },
+ {
+  "family": "heldout",
+  "run": 0,
+  "task_id": "ho-q03",
+  "question": "Claim to check: an AL-3 coating lets nickel-rich cathodes keep more than 90% of their capacity after 500 cycles.",
+  "arm": "single_call",
+  "outcome": "insufficient",
+  "claim": "Preprint withdrawn.",
+  "conditions": {},
+  "rationale": "Withdrawn data.",
+  "citations": [
+   {
+    "doc_id": "ho-05",
+    "start": 587,
+    "end": 635,
+    "doc_hash": "de563a554265d4d40314faaedbb7529aa1b53138f6cdad7de2e9d4d1b92ee62d",
+    "quote": "are therefore unreliable and should not be cited",
+    "read_span_id": "ho-05:0:770"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout",
+  "run": 0,
+  "task_id": "ho-q03",
+  "question": "Claim to check: an AL-3 coating lets nickel-rich cathodes keep more than 90% of their capacity after 500 cycles.",
+  "arm": "agent",
+  "outcome": "insufficient",
+  "claim": "The only supporting preprint was withdrawn.",
+  "conditions": {},
+  "rationale": "The withdrawal notice supersedes the retention values.",
+  "citations": [
+   {
+    "doc_id": "ho-05",
+    "start": 587,
+    "end": 635,
+    "doc_hash": "de563a554265d4d40314faaedbb7529aa1b53138f6cdad7de2e9d4d1b92ee62d",
+    "quote": "are therefore unreliable and should not be cited",
+    "read_span_id": "ho-05:0:770"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout",
+  "run": 0,
+  "task_id": "ho-q03",
+  "question": "Claim to check: an AL-3 coating lets nickel-rich cathodes keep more than 90% of their capacity after 500 cycles.",
+  "arm": "agent_no_expand",
+  "outcome": "insufficient",
+  "claim": "The only supporting preprint was withdrawn.",
+  "conditions": {},
+  "rationale": "The withdrawal notice supersedes the retention values.",
+  "citations": [
+   {
+    "doc_id": "ho-05",
+    "start": 587,
+    "end": 635,
+    "doc_hash": "de563a554265d4d40314faaedbb7529aa1b53138f6cdad7de2e9d4d1b92ee62d",
+    "quote": "are therefore unreliable and should not be cited",
+    "read_span_id": "ho-05:0:770"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout",
+  "run": 0,
+  "task_id": "ho-q04",
+  "question": "Claim to check: SX-2 stays stable for at least 48 hours under dry-room conditions.",
+  "arm": "lexical",
+  "outcome": "supported",
+  "claim": "Finding 2: in a dry room with a dew point of -50 °C, corresponding to well below 1% relative humidity, SX-2 pellets showed no hydrogen sulfide release and no measurable conductivity loss over 48 hours.",
+  "conditions": {},
+  "rationale": "best sentence covers 0.58 of query terms (threshold 0.5)",
+  "citations": [
+   {
+    "doc_id": "ho-06",
+    "start": 528,
+    "end": 729,
+    "doc_hash": "684eb46e1817e8039eabb2db0e381aab6e2f4f31e439acd814ae394360c2b979",
+    "quote": "Finding 2: in a dry room with a dew point of -50 °C, corresponding to well below 1% relative humidity, SX-2 pellets showed no hydrogen sulfide release and no measurable conductivity loss over 48 hours.",
+    "read_span_id": "ho-06:0:898"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": null
+ },
+ {
+  "family": "heldout",
+  "run": 0,
+  "task_id": "ho-q04",
+  "question": "Claim to check: SX-2 stays stable for at least 48 hours under dry-room conditions.",
+  "arm": "single_call",
+  "outcome": "supported",
+  "claim": "Stable 48 hours in a dry room.",
+  "conditions": {
+   "humidity": "dry room"
+  },
+  "rationale": "Stated directly.",
+  "citations": [
+   {
+    "doc_id": "ho-06",
+    "start": 683,
+    "end": 728,
+    "doc_hash": "684eb46e1817e8039eabb2db0e381aab6e2f4f31e439acd814ae394360c2b979",
+    "quote": "no measurable conductivity loss over 48 hours",
+    "read_span_id": "ho-06:0:898"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout",
+  "run": 0,
+  "task_id": "ho-q04",
+  "question": "Claim to check: SX-2 stays stable for at least 48 hours under dry-room conditions.",
+  "arm": "agent",
+  "outcome": "supported",
+  "claim": "SX-2 showed no degradation over 48 hours in a dry room.",
+  "conditions": {
+   "humidity": "dry room, dew point -50 °C"
+  },
+  "rationale": "Holds for dry-room conditions only; ambient air degrades SX-2.",
+  "citations": [
+   {
+    "doc_id": "ho-06",
+    "start": 631,
+    "end": 728,
+    "doc_hash": "684eb46e1817e8039eabb2db0e381aab6e2f4f31e439acd814ae394360c2b979",
+    "quote": "SX-2 pellets showed no hydrogen sulfide release and no measurable conductivity loss over 48 hours",
+    "read_span_id": "ho-06:0:898"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout",
+  "run": 0,
+  "task_id": "ho-q04",
+  "question": "Claim to check: SX-2 stays stable for at least 48 hours under dry-room conditions.",
+  "arm": "agent_no_expand",
+  "outcome": "supported",
+  "claim": "SX-2 showed no degradation over 48 hours in a dry room.",
+  "conditions": {
+   "humidity": "dry room, dew point -50 °C"
+  },
+  "rationale": "Holds for dry-room conditions only; ambient air degrades SX-2.",
+  "citations": [
+   {
+    "doc_id": "ho-06",
+    "start": 631,
+    "end": 728,
+    "doc_hash": "684eb46e1817e8039eabb2db0e381aab6e2f4f31e439acd814ae394360c2b979",
+    "quote": "SX-2 pellets showed no hydrogen sulfide release and no measurable conductivity loss over 48 hours",
+    "read_span_id": "ho-06:0:898"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout",
+  "run": 0,
+  "task_id": "ho-q05",
+  "question": "Claim to check: TQ-5 has an ionic conductivity of about 3 mS cm-1 at 25 °C.",
+  "arm": "lexical",
+  "outcome": "supported",
+  "claim": "Finding: across six pellets from two batches, TQ-5 showed an ionic conductivity of 0.9 mS cm-1 at 25 °C, with a batch-to-batch spread of plus or minus 0.1 mS cm-1.",
+  "conditions": {},
+  "rationale": "best sentence covers 0.85 of query terms (threshold 0.5)",
+  "citations": [
+   {
+    "doc_id": "ho-08",
+    "start": 566,
+    "end": 729,
+    "doc_hash": "95fe4b2fae6991be25d03313dc5b5ede15bb6bc7fdc86c0bea84bc9c38a8ade2",
+    "quote": "Finding: across six pellets from two batches, TQ-5 showed an ionic conductivity of 0.9 mS cm-1 at 25 °C, with a batch-to-batch spread of plus or minus 0.1 mS cm-1.",
+    "read_span_id": "ho-08:0:956"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": null
+ },
+ {
+  "family": "heldout",
+  "run": 0,
+  "task_id": "ho-q05",
+  "question": "Claim to check: TQ-5 has an ionic conductivity of about 3 mS cm-1 at 25 °C.",
+  "arm": "single_call",
+  "outcome": "conflicted",
+  "claim": "3.1 versus 0.9 mS cm-1 at 25 °C.",
+  "conditions": {
+   "temperature": "25 °C"
+  },
+  "rationale": "Replication disagrees.",
+  "citations": [
+   {
+    "doc_id": "ho-09",
+    "start": 410,
+    "end": 451,
+    "doc_hash": "61cb8b3d233ab010550f3f6e2b9b80737d5a471742a75851eca964b93a6a5a54",
+    "quote": "gave an ionic conductivity of 3.1 mS cm-1",
+    "read_span_id": "ho-09:0:727"
+   },
+   {
+    "doc_id": "ho-08",
+    "start": 612,
+    "end": 669,
+    "doc_hash": "95fe4b2fae6991be25d03313dc5b5ede15bb6bc7fdc86c0bea84bc9c38a8ade2",
+    "quote": "TQ-5 showed an ionic conductivity of 0.9 mS cm-1 at 25 °C",
+    "read_span_id": "ho-08:0:956"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout",
+  "run": 0,
+  "task_id": "ho-q05",
+  "question": "Claim to check: TQ-5 has an ionic conductivity of about 3 mS cm-1 at 25 °C.",
+  "arm": "agent",
+  "outcome": "failed",
+  "claim": "",
+  "conditions": {},
+  "rationale": "",
+  "citations": [],
+  "abstain_reason": null,
+  "stop_reason": "max_tool_calls"
+ },
+ {
+  "family": "heldout",
+  "run": 0,
+  "task_id": "ho-q05",
+  "question": "Claim to check: TQ-5 has an ionic conductivity of about 3 mS cm-1 at 25 °C.",
+  "arm": "agent_no_expand",
+  "outcome": "failed",
+  "claim": "",
+  "conditions": {},
+  "rationale": "",
+  "citations": [],
+  "abstain_reason": null,
+  "stop_reason": "max_tool_calls"
+ },
+ {
+  "family": "heldout",
+  "run": 0,
+  "task_id": "ho-q06",
+  "question": "Claim to check: the binder PB-1 is electrochemically stable up to 4.5 V vs Li/Li+.",
+  "arm": "lexical",
+  "outcome": "supported",
+  "claim": "Electrochemical window: in linear sweep voltammetry against a lithium reference at 0.1 mV s-1 and 25 °C, PB-1 showed no oxidation current above background up to 4.5 V vs Li/Li+.",
+  "conditions": {},
+  "rationale": "best sentence covers 0.73 of query terms (threshold 0.5)",
+  "citations": [
+   {
+    "doc_id": "ho-10",
+    "start": 270,
+    "end": 447,
+    "doc_hash": "6c98caec2c3c82f46cc1f13360c24b0f32a748e228f9e75a2267d871fb324bbf",
+    "quote": "Electrochemical window: in linear sweep voltammetry against a lithium reference at 0.1 mV s-1 and 25 °C, PB-1 showed no oxidation current above background up to 4.5 V vs Li/Li+.",
+    "read_span_id": "ho-10:0:858"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": null
+ },
+ {
+  "family": "heldout",
+  "run": 0,
+  "task_id": "ho-q06",
+  "question": "Claim to check: the binder PB-1 is electrochemically stable up to 4.5 V vs Li/Li+.",
+  "arm": "single_call",
+  "outcome": "supported",
+  "claim": "Stable to 4.5 V.",
+  "conditions": {},
+  "rationale": "Datasheet value.",
+  "citations": [
+   {
+    "doc_id": "ho-10",
+    "start": 387,
+    "end": 446,
+    "doc_hash": "6c98caec2c3c82f46cc1f13360c24b0f32a748e228f9e75a2267d871fb324bbf",
+    "quote": "no oxidation current above background up to 4.5 V vs Li/Li+",
+    "read_span_id": "ho-10:0:858"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout",
+  "run": 0,
+  "task_id": "ho-q06",
+  "question": "Claim to check: the binder PB-1 is electrochemically stable up to 4.5 V vs Li/Li+.",
+  "arm": "agent",
+  "outcome": "supported",
+  "claim": "PB-1 shows no oxidation current up to 4.5 V vs Li/Li+.",
+  "conditions": {
+   "method": "linear sweep voltammetry, 0.1 mV s-1",
+   "source": "supplier datasheet"
+  },
+  "rationale": "Supplier data, which the datasheet calls typical rather than a specification.",
+  "citations": [
+   {
+    "doc_id": "ho-10",
+    "start": 380,
+    "end": 446,
+    "doc_hash": "6c98caec2c3c82f46cc1f13360c24b0f32a748e228f9e75a2267d871fb324bbf",
+    "quote": "showed no oxidation current above background up to 4.5 V vs Li/Li+",
+    "read_span_id": "ho-10:0:858"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout",
+  "run": 0,
+  "task_id": "ho-q06",
+  "question": "Claim to check: the binder PB-1 is electrochemically stable up to 4.5 V vs Li/Li+.",
+  "arm": "agent_no_expand",
+  "outcome": "supported",
+  "claim": "PB-1 shows no oxidation current up to 4.5 V vs Li/Li+.",
+  "conditions": {
+   "method": "linear sweep voltammetry, 0.1 mV s-1",
+   "source": "supplier datasheet"
+  },
+  "rationale": "Supplier data, which the datasheet calls typical rather than a specification.",
+  "citations": [
+   {
+    "doc_id": "ho-10",
+    "start": 380,
+    "end": 446,
+    "doc_hash": "6c98caec2c3c82f46cc1f13360c24b0f32a748e228f9e75a2267d871fb324bbf",
+    "quote": "showed no oxidation current above background up to 4.5 V vs Li/Li+",
+    "read_span_id": "ho-10:0:858"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout",
+  "run": 0,
+  "task_id": "ho-q07",
+  "question": "Claim to check: GZ-9 separators cycle stably against lithium metal for more than 1000 cycles.",
+  "arm": "lexical",
+  "outcome": "supported",
+  "claim": "Abstract: We cycled symmetric lithium metal cells on GZ-9 separators at stack pressures of 1, 5 and 10 MPa and a current density of 0.2 mA cm-2 at 25 °C.",
+  "conditions": {},
+  "rationale": "best sentence covers 0.50 of query terms (threshold 0.5)",
+  "citations": [
+   {
+    "doc_id": "ho-12",
+    "start": 179,
+    "end": 332,
+    "doc_hash": "bb1183a9103e3b4dab2fadc58dacc53f6511c4d391a0505ef142097004ad60d8",
+    "quote": "Abstract: We cycled symmetric lithium metal cells on GZ-9 separators at stack pressures of 1, 5 and 10 MPa and a current density of 0.2 mA cm-2 at 25 °C.",
+    "read_span_id": "ho-12:0:733"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": null
+ },
+ {
+  "family": "heldout",
+  "run": 0,
+  "task_id": "ho-q07",
+  "question": "Claim to check: GZ-9 separators cycle stably against lithium metal for more than 1000 cycles.",
+  "arm": "single_call",
+  "outcome": "abstained",
+  "claim": "",
+  "conditions": {},
+  "rationale": "",
+  "citations": [],
+  "abstain_reason": "No passage reports 1000 cycles.",
+  "stop_reason": "abstained"
+ },
+ {
+  "family": "heldout",
+  "run": 0,
+  "task_id": "ho-q07",
+  "question": "Claim to check: GZ-9 separators cycle stably against lithium metal for more than 1000 cycles.",
+  "arm": "agent",
+  "outcome": "insufficient",
+  "claim": "Only 200 stable cycles are reported; nothing beyond.",
+  "conditions": {
+   "stack pressure": "5 MPa"
+  },
+  "rationale": "No data exist for more than 200 cycles.",
+  "citations": [
+   {
+    "doc_id": "ho-12",
+    "start": 613,
+    "end": 644,
+    "doc_hash": "bb1183a9103e3b4dab2fadc58dacc53f6511c4d391a0505ef142097004ad60d8",
+    "quote": "the study stopped at 200 cycles",
+    "read_span_id": "ho-12:0:733"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout",
+  "run": 0,
+  "task_id": "ho-q07",
+  "question": "Claim to check: GZ-9 separators cycle stably against lithium metal for more than 1000 cycles.",
+  "arm": "agent_no_expand",
+  "outcome": "insufficient",
+  "claim": "Only 200 stable cycles are reported; nothing beyond.",
+  "conditions": {
+   "stack pressure": "5 MPa"
+  },
+  "rationale": "No data exist for more than 200 cycles.",
+  "citations": [
+   {
+    "doc_id": "ho-12",
+    "start": 613,
+    "end": 644,
+    "doc_hash": "bb1183a9103e3b4dab2fadc58dacc53f6511c4d391a0505ef142097004ad60d8",
+    "quote": "the study stopped at 200 cycles",
+    "read_span_id": "ho-12:0:733"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout",
+  "run": 0,
+  "task_id": "ho-q08",
+  "question": "Claim to check: dendrite growth in GZ-9 is caused by grain-boundary electronic conductivity.",
+  "arm": "lexical",
+  "outcome": "supported",
+  "claim": "In our view the debate is settled: grain-boundary electronic conductivity is unquestionably the sole cause of dendrite growth in GZ-9 and related garnets.",
+  "conditions": {},
+  "rationale": "best sentence covers 0.91 of query terms (threshold 0.5)",
+  "citations": [
+   {
+    "doc_id": "ho-11",
+    "start": 282,
+    "end": 436,
+    "doc_hash": "0e64e0042195d0d92322e648f3e2bba72ecaaee2ab7871bccd6995c9a5aa799a",
+    "quote": "In our view the debate is settled: grain-boundary electronic conductivity is unquestionably the sole cause of dendrite growth in GZ-9 and related garnets.",
+    "read_span_id": "ho-11:0:873"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": null
+ },
+ {
+  "family": "heldout",
+  "run": 0,
+  "task_id": "ho-q08",
+  "question": "Claim to check: dendrite growth in GZ-9 is caused by grain-boundary electronic conductivity.",
+  "arm": "single_call",
+  "outcome": "insufficient",
+  "claim": "Opinion without measurements.",
+  "conditions": {},
+  "rationale": "No data.",
+  "citations": [
+   {
+    "doc_id": "ho-11",
+    "start": 549,
+    "end": 622,
+    "doc_hash": "0e64e0042195d0d92322e648f3e2bba72ecaaee2ab7871bccd6995c9a5aa799a",
+    "quote": "We have not measured the electronic conductivity of GZ-9 grain boundaries",
+    "read_span_id": "ho-11:0:873"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout",
+  "run": 0,
+  "task_id": "ho-q08",
+  "question": "Claim to check: dendrite growth in GZ-9 is caused by grain-boundary electronic conductivity.",
+  "arm": "agent",
+  "outcome": "insufficient",
+  "claim": "The cause is asserted in an opinion piece without data.",
+  "conditions": {},
+  "rationale": "The only source is an opinion that reports no measurements.",
+  "citations": [
+   {
+    "doc_id": "ho-11",
+    "start": 549,
+    "end": 622,
+    "doc_hash": "0e64e0042195d0d92322e648f3e2bba72ecaaee2ab7871bccd6995c9a5aa799a",
+    "quote": "We have not measured the electronic conductivity of GZ-9 grain boundaries",
+    "read_span_id": "ho-11:0:873"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout",
+  "run": 0,
+  "task_id": "ho-q08",
+  "question": "Claim to check: dendrite growth in GZ-9 is caused by grain-boundary electronic conductivity.",
+  "arm": "agent_no_expand",
+  "outcome": "insufficient",
+  "claim": "The cause is asserted in an opinion piece without data.",
+  "conditions": {},
+  "rationale": "The only source is an opinion that reports no measurements.",
+  "citations": [
+   {
+    "doc_id": "ho-11",
+    "start": 549,
+    "end": 622,
+    "doc_hash": "0e64e0042195d0d92322e648f3e2bba72ecaaee2ab7871bccd6995c9a5aa799a",
+    "quote": "We have not measured the electronic conductivity of GZ-9 grain boundaries",
+    "read_span_id": "ho-11:0:873"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout",
+  "run": 0,
+  "task_id": "ho-q09",
+  "question": "Claim to check: the SX-2 interface has an area-specific resistance below 50 ohm cm2 at 25 °C.",
+  "arm": "lexical",
+  "outcome": "insufficient",
+  "claim": "",
+  "conditions": {},
+  "rationale": "best sentence covers 0.43 of query terms (threshold 0.5)",
+  "citations": [],
+  "abstain_reason": null,
+  "stop_reason": null
+ },
+ {
+  "family": "heldout",
+  "run": 0,
+  "task_id": "ho-q09",
+  "question": "Claim to check: the SX-2 interface has an area-specific resistance below 50 ohm cm2 at 25 °C.",
+  "arm": "single_call",
+  "outcome": "supported",
+  "claim": "35 ohm cm2 at 25 °C.",
+  "conditions": {
+   "temperature": "25 °C"
+  },
+  "rationale": "0.035 kOhm cm2 is 35 Ohm cm2.",
+  "citations": [
+   {
+    "doc_id": "ho-07",
+    "start": 426,
+    "end": 479,
+    "doc_hash": "5867424d9d5560daba977018e2b7866b4a2639fd88c556a31fb058d9396b5e66",
+    "quote": "the interfacial ASR of SX-2 was 0.035 kΩ cm2 at 25 °C",
+    "read_span_id": "ho-07:0:827"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout",
+  "run": 0,
+  "task_id": "ho-q09",
+  "question": "Claim to check: the SX-2 interface has an area-specific resistance below 50 ohm cm2 at 25 °C.",
+  "arm": "agent",
+  "outcome": "supported",
+  "claim": "The SX-2 interfacial ASR is 35 ohm cm2 at 25 °C.",
+  "conditions": {
+   "temperature": "25 °C",
+   "electrodes": "lithium-indium",
+   "stack pressure": "10 MPa"
+  },
+  "rationale": "0.035 kOhm cm2 equals 35 Ohm cm2, below 50.",
+  "citations": [
+   {
+    "doc_id": "ho-07",
+    "start": 426,
+    "end": 479,
+    "doc_hash": "5867424d9d5560daba977018e2b7866b4a2639fd88c556a31fb058d9396b5e66",
+    "quote": "the interfacial ASR of SX-2 was 0.035 kΩ cm2 at 25 °C",
+    "read_span_id": "ho-07:0:827"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout",
+  "run": 0,
+  "task_id": "ho-q09",
+  "question": "Claim to check: the SX-2 interface has an area-specific resistance below 50 ohm cm2 at 25 °C.",
+  "arm": "agent_no_expand",
+  "outcome": "supported",
+  "claim": "The SX-2 interfacial ASR is 35 ohm cm2 at 25 °C.",
+  "conditions": {
+   "temperature": "25 °C",
+   "electrodes": "lithium-indium",
+   "stack pressure": "10 MPa"
+  },
+  "rationale": "0.035 kOhm cm2 equals 35 Ohm cm2, below 50.",
+  "citations": [
+   {
+    "doc_id": "ho-07",
+    "start": 426,
+    "end": 479,
+    "doc_hash": "5867424d9d5560daba977018e2b7866b4a2639fd88c556a31fb058d9396b5e66",
+    "quote": "the interfacial ASR of SX-2 was 0.035 kΩ cm2 at 25 °C",
+    "read_span_id": "ho-07:0:827"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout",
+  "run": 0,
+  "task_id": "ho-q10",
+  "question": "Claim to check: SX-2 releases hydrogen sulfide when exposed to air at 30% relative humidity.",
+  "arm": "lexical",
+  "outcome": "supported",
+  "claim": "Finding 1: at 30% relative humidity and 25 °C, SX-2 released detectable hydrogen sulfide within 2 minutes, and its conductivity fell by 60% after 1 hour of exposure.",
+  "conditions": {},
+  "rationale": "best sentence covers 0.67 of query terms (threshold 0.5)",
+  "citations": [
+   {
+    "doc_id": "ho-06",
+    "start": 361,
+    "end": 526,
+    "doc_hash": "684eb46e1817e8039eabb2db0e381aab6e2f4f31e439acd814ae394360c2b979",
+    "quote": "Finding 1: at 30% relative humidity and 25 °C, SX-2 released detectable hydrogen sulfide within 2 minutes, and its conductivity fell by 60% after 1 hour of exposure.",
+    "read_span_id": "ho-06:0:898"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": null
+ },
+ {
+  "family": "heldout",
+  "run": 0,
+  "task_id": "ho-q10",
+  "question": "Claim to check: SX-2 releases hydrogen sulfide when exposed to air at 30% relative humidity.",
+  "arm": "single_call",
+  "outcome": "supported",
+  "claim": "H2S within 2 minutes at 30% RH.",
+  "conditions": {
+   "humidity": "30% RH"
+  },
+  "rationale": "Stated directly.",
+  "citations": [
+   {
+    "doc_id": "ho-06",
+    "start": 408,
+    "end": 466,
+    "doc_hash": "684eb46e1817e8039eabb2db0e381aab6e2f4f31e439acd814ae394360c2b979",
+    "quote": "SX-2 released detectable hydrogen sulfide within 2 minutes",
+    "read_span_id": "ho-06:0:898"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout",
+  "run": 0,
+  "task_id": "ho-q10",
+  "question": "Claim to check: SX-2 releases hydrogen sulfide when exposed to air at 30% relative humidity.",
+  "arm": "agent",
+  "outcome": "supported",
+  "claim": "SX-2 releases H2S within 2 minutes at 30% relative humidity.",
+  "conditions": {
+   "humidity": "30% RH",
+   "temperature": "25 °C"
+  },
+  "rationale": "Direct statement.",
+  "citations": [
+   {
+    "doc_id": "ho-06",
+    "start": 372,
+    "end": 466,
+    "doc_hash": "684eb46e1817e8039eabb2db0e381aab6e2f4f31e439acd814ae394360c2b979",
+    "quote": "at 30% relative humidity and 25 °C, SX-2 released detectable hydrogen sulfide within 2 minutes",
+    "read_span_id": "ho-06:0:898"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ },
+ {
+  "family": "heldout",
+  "run": 0,
+  "task_id": "ho-q10",
+  "question": "Claim to check: SX-2 releases hydrogen sulfide when exposed to air at 30% relative humidity.",
+  "arm": "agent_no_expand",
+  "outcome": "supported",
+  "claim": "SX-2 releases H2S within 2 minutes at 30% relative humidity.",
+  "conditions": {
+   "humidity": "30% RH",
+   "temperature": "25 °C"
+  },
+  "rationale": "Direct statement.",
+  "citations": [
+   {
+    "doc_id": "ho-06",
+    "start": 372,
+    "end": 466,
+    "doc_hash": "684eb46e1817e8039eabb2db0e381aab6e2f4f31e439acd814ae394360c2b979",
+    "quote": "at 30% relative humidity and 25 °C, SX-2 released detectable hydrogen sulfide within 2 minutes",
+    "read_span_id": "ho-06:0:898"
+   }
+  ],
+  "abstain_reason": null,
+  "stop_reason": "finished"
+ }
+]

@@ -1,0 +1,79 @@
+{
+ "agentcore_version": "0.1.0",
+ "config": {
+  "arms": [
+   "lexical",
+   "single_call",
+   "agent",
+   "agent_no_expand"
+  ],
+  "checkpoint_dir": "runs",
+  "episode": {
+   "max_completion_tokens": 700,
+   "max_steps": 16,
+   "max_tokens_per_episode": 40000,
+   "max_tool_calls": 10,
+   "max_wall_seconds": 300.0,
+   "recent_k": 4
+  },
+  "families": {
+   "dev": {
+    "corpus": "tests/fixtures/corpus/dev",
+    "gold": "evaluator/gold_dev.json",
+    "questions": "tests/fixtures/questions_dev.json"
+   },
+   "heldout": {
+    "corpus": "tests/fixtures/corpus/heldout",
+    "gold": "evaluator/gold_heldout.json",
+    "questions": "tests/fixtures/questions_heldout.json"
+   }
+  },
+  "fixture_scripts": "tests/fixtures/scripts",
+  "lexical_coverage_threshold": 0.5,
+  "mode": "fixture",
+  "output_dir": "reports/fixture",
+  "record_timing": false,
+  "run_caps": {
+   "max_total_tokens": null,
+   "max_usd": null,
+   "usd_per_mtok_input": null,
+   "usd_per_mtok_output": null
+  },
+  "runs": 1,
+  "single_call_max_completion_tokens": 900,
+  "single_call_top_k": 4,
+  "task_limit": null
+ },
+ "config_sha256": "3c8f29c3b833765bb22153a09b1697af9759ba734f9f08cef9e63430884bd080",
+ "finished_at": "2026-11-09T11:13:45+09:00",
+ "fixture_hashes": {
+  "dev/corpus": "428081366b3b73eca0fd2efabd44300162edceb4363244344930b658e3625c18",
+  "dev/gold": "9f6295b261f0c5eaf8a74da8fe3852dd49974b7fb2f3b23b439cef43447b479f",
+  "dev/questions": "e38274cb0bff26a581bfd1c0d716ba5401ba233e5b81f550298d482f0b9edb80",
+  "dev/script/agent": "58c1376954500ae5a32cc0da468dfb8512cf916d9dba3051826ec1a4b7a3c82f",
+  "dev/script/agent_no_expand": "73b028e4a5c5771d0a52ee4ae9cba45acc1ace775e3087aa96e522e3c0354f32",
+  "dev/script/single_call": "1b1d2de5e242cd96884641c8b247bd124365aed154b7b31f0ed5cd059cefa12b",
+  "heldout/corpus": "182dadc4e2f0afdb646e60f3708150a52828b7e89e22296ebd1b51b81b15682f",
+  "heldout/gold": "952fcc627e733d20fe5079f5fafe10c3c4461faae87ac51acd73f7014988a19b",
+  "heldout/questions": "61512056af330bc994a988f7a13ece58b37a3c96686b830de3bb9612b1e175e2",
+  "heldout/script/agent": "c7c36c70a7a7b2e2855845a1c626e3787596749ac3813c78425036ef0416554c",
+  "heldout/script/agent_no_expand": "4e276a6f78b9993b88470edfcd2f06063871abf5fb1189624136426c1580754d",
+  "heldout/script/single_call": "60a774633dbbb50ee33a1b59db8343884a0451907c91667d8463110e69dcf691"
+ },
+ "git_commit": "aa2d2950a0d053419b724e2defe755acb723cc9a",
+ "git_dirty": false,
+ "hardware": {
+  "machine": "AMD64",
+  "platform": "Windows-10-10.0.26300-SP0",
+  "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
+  "python": "3.11.9"
+ },
+ "mode": "fixture",
+ "model": "none (scripted fixture adapter)",
+ "package_version": "0.1.0",
+ "prompt_sha256": "fc7d2e3c607462af3eb0b264faf478a21c31135b8c9dbf640eafdca69b4e2477",
+ "prompt_version": "ledger-prompts-v1",
+ "started_at": "2026-11-09T11:13:28+09:00",
+ "tokens": null,
+ "usd": null
+}
