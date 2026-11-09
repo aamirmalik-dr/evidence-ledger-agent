@@ -1,0 +1,71 @@
+{
+ "adapter_retries": 0,
+ "agentcore_version": "0.1.1",
+ "config": {
+  "arms": [
+   "lexical",
+   "single_call",
+   "agent",
+   "agent_no_expand"
+  ],
+  "checkpoint_dir": "runs",
+  "episode": {
+   "max_completion_tokens": 700,
+   "max_steps": 16,
+   "max_tokens_per_episode": 40000,
+   "max_tool_calls": 10,
+   "max_wall_seconds": 300.0,
+   "recent_k": 4
+  },
+  "families": {
+   "heldout": {
+    "corpus": "tests/fixtures/corpus/heldout",
+    "gold": "evaluator/gold_heldout.json",
+    "questions": "tests/fixtures/questions_heldout.json"
+   }
+  },
+  "fixture_scripts": "tests/fixtures/scripts",
+  "lexical_coverage_threshold": 0.5,
+  "mode": "live",
+  "model": "openai/gpt-4.1-mini",
+  "output_dir": "reports/live",
+  "record_timing": true,
+  "run_caps": {
+   "max_total_tokens": 1500000,
+   "max_usd": 5.0,
+   "usd_per_mtok_input": 0.4,
+   "usd_per_mtok_output": 1.6
+  },
+  "runs": 2,
+  "single_call_max_completion_tokens": 900,
+  "single_call_top_k": 4,
+  "task_limit": null
+ },
+ "config_sha256": "ec65290df76a3c8877cb8126da3d069341c14422efa8a51cebfaf2c98aca4414",
+ "finished_at": "2026-11-09T12:02:08+09:00",
+ "fixture_hashes": {
+  "heldout/corpus": "182dadc4e2f0afdb646e60f3708150a52828b7e89e22296ebd1b51b81b15682f",
+  "heldout/gold": "952fcc627e733d20fe5079f5fafe10c3c4461faae87ac51acd73f7014988a19b",
+  "heldout/questions": "61512056af330bc994a988f7a13ece58b37a3c96686b830de3bb9612b1e175e2"
+ },
+ "git_commit": "9d07e389503a789e5985ea98a6426439e908e24d",
+ "git_dirty": false,
+ "hardware": {
+  "machine": "AMD64",
+  "platform": "Windows-10-10.0.26300-SP0",
+  "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
+  "python": "3.11.9"
+ },
+ "mode": "live",
+ "model": "openai/gpt-4.1-mini",
+ "package_version": "0.1.0",
+ "prompt_sha256": "8df09e930c93887d250233e79c111c42a46b2273ce8a9fa7811dd3918850a2b1",
+ "prompt_version": "ledger-prompts-v2",
+ "started_at": "2026-11-09T11:50:33+09:00",
+ "tokens": {
+  "completion": 44890,
+  "prompt": 755603
+ },
+ "usd": 0.3740652,
+ "usd_reported_by_provider": 0.272652
+}
