@@ -14,11 +14,11 @@ v2 round, pre-registered in `docs/v2_preregistration.md`:
   - Malformed agent steps fell from 22 in v1 to 0.
 - Live results with `anthropic/claude-sonnet-4.6`, 1 run: single call 10/10, agent 9/10.
 - The first Sonnet attempt failed on HTTP 429 rate limits. It is kept under `reports/aborted/` and not counted.
-- Em dashes in saved model replies are stored as JSON escapes.
+- Saved model replies are written as ASCII-escaped JSON.
 
 Figures:
 - `scripts/make_figures.py` draws every figure from saved task results only.
-- The current set is publication-style: Figure 1 (accuracy by arm, paired difference against the single call, outcome composition, per-question tiles), Figure S1 (tool calls per episode) and Figure S2 (citation validity against accuracy).
+- The current set: Figure 1 (accuracy by arm, paired difference against the single call, outcome composition, per-question tiles), Figure S1 (tool calls per episode) and Figure S2 (citation validity against accuracy).
   - Exported as SVG for the README and as 300 dpi PNG.
   - Wilson intervals for rates and a paired question-level bootstrap for differences (10,000 resamples, seed 20261109).
   - Every plotted value is in `docs/figures/figure_stats.json`.
